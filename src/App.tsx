@@ -8,9 +8,10 @@ import Grid from '@mui/material/Grid';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
 import Item from './item/item';
-
+import Cart from './components/Cart/Cart';
 //Styles
 import { Wrapper, StyledButton } from './App.styles';
+import Header from './components/Header/Header';
 
 // Types
 export type CartItemType = {
@@ -33,38 +34,72 @@ function App() {
     'products',
     getProducts
   );
-  console.log(data);
 
   const getTotalItems = (items: CartItemType[]) =>
     items.reduce((ack: number, item) => ack + item.amount, 0);
-  const handleAddCart = (clickedItem: CartItemType) => null;
-  const handleRemoveCart = () => null;
+  const handleAddCart = (clickedItem: CartItemType) => {
+    setCartItems((prev) => {
+      const itemAlreadyInCart = prev.find(
+        (item) => item.id === clickedItem.id
+      );
+      if (itemAlreadyInCart) {
+        return prev.map((item) =>
+          item.id === clickedItem.id
+            ? { ...item, amount: item.amount + 1 }
+            : item
+        );
+      }
+      return [...prev, { ...clickedItem, amount: 1 }];
+    });
+  };
+  const handleRemoveCart = (id: number) => {
+    setCartItems((prev) =>
+      prev.reduce((ack, item) => {
+        if (item.id === id) {
+          if (item.amount === 1) return ack;
+          return [...ack, { ...item, amount: item.amount - 1 }];
+        } else {
+          return [...ack, item];
+        }
+      }, [] as CartItemType[])
+    );
+  };
 
   if (isLoading) return <LinearProgress />;
-  if (error) return <p>'Sometin wong'</p>;
+  if (error) return <p>'Someting went wrong'</p>;
 
   return (
-    <Wrapper>
-      <Drawer
-        anchor="right"
-        open={cartOpen}
-        onClose={() => setCartOpen(false)}
-      >
-        Cart goes here
-      </Drawer>
-      <StyledButton onClick={() => setCartOpen(true)}>
-        <Badge badgeContent={getTotalItems(cartItems)} color="error">
-          <ShoppingCartOutlinedIcon />
-        </Badge>
-      </StyledButton>
-      <Grid container spacing={3}>
-        {data?.map((item) => (
-          <Grid item key={item.id} xs={12} sm={4}>
-            <Item item={item} handleAddCart={handleAddCart} />
-          </Grid>
-        ))}
-      </Grid>
-    </Wrapper>
+    <>
+      <Header />
+      <Wrapper>
+        <Drawer
+          anchor="right"
+          open={cartOpen}
+          onClose={() => setCartOpen(false)}
+        >
+          <Cart
+            cartItems={cartItems}
+            addToCart={handleAddCart}
+            removeFromCart={handleRemoveCart}
+          />
+        </Drawer>
+        <StyledButton onClick={() => setCartOpen(true)}>
+          <Badge
+            badgeContent={getTotalItems(cartItems)}
+            color="error"
+          >
+            <ShoppingCartOutlinedIcon />
+          </Badge>
+        </StyledButton>
+        <Grid container spacing={2}>
+          {data?.map((item) => (
+            <Grid item key={item.id} xs={12} sm={6} xl={3}>
+              <Item item={item} handleAddCart={handleAddCart} />
+            </Grid>
+          ))}
+        </Grid>
+      </Wrapper>
+    </>
   );
 }
 
