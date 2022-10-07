@@ -8,7 +8,7 @@ import { LinearProgress } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
-import Item from '../Item/Item';
+import Item from '../Item/item';
 import Cart from '../components/Cart/Cart';
 //Styles
 import { Wrapper, StyledButton } from '../App.styles';

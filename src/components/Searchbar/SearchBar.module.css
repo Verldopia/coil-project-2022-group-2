@@ -3,6 +3,7 @@
     background-color: var(--dark-color);
 }
 .searchBarBox {
+    padding-top: 1.1rem;
     max-width: 68rem;
     width: 100%;
     margin: 0 auto;
