@@ -4,6 +4,7 @@ import AdjustOutlinedIcon from '@mui/icons-material/AdjustOutlined';
 import styles from './Header.module.css';
 
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Button } from 'reactstrap';
+import { ROUTES } from '../../constants/routes';
 // import { SearchBar } from '../../filter';
 
 // Custom components
@@ -12,23 +13,22 @@ import { Navbar, NavbarBrand, NavbarToggler, Collapse, Button } from 'reactstrap
 const Header: React.FC = () => {
     return (
         <header className={styles.header}>
-            <AdjustOutlinedIcon></AdjustOutlinedIcon>
-            <NavbarBrand tag={NavLink} to="/">
-                Home
+            <NavbarBrand tag={NavLink} to={ROUTES.LANDING}>
+                <AdjustOutlinedIcon></AdjustOutlinedIcon>
             </NavbarBrand>
-            <Button tag={NavLink} to="/x">
+            <Button tag={NavLink} to={ROUTES.ADMIN}>
                 Admin dashboard
             </Button>
-            <Button tag={NavLink} to="/wishlist">
+            <Button tag={NavLink} to={ROUTES.WISHLIST}>
                 Wishlist
             </Button>
-            <Button tag={NavLink} to="/login">
+            <Button tag={NavLink} to={ROUTES.LOGIN}>
                 Login
             </Button>
-            <Button tag={NavLink} to="/register">
+            <Button tag={NavLink} to={ROUTES.REGISTER}>
                 Register
             </Button>
-            <Button tag={NavLink} to="/language">
+            <Button tag={NavLink} to="/toggler">
                 EN
             </Button>
             <div /* <SearchBar /> */></div>
