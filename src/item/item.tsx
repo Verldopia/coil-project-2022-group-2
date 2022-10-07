@@ -12,8 +12,7 @@ const Item: React.FC<Props> = ({ item, handleAddCart }) => (
     <img src={item.image} alt={item.title} />
     <div>
       <h2>{item.title}</h2>
-      <p>{item.description}</p>
-      <h3>{item.price}</h3>
+      <h4>€{item.price}</h4>
     </div>
     <Button onClick={() => handleAddCart(item)}>Add to cart</Button>
   </Wrapper>
