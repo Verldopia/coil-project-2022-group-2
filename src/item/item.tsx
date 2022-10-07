@@ -1,6 +1,8 @@
 import Button from '@mui/material/Button';
+import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
 import { CartItemType } from '../pages/LandingPage';
 import { Wrapper } from './item.styles';
+import styles from './Item.module.css';
 
 type Props = {
     item: CartItemType;
@@ -14,7 +16,9 @@ const Item: React.FC<Props> = ({ item, handleAddCart }) => (
             <h2>{item.title}</h2>
             <h4>€{item.price}</h4>
         </div>
-        <Button onClick={() => handleAddCart(item)}>Add to cart</Button>
+        <Button className={styles.cartBtn} onClick={() => handleAddCart(item)} variant="text" startIcon={<ShoppingCartOutlined />}>
+            Add to Cart
+        </Button>
     </Wrapper>
 );
 

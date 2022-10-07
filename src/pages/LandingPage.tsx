@@ -8,7 +8,7 @@ import { LinearProgress } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
-import Item from '../item/item';
+import Item from '../Item/Item';
 import Cart from '../components/Cart/Cart';
 //Styles
 import { Wrapper, StyledButton } from '../App.styles';
@@ -72,7 +72,7 @@ const LandingPage: React.FC<ILandingPageProps> = (props) => {
                 </StyledButton>
                 <Grid container spacing={2}>
                     {data?.map((item) => (
-                        <Grid item key={item.id} xs={12} sm={6} xl={3}>
+                        <Grid item key={item.id} xs={12} sm={6} md={4}>
                             <Item item={item} handleAddCart={handleAddCart} />
                         </Grid>
                     ))}

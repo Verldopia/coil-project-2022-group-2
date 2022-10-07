@@ -1,6 +1,6 @@
 .footerContainer {
-    border: 5px solid var(--dark-color);
-    position: absolute;
-    bottom: 0;
+    color: var(--bgd-color);
+    padding: 1rem;
+    background-color: var(--darkest-grey);
     width: 100%;
 }

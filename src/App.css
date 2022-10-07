@@ -33,6 +33,7 @@
     --dark-grey: #99979d;
     --darkest-grey: #34303d;
     --cta-color: #ffeb6e;
+    --cta-color-dark: #dddb48;
     --light-color: #e1ffb1;
     --dark-color: #b6e388;
 
@@ -64,14 +65,23 @@ body {
     font-size: var(--base);
     background-color: var(--white-clr);
 }
-
+.container {
+    width: 100%;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+.container-fluid {
+    background-color: var(--dark-color);
+}
 h1,
 h2,
 h3 {
     font-family: var(--secondary-ff);
     font-size: var(--xl);
 }
-
+ul {
+    list-style: none;
+}
 .bg-bottom-margin {
     margin-bottom: 5rem;
 }

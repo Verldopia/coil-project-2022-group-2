@@ -1,0 +1,15 @@
+.searchBarContainer {
+    display: flex;
+    background-color: var(--dark-color);
+}
+.searchBarBox {
+    max-width: 68rem;
+    width: 100%;
+    margin: 0 auto;
+}
+.searchBar {
+    background-color: var(--bgd-color);
+    width: 20rem;
+    margin: 1rem 1rem -0.3rem 1rem;
+    border-radius: 0.25rem;
+}
