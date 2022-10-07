@@ -1,9 +1,19 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  color: var(--green-clr);
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid blue;
 }
-.header_title {
-  font-size: var(--lg);
+.headerMiddle {
+    background-color: --dark-color;
+    padding: 1rem;
+}
+.admin {
+    /* Code to be removed for production */
+    color: red;
+}
+.headerBottom {
+    background-color: #34303d;
+}
+.headerButton {
+    color: --bgd-color;
 }
