@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 import ShoppingCartOutlined from '@mui/icons-material/ShoppingCartOutlined';
-import { CartItemType } from '../pages/LandingPage';
+import { CartItemType } from '../../pages/LandingPage';
 import { Wrapper } from './item.styles';
 import styles from './Item.module.css';
 
