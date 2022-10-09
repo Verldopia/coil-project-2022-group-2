@@ -1,6 +1,6 @@
 .containerSidebar {
   width: 15rem;
-  border: 1px solid var(--darkest-grey);
+  border: 1px solid var(--dark-grey);
   border-radius: 0.5rem;
 }
 .listItem,
@@ -8,7 +8,7 @@
 .listItemLast {
   background-color: var(--light-grey);
   padding: 1rem;
-  border-bottom: 1px solid var(--darkest-grey);
+  border-bottom: 1px solid var(--dark-grey);
 }
 .listItemLast {
   border: none;

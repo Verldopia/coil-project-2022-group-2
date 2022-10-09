@@ -1,7 +1,6 @@
 .adminLayout {
   display: flex;
-  gap: 1rem;
-  border: 1px solid red;
+  gap: 0.5rem;
   max-width: var(--width);
   margin: 0 auto;
   padding: 1rem;

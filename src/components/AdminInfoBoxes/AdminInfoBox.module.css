@@ -1,0 +1,61 @@
+.mainContainer {
+  width: 100%;
+}
+.infoBoxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.infoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  height: 5rem;
+  width: 10rem;
+  flex-grow: 1;
+  background-color: var(--light-grey);
+  border: 1px solid var(--dark-grey);
+}
+.infoBoxIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-size: cover;
+  background-position: center;
+}
+#iconBox {
+  background-image: url(../../assets/icons/box.png);
+  background-color: var(--cta-color-dark);
+}
+#iconGlobe {
+  background-image: url(../../assets/icons/globe.png);
+  background-color: var(--cta-color);
+}
+#iconCurrency {
+  background-image: url(../../assets/icons/currency.png);
+  background-color: var(--light-color);
+}
+#iconSold {
+  background-image: url(../../assets/icons/sold.png);
+  background-color: var(--dark-color);
+}
+.infoBoxText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 0.7rem;
+}
+.infoBoxSpan {
+  font-size: var(--lg);
+  font-weight: var(--strong-fw);
+}

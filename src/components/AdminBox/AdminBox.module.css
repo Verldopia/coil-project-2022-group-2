@@ -1,15 +1,12 @@
-.mainContainer {
-  padding: 1rem;
+.adminContentBox {
   width: 100%;
-}
-.infoBoxes {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  border: 1px solid red;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-.infoBox {
-  width: 10rem;
-  flex-grow: 1;
-  border: 1px solid blue;
+.adminContent {
+  background-color: var(--light-grey);
+  border-radius: 0.5rem;
+  border: 1px solid var(--dark-grey);
+  padding: 1rem;
 }
