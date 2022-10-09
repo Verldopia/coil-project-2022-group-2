@@ -1,0 +1,22 @@
+.containerSidebar {
+  width: 15rem;
+  border: 1px solid var(--darkest-grey);
+  border-radius: 0.5rem;
+}
+.listItem,
+.listItemWhite,
+.listItemLast {
+  background-color: var(--light-grey);
+  padding: 1rem;
+  border-bottom: 1px solid var(--darkest-grey);
+}
+.listItemLast {
+  border: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.listItemWhite {
+  background-color: var(--bkg-color);
+}
+.listItemBold {
+  font-weight: bold;
+}

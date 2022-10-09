@@ -1,0 +1,15 @@
+.mainContainer {
+  padding: 1rem;
+  width: 100%;
+}
+.infoBoxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border: 1px solid red;
+}
+.infoBox {
+  width: 10rem;
+  flex-grow: 1;
+  border: 1px solid blue;
+}

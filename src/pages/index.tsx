@@ -9,4 +9,15 @@ import LogInPage from './LogInPage';
 import RegisterPage from './RegisterPage';
 import WishlistPage from './WishlistPage';
 
-export { AboutPage, AccountPage, AdminPage, CategoriesPage, ContactPage, ItemPage, LandingPage, LogInPage, RegisterPage, WishlistPage };
+export {
+  AboutPage,
+  AccountPage,
+  AdminPage,
+  CategoriesPage,
+  ContactPage,
+  ItemPage,
+  LandingPage,
+  LogInPage,
+  RegisterPage,
+  WishlistPage,
+};
