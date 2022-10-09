@@ -1,27 +1,27 @@
 .link {
-    transition: all ease 0.2s;
-    color: var(--bgd-color);
+  transition: all ease 0.2s;
+  color: var(--bgd-color);
 }
 .sale {
-    transition: all ease 0.2s;
-    color: var(--cta-color);
+  transition: all ease 0.2s;
+  color: var(--cta-color);
 }
 .nav,
 .navContainer {
-    display: flex;
-    gap: 1.5rem;
-    width: 100%;
-    padding: 1rem;
-    background-color: var(--darkest-grey);
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--darkest-grey);
 }
 .navContainer {
-    width: calc(70rem - 4rem);
-    margin: 0 auto;
-    padding: 0;
+  width: var(--width);
+  margin: 0 auto;
+  padding: 0;
 }
 .link:hover {
-    color: var(--cta-color);
+  color: var(--cta-color);
 }
 .sale:hover {
-    color: var(--bgd-color);
+  color: var(--bgd-color);
 }

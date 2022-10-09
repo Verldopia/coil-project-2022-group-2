@@ -1,50 +1,50 @@
 .headerContainer {
-    border-radius: 1rem;
-    background-color: var(--darkest-grey);
-    margin: 0.5rem;
+  border-radius: 1rem;
+  background-color: var(--darkest-grey);
+  margin: 0.5rem;
 }
 .headerTop {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: calc(70rem - 2rem);
-    padding: 1rem;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  width: calc(var(--width) + 2rem);
+  padding: 1rem;
+  margin: 0 auto;
 }
 .headerLogo {
-    color: var(--cta-color);
+  color: var(--cta-color);
 }
 .headerLogoIMG {
-    transition: all ease 0.2s;
-    width: 2.5rem;
-    height: 2.5rem;
+  transition: all ease 0.2s;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 .headerLogoIMG:hover {
-    color: var(--bgd-color);
+  color: var(--bgd-color);
 }
 .headerBtns {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    color: var(--bgd-color);
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  color: var(--bgd-color);
 }
 .btn {
-    transition: all ease 0.2s;
+  transition: all ease 0.2s;
 }
 .btn:hover {
-    color: var(--md-grey);
+  color: var(--md-grey);
 }
 .headerMiddle {
-    background-color: --dark-color;
-    padding: 1rem;
+  background-color: --dark-color;
+  padding: 1rem;
 }
 .admin {
-    /* Code to be removed for production (also btn itself) */
-    color: red;
+  /* Code to be removed for production (also btn itself) */
+  color: red;
 }
 .headerBottom {
-    background-color: var(--darkest-grey);
+  background-color: var(--darkest-grey);
 }
 .headerButton {
-    color: var(--bgd-color);
+  color: var(--bgd-color);
 }
