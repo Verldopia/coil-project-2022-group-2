@@ -1,16 +1,15 @@
 import React from 'react';
 import { TextField, Button } from '@mui/material';
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
-import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
+import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
 
-export const RegisterForm: React.FC = () => {
+export const AdminLoginForm: React.FC = () => {
   return (
     <form className="form-container" action="">
       <div className="form-box">
-        <h2 className="form-title">Register</h2>
+        <h2 className="form-title">Administrator Login</h2>
         <div className="form-box-s">
           <TextField
-            required
             className="form-input"
             size="small"
             variant="outlined"
@@ -20,17 +19,6 @@ export const RegisterForm: React.FC = () => {
         </div>
         <div className="form-box-s">
           <TextField
-            required
-            className="form-input"
-            size="small"
-            variant="outlined"
-            label="Email"
-            type="email"
-          />
-        </div>
-        <div className="form-box-s">
-          <TextField
-            required
             className="form-input"
             size="small"
             variant="outlined"
@@ -42,16 +30,12 @@ export const RegisterForm: React.FC = () => {
           <Button
             variant="contained"
             startIcon={<CheckOutlinedIcon />}
-            href="/"
-          >
-            Register
-          </Button>
-          <Button
-            variant="outlined"
-            startIcon={<VpnKeyOutlinedIcon />}
-            href="/login"
+            href="x"
           >
             Login
+          </Button>
+          <Button className="form-btn--password" variant="text">
+            {<QuestionMarkOutlinedIcon />}
           </Button>
         </div>
       </div>

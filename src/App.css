@@ -45,6 +45,10 @@
   --width: 66rem;
 }
 
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
 body {
   font-family: var(--primary-ff);
   font-weight: var(--regular-fw);
@@ -77,14 +81,26 @@ h3 {
 }
 .form-container {
   max-width: 100%;
+  width: var(--width);
+}
+.form-box {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 50rem;
+  width: 30rem;
 }
 .form-input {
-  width: 20rem;
+  width: 100%;
+}
+.form-btn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
 }
 .form-btn > * {
-  width: 10rem;
+  flex-grow: 10;
+}
+.form-btn--password {
+  flex-grow: 1;
 }

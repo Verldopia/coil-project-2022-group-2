@@ -1,13 +1,12 @@
 import React from 'react';
-import Header from '../components/Header/Header';
-import { LoginForm } from '../components/LoginForm/LoginForm';
+import { AdminLoginForm } from '../components/AdminLoginForm/AdminLoginForm';
 
 export interface IAdminLoginPageProps {}
 
 const AdminLoginPage: React.FC<IAdminLoginPageProps> = (props) => {
   return (
     <div>
-      <LoginForm />
+      <AdminLoginForm />
     </div>
   );
 };
