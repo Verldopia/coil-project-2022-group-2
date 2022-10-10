@@ -1,7 +1,7 @@
 .searchBarContainer {
   display: flex;
   padding: 0 1rem;
-  background-color: var(--dark-color);
+  background-color: var(--light-color);
 }
 .searchBarBox {
   padding-top: 1.1rem;
