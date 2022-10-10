@@ -80,17 +80,40 @@ h3 {
   margin: 1rem auto;
 }
 .form-container {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--dark-grey);
   max-width: 100%;
-  width: var(--width);
 }
-.form-box {
+.form-box,
+.admin-form-box {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 100%;
   width: 30rem;
 }
-.form-input {
+.admin-form-box {
+  width: auto;
+}
+.admin-form-box {
+  width: 30rem;
+}
+.admin-form-box--flex {
+  display: flex;
+  gap: 1rem;
+}
+.form-input,
+.selector {
   width: 100%;
+  background-color: var(--bgd-color);
+  border: 1px solid var(--md-grey);
+  color: var(--darkest-grey);
+}
+.selector {
+  height: var(--xl);
+  border-radius: 0.3rem;
+  padding: 0.5rem;
 }
 .form-btn {
   display: flex;
