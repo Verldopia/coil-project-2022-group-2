@@ -17,6 +17,14 @@ import {
   AdminLandingPage,
   AdminLoginPage,
   AdminLivePage,
+  AdminAdministrationPage,
+  AdminContentPage,
+  AdminContentApprovalPage,
+  AdminStockPage,
+  AdminShippingPage,
+  AdminPaymentsPage,
+  AdminDiscountPage,
+  AdminCustomersPage,
 } from './pages/Admin';
 
 // Layouts
@@ -32,18 +40,51 @@ function App() {
   return (
     <>
       <Routes>
+        <Route element={<FormLayout />}>
+          <Route
+            path={ROUTES.ADMINLogin}
+            element={<AdminLoginPage />}
+          />
+        </Route>
+
         {/* Admin layout */}
         <Route element={<AdminLayout />}>
-          <Route element={<FormLayout />}>
-            <Route
-              path={ROUTES.ADMINLogin}
-              element={<AdminLoginPage />}
-            />
-          </Route>
           <Route path={ROUTES.ADMIN} element={<AdminLandingPage />} />
           <Route
             path={ROUTES.ADMINLive}
             element={<AdminLivePage />}
+          />
+          <Route
+            path={ROUTES.ADMINAdministration}
+            element={<AdminAdministrationPage />}
+          />
+          <Route
+            path={ROUTES.ADMINContent}
+            element={<AdminContentPage />}
+          />
+          <Route
+            path={ROUTES.ADMINContentApproval}
+            element={<AdminContentApprovalPage />}
+          />
+          <Route
+            path={ROUTES.ADMINStock}
+            element={<AdminStockPage />}
+          />
+          <Route
+            path={ROUTES.ADMINShipping}
+            element={<AdminShippingPage />}
+          />
+          <Route
+            path={ROUTES.ADMINPayments}
+            element={<AdminPaymentsPage />}
+          />
+          <Route
+            path={ROUTES.ADMINDiscount}
+            element={<AdminDiscountPage />}
+          />
+          <Route
+            path={ROUTES.ADMINCustomers}
+            element={<AdminCustomersPage />}
           />
         </Route>
 
