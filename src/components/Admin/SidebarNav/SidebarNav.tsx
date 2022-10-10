@@ -1,6 +1,7 @@
-import styles from './Sidebar.module.css';
+import styles from './SidebarNav.module.css';
+import { ROUTES } from '../../../constants/routes';
 
-const Sidebar: React.FC = () => {
+const SidebarNav: React.FC = () => {
   return (
     <div className={styles.containerSidebar}>
       <nav id="sidebar">
@@ -12,31 +13,33 @@ const Sidebar: React.FC = () => {
               </a>
             </li>
             <li className={styles.listItem}>
-              <a href="#">Live chat</a>
+              <a href={ROUTES.ADMINLive}>Live chat</a>
             </li>
             <li className={styles.listItem}>
-              <a href="#">Administration</a>
+              <a href={ROUTES.ADMINAdministration}>Administration</a>
             </li>
             <li className={styles.listItem}>
-              <a href="#">Content</a>
+              <a href={ROUTES.ADMINContent}>Content</a>
             </li>
             <li className={styles.listItem}>
-              <a href="#">Content approval</a>
+              <a href={ROUTES.ADMINContentApproval}>
+                Content approval
+              </a>
             </li>
             <li className={styles.listItem}>
-              <a href="#">Stock</a>
+              <a href={ROUTES.ADMINStock}>Stock</a>
             </li>
             <li className={styles.listItem}>
-              <a href="#">Shipping</a>
+              <a href={ROUTES.ADMINShipping}>Shipping</a>
             </li>
             <li className={styles.listItem}>
-              <a href="#">Payments</a>
+              <a href={ROUTES.ADMINPayments}>Payments</a>
             </li>
             <li className={styles.listItem}>
-              <a href="#">Discounts</a>
+              <a href={ROUTES.ADMINDiscount}>Discounts</a>
             </li>
             <li className={styles.listItemLast}>
-              <a href="#">Customers</a>
+              <a href={ROUTES.ADMINCustomers}>Customers</a>
             </li>
           </ul>
         </div>
@@ -45,4 +48,4 @@ const Sidebar: React.FC = () => {
   );
 };
 
-export default Sidebar;
+export default SidebarNav;

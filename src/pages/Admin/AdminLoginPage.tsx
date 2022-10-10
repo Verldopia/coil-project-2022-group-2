@@ -1,5 +1,5 @@
 import React from 'react';
-import { AdminLoginForm } from '../components/AdminLoginForm/AdminLoginForm';
+import { AdminLoginForm } from '../../components/Admin/AdminLoginForm/AdminLoginForm';
 
 export interface IAdminLoginPageProps {}
 

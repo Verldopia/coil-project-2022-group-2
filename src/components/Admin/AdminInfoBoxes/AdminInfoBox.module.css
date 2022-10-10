@@ -33,19 +33,19 @@
   background-position: center;
 }
 #iconBox {
-  background-image: url(../../assets/icons/box.png);
+  background-image: url(../../../assets/icons/box.png);
   background-color: var(--cta-color-dark);
 }
 #iconGlobe {
-  background-image: url(../../assets/icons/globe.png);
+  background-image: url(../../../assets/icons/globe.png);
   background-color: var(--cta-color);
 }
 #iconCurrency {
-  background-image: url(../../assets/icons/currency.png);
+  background-image: url(../../../assets/icons/currency.png);
   background-color: var(--light-color);
 }
 #iconSold {
-  background-image: url(../../assets/icons/sold.png);
+  background-image: url(../../../assets/icons/sold.png);
   background-color: var(--dark-color);
 }
 .infoBoxText {

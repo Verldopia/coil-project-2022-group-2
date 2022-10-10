@@ -1,4 +1,5 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import AdminInfoBox from '../AdminInfoBoxes/AdminInfoBox';
 import styles from './AdminBox.module.css';
 
@@ -7,7 +8,7 @@ const AdminBox: React.FC = (props) => {
     <div className={styles.adminContentBox}>
       <AdminInfoBox />
       <div className={styles.adminContent}>
-        <p>hello world...</p>
+        <Outlet />
       </div>
     </div>
   );

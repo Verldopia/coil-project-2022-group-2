@@ -5,16 +5,19 @@ import { ROUTES } from './constants/routes';
 import {
   LandingPage,
   ContactPage,
-  AdminLoginPage,
   WishlistPage,
   AboutPage,
   AccountPage,
-  AdminPage,
   CategoriesPage,
   ItemPage,
   LoginPage,
   RegisterPage,
 } from './pages';
+import {
+  AdminLandingPage,
+  AdminLoginPage,
+  AdminLivePage,
+} from './pages/Admin';
 
 // Layouts
 import AdminLayout from './components/.layouts/AdminLayout';
@@ -31,13 +34,17 @@ function App() {
       <Routes>
         {/* Admin layout */}
         <Route element={<AdminLayout />}>
-          <Route path={ROUTES.ADMIN} element={<AdminPage />} />
           <Route element={<FormLayout />}>
             <Route
-              path={ROUTES.ADMINLOGIN}
+              path={ROUTES.ADMINLogin}
               element={<AdminLoginPage />}
             />
           </Route>
+          <Route path={ROUTES.ADMIN} element={<AdminLandingPage />} />
+          <Route
+            path={ROUTES.ADMINLive}
+            element={<AdminLivePage />}
+          />
         </Route>
 
         {/* User layout */}

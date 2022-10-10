@@ -13,8 +13,8 @@ import {
 import { ROUTES } from '../../constants/routes';
 
 // Custom components
-import Navigation from '../Navigation/Navigation';
-import { Searchbar } from '../Searchbar/Searchbar';
+import Navigation from './Navigation/Navigation';
+import { Searchbar } from './Searchbar/Searchbar';
 
 const Header: React.FC = () => {
   return (
@@ -33,7 +33,7 @@ const Header: React.FC = () => {
             <Button
               className={styles.admin}
               tag={NavLink}
-              to={ROUTES.ADMINLOGIN}
+              to={ROUTES.ADMINLogin}
             >
               Admin dashboard
             </Button>
