@@ -1,13 +1,14 @@
 import React from 'react';
+import { LoginForm } from '../components/LoginForm/LoginForm';
 
-export interface ILogInPageProps {}
+export interface ILoginPageProps {}
 
-const LogInPage: React.FC<ILogInPageProps> = (props) => {
-    return (
-        <div>
-            <p>This is the LogInpage.</p>
-        </div>
-    );
+const LoginPage: React.FC<ILoginPageProps> = (props) => {
+  return (
+    <div>
+      <LoginForm />
+    </div>
+  );
 };
 
-export default LogInPage;
+export default LoginPage;

@@ -1,13 +1,14 @@
 import React from 'react';
+import { RegisterForm } from '../components/RegisterForm/RegisterForm';
 
 export interface IRegisterPageProps {}
 
 const RegisterPage: React.FC<IRegisterPageProps> = (props) => {
-    return (
-        <div>
-            <p>This is the Registerpage.</p>
-        </div>
-    );
+  return (
+    <div>
+      <RegisterForm />
+    </div>
+  );
 };
 
 export default RegisterPage;
