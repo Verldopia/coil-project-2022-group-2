@@ -2,6 +2,7 @@ import React from 'react';
 import { TextField, Button } from '@mui/material';
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
+import { ROUTES } from '../../../constants/routes';
 
 export const AdminLoginForm: React.FC = () => {
   return (
@@ -30,7 +31,7 @@ export const AdminLoginForm: React.FC = () => {
           <Button
             variant="contained"
             startIcon={<CheckOutlinedIcon />}
-            href="x"
+            href={ROUTES.ADMIN}
           >
             Login
           </Button>

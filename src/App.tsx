@@ -40,6 +40,8 @@ function App() {
   return (
     <>
       <Routes>
+        {/* Admin login layout */}
+
         <Route element={<FormLayout />}>
           <Route
             path={ROUTES.ADMINLogin}
@@ -106,6 +108,7 @@ function App() {
           </Route>
         </Route>
 
+        {/* Does not exist yet */}
         <Route path={ROUTES.CONTACT} element={<ContactPage />} />
         <Route path={ROUTES.ABOUT} element={<AboutPage />} />
         <Route path={ROUTES.ACCOUNT} element={<AccountPage />} />

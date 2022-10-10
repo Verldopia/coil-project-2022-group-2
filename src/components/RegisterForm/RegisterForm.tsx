@@ -2,6 +2,7 @@ import React from 'react';
 import { TextField, Button } from '@mui/material';
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
+import { ROUTES } from '../../constants/routes';
 
 export const RegisterForm: React.FC = () => {
   return (
@@ -42,14 +43,14 @@ export const RegisterForm: React.FC = () => {
           <Button
             variant="contained"
             startIcon={<CheckOutlinedIcon />}
-            href="/"
+            href={ROUTES.LOGIN}
           >
             Register
           </Button>
           <Button
             variant="outlined"
             startIcon={<VpnKeyOutlinedIcon />}
-            href="/login"
+            href={ROUTES.LOGIN}
           >
             Login
           </Button>
