@@ -1,9 +1,6 @@
 import { Button, TextField } from '@mui/material';
 import React from 'react';
-import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
-import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
-import { ROUTES } from '../../constants/routes';
 
 const AdminContentPage: React.FC = () => {
   return (

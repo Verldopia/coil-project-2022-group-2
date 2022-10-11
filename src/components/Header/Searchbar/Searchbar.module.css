@@ -4,7 +4,10 @@
   background-color: var(--light-color);
 }
 .searchBarBox {
-  padding-top: 1.1rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   max-width: var(--width);
   width: 100%;
   margin: 0 auto;
@@ -12,6 +15,19 @@
 .searchBar {
   background-color: var(--bgd-color);
   width: 20rem;
-  margin: 1rem 1rem -0.3rem 1rem;
   border-radius: 0.25rem;
+}
+.searchCart {
+  cursor: pointer;
+  margin-right: 1rem;
+  width: 4rem;
+  height: 2rem;
+  background-color: var(--cta-color);
+  border-radius: 0.5rem;
+  color: var(--darkest-grey);
+  transition: all ease 0.2s;
+  border: 1px solid var(--darkest-grey);
+}
+.searchCart:hover {
+  background-color: var(--dark-color);
 }

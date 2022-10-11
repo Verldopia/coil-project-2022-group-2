@@ -1,5 +1,6 @@
 import { TextField } from '@mui/material';
 import styles from './Searchbar.module.css';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 export const Searchbar: React.FC = () => {
   return (
@@ -12,6 +13,9 @@ export const Searchbar: React.FC = () => {
           label="Search products"
           type="search"
         />
+        <button className={styles.searchCart}>
+          <ShoppingCartOutlinedIcon />
+        </button>
       </div>
     </div>
   );

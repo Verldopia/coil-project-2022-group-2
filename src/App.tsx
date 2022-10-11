@@ -41,7 +41,6 @@ function App() {
     <>
       <Routes>
         {/* Admin login layout */}
-
         <Route element={<FormLayout />}>
           <Route
             path={ROUTES.ADMINLogin}
