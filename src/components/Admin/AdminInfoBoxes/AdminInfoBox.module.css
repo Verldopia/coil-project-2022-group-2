@@ -42,11 +42,11 @@
 }
 #iconCurrency {
   background-image: url(../../../assets/icons/currency.png);
-  background-color: var(--light-color);
+  background-color: var(--dark-color);
 }
 #iconSold {
   background-image: url(../../../assets/icons/sold.png);
-  background-color: var(--dark-color);
+  background-color: var(--light-color);
 }
 .infoBoxText {
   display: flex;

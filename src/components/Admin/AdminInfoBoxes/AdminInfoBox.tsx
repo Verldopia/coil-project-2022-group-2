@@ -11,7 +11,7 @@ const AdminInfoBox: React.FC = (props) => {
           </div>
           <div className={styles.infoBoxText}>
             <span className={styles.infoBoxSpan}>41</span>
-            <p>orders</p>
+            <p>Orders</p>
           </div>
         </div>
         <div className={styles.infoBox}>
@@ -20,7 +20,7 @@ const AdminInfoBox: React.FC = (props) => {
           </div>
           <div className={styles.infoBoxText}>
             <span className={styles.infoBoxSpan}>17</span>
-            <p>customers</p>
+            <p>Customers</p>
           </div>
         </div>
         <div className={styles.infoBox}>
@@ -34,8 +34,8 @@ const AdminInfoBox: React.FC = (props) => {
             ></div>
           </div>
           <div className={styles.infoBoxText}>
-            <span className={styles.infoBoxSpan}>975</span>
-            <p>users</p>
+            <span className={styles.infoBoxSpan}>9751</span>
+            <p>Revenue</p>
           </div>
         </div>
         <div className={styles.infoBox}>
@@ -44,7 +44,16 @@ const AdminInfoBox: React.FC = (props) => {
           </div>
           <div className={styles.infoBoxText}>
             <span className={styles.infoBoxSpan}>65</span>
-            <p>items sold</p>
+            <p>Items sold</p>
+          </div>
+        </div>
+        <div className={styles.infoBox}>
+          <div id={styles.iconGlobe} className={styles.infoBoxIcon}>
+            <div id={styles.iconGlobe} className={styles.icon}></div>
+          </div>
+          <div className={styles.infoBoxText}>
+            <span className={styles.infoBoxSpan}>97</span>
+            <p>Users</p>
           </div>
         </div>
       </div>

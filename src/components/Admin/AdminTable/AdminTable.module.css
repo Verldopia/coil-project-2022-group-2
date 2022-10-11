@@ -1,0 +1,22 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.td,
+.th {
+  border: 1px solid var(--dark-grey);
+  text-align: left;
+  padding: 8px;
+}
+.tr:nth-child(even) {
+  background-color: var(--bgd-color);
+}
+.statusInitial {
+  color: rgb(255, 183, 0);
+}
+.statusDelivered {
+  color: rgb(26, 198, 26);
+}
+.statusShipped {
+  color: rgb(0, 195, 255);
+}

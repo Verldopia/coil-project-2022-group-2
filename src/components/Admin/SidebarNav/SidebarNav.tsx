@@ -16,7 +16,7 @@ const SidebarNav: React.FC = () => {
               <a href={ROUTES.ADMINLive}>Live chat</a>
             </li>
             <li className={styles.listItem}>
-              <a href={ROUTES.ADMINAdministration}>Administration</a>
+              <a href={ROUTES.ADMINAdministration}>Orders</a>
             </li>
             <li className={styles.listItem}>
               <a href={ROUTES.ADMINContent}>Content</a>

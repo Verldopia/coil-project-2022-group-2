@@ -17,7 +17,7 @@ import {
   AdminLandingPage,
   AdminLoginPage,
   AdminLivePage,
-  AdminAdministrationPage,
+  AdminOrdersPage,
   AdminContentPage,
   AdminContentApprovalPage,
   AdminStockPage,
@@ -57,7 +57,7 @@ function App() {
           />
           <Route
             path={ROUTES.ADMINAdministration}
-            element={<AdminAdministrationPage />}
+            element={<AdminOrdersPage />}
           />
           <Route
             path={ROUTES.ADMINContent}

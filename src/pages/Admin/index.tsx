@@ -1,7 +1,7 @@
 import AdminLandingPage from './AdminLandingPage';
 import AdminLivePage from './AdminLivePage';
 import AdminLoginPage from './AdminLoginPage';
-import AdminAdministrationPage from './AdminAdministrationPage';
+import AdminOrdersPage from './AdminOrdersPage';
 import AdminStockPage from './AdminStockPage';
 import AdminShippingPage from './AdminShippingPage';
 import AdminDiscountPage from './AdminDiscountPage';
@@ -14,7 +14,7 @@ export {
   AdminLivePage,
   AdminLandingPage,
   AdminLoginPage,
-  AdminAdministrationPage,
+  AdminOrdersPage,
   AdminStockPage,
   AdminShippingPage,
   AdminDiscountPage,
