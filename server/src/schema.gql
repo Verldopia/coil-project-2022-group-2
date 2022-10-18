@@ -59,6 +59,7 @@ type Query {
   getItem(id: Int!): Item!
   categories: [Category!]!
   getCategory(id: Int!): Category!
+  getCategoryTitle(title: String!): Category!
   Users: [User!]!
   getUser(id: String!): User!
   UserMeta: [UserMeta!]!
