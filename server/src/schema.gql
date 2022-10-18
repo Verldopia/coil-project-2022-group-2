@@ -1,0 +1,123 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserMeta {
+  id: Int!
+  firstName: String!
+  lastName: String!
+  address: String
+  city: String
+  country: String
+  userId: Int!
+  user: User!
+  User: User!
+}
+
+type User {
+  id: Int!
+  userName: String!
+  email: String!
+  password: String!
+  userMeta: UserMeta!
+}
+
+type Admin {
+  id: Int!
+  userName: String!
+  password: String!
+  email: String!
+  telephone: Float!
+  type: String!
+  items: [Item!]
+}
+
+type Category {
+  id: Int!
+  title: String!
+  items: [Item!]
+}
+
+type Item {
+  id: Int!
+  title: String!
+  description: String!
+  price: Float!
+  stock: Float!
+  images: String
+  popularity: Float
+  approved: Boolean!
+  archived: Boolean!
+  categoryId: Int!
+  adminId: Int!
+  category: Category!
+  admin: Admin!
+}
+
+type Query {
+  Items: [Item!]!
+  getItem(id: Int!): Item!
+  categories: [Category!]!
+  getCategory(id: Int!): Category!
+  Users: [User!]!
+  getUser(id: String!): User!
+  UserMeta: [UserMeta!]!
+  getUserMeta(id: Int!): UserMeta!
+  Admins: [Admin!]!
+  getAdmin(id: Int!): Admin!
+}
+
+type Mutation {
+  createItem(createItemInput: CreateItemInput!): Item!
+  createCategory(createCategoryInput: CreateCategoryInput!): Category!
+  updateCategory(updateCategoryInput: UpdateCategoryInput!): Category!
+  removeCategory(id: Int!): Category!
+  createUser(createUserInput: CreateUserInput!): User!
+  createUserMeta(createUserMetaInput: CreateUserMetaInput!): UserMeta!
+  createAdmin(createAdminInput: CreateAdminInput!): Admin!
+}
+
+input CreateItemInput {
+  title: String!
+  description: String!
+  price: Float!
+  stock: Float!
+  images: String
+  popularity: Float
+  approved: Boolean!
+  archived: Boolean!
+  categoryId: Int!
+  adminId: Int!
+}
+
+input CreateCategoryInput {
+  title: String!
+}
+
+input UpdateCategoryInput {
+  title: String
+  id: Int!
+}
+
+input CreateUserInput {
+  userName: String!
+  email: String!
+  password: String!
+}
+
+input CreateUserMetaInput {
+  firstName: String!
+  lastName: String!
+  address: String
+  city: String
+  country: String
+  userId: Int!
+}
+
+input CreateAdminInput {
+  userName: String!
+  password: String!
+  email: String!
+  telephone: Float!
+  type: String!
+}

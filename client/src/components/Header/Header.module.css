@@ -1,0 +1,53 @@
+.headerContainer {
+  border-radius: 1rem;
+  background-color: var(--darkest-grey);
+  margin: 0.5rem;
+}
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  width: var(--width);
+  padding: 1rem;
+  margin: 0 auto;
+}
+.headerLogo {
+  color: var(--cta-color);
+}
+.headerLogoIMG {
+  transition: all ease 0.2s;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-image: var(--logo);
+  background-size: contain;
+}
+.headerLogoIMG:hover {
+  color: var(--bgd-color);
+}
+.headerBtns {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  color: var(--bgd-color);
+}
+.btn {
+  transition: all ease 0.2s;
+}
+.btn:hover {
+  color: var(--md-grey);
+}
+.headerMiddle {
+  background-color: --dark-color;
+  padding: 1rem;
+}
+.admin {
+  /* Code to be removed for production (also btn itself) */
+  color: red;
+}
+.headerBottom {
+  background-color: var(--darkest-grey);
+}
+.headerButton {
+  color: var(--bgd-color);
+}
