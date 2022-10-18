@@ -2,37 +2,52 @@ import { NavLink as RRNavLink } from 'react-router-dom';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import styles from './Navigation.module.css';
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { GET_ALL_CATEGORIES } from '../../../graphql/categories';
-import { CategoryData } from '../../../interfaces';
-import { Capitalize, Lowercase } from '../../../hooks/TextTransform';
 
+const categoriesRoutes = [
+  {
+    title: 'New arrivals',
+    path: 'categories',
+  },
+  {
+    title: 'Cameras',
+    path: 'categories',
+  },
+  {
+    title: 'Sensors',
+    path: 'categories',
+  },
+  {
+    title: 'Touchpads',
+    path: 'categories',
+  },
+  {
+    title: 'Thermostats',
+    path: 'categories',
+  },
+  {
+    title: 'Sale',
+    path: 'categories',
+  },
+];
 const Navigation: React.FC = () => {
-  // Fetch categories for navigation
-  const { loading, error, data } = useQuery<CategoryData>(
-    GET_ALL_CATEGORIES,
-    { fetchPolicy: 'cache-first' }
-  );
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>There are no categories</p>;
-
   return (
     <>
       <Nav className={styles.nav}>
         <div className={styles.navContainer}>
-          {data?.categories.map((item, i) => (
-            <NavItem key={i}>
-              <NavLink
-                className={
-                  item.title == 'Sale' ? styles.sale : styles.link
-                }
-                tag={RRNavLink}
-                to={`categories/` + Lowercase(item.title)}
-              >
-                {Capitalize(item.title)}
-              </NavLink>
-            </NavItem>
-          ))}
+          {categoriesRoutes &&
+            categoriesRoutes.map((route, i) => (
+              <NavItem key={i}>
+                <NavLink
+                  className={
+                    route.title == 'Sale' ? styles.sale : styles.link
+                  }
+                  tag={RRNavLink}
+                  to={route.path}
+                >
+                  {route.title}
+                </NavLink>
+              </NavItem>
+            ))}
         </div>
       </Nav>
     </>

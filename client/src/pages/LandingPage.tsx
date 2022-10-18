@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-// import { useQuery } from 'react-query';
+import { useQuery } from 'react-query';
 
 // Components
 import Drawer from '@mui/material/Drawer';
@@ -15,65 +15,65 @@ import Cart from '../components/Header/Cart/Cart';
 import { Wrapper, StyledButton } from '../App.styles';
 
 // Types
-// export type CartItemType = {
-//   id: number;
-//   title: string;
-//   description: string;
-//   category: string;
-//   image: string;
-//   price: number;
-//   amount: number;
-// };
+export type CartItemType = {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  image: string;
+  price: number;
+  amount: number;
+};
 
-// const getProducts = async (): Promise<CartItemType[]> =>
-//   await (await fetch('https://fakestoreapi.com/products')).json();
+const getProducts = async (): Promise<CartItemType[]> =>
+  await (await fetch('https://fakestoreapi.com/products')).json();
 
 export interface ILandingPageProps {}
 
 const LandingPage: React.FC<ILandingPageProps> = (props) => {
-//   const [cartOpen, setCartOpen] = useState(false);
-//   const [cartItems, setCartItems] = useState([] as CartItemType[]);
-//   const { data, isLoading, error } = useQuery<CartItemType[]>(
-//     'products',
-//     getProducts
-//   );
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([] as CartItemType[]);
+  const { data, isLoading, error } = useQuery<CartItemType[]>(
+    'products',
+    getProducts
+  );
 
-//   const getTotalItems = (items: CartItemType[]) =>
-//     items.reduce((ack: number, item) => ack + item.amount, 0);
-//   const handleAddCart = (clickedItem: CartItemType) => {
-//     setCartItems((prev) => {
-//       const itemAlreadyInCart = prev.find(
-//         (item) => item.id === clickedItem.id
-//       );
-//       if (itemAlreadyInCart) {
-//         return prev.map((item) =>
-//           item.id === clickedItem.id
-//             ? { ...item, amount: item.amount + 1 }
-//             : item
-//         );
-//       }
-//       return [...prev, { ...clickedItem, amount: 1 }];
-//     });
-//   };
-//   const handleRemoveCart = (id: number) => {
-//     setCartItems((prev) =>
-//       prev.reduce((ack, item) => {
-//         if (item.id === id) {
-//           if (item.amount === 1) return ack;
-//           return [...ack, { ...item, amount: item.amount - 1 }];
-//         } else {
-//           return [...ack, item];
-//         }
-//       }, [] as CartItemType[])
-//     );
-//   };
+  const getTotalItems = (items: CartItemType[]) =>
+    items.reduce((ack: number, item) => ack + item.amount, 0);
+  const handleAddCart = (clickedItem: CartItemType) => {
+    setCartItems((prev) => {
+      const itemAlreadyInCart = prev.find(
+        (item) => item.id === clickedItem.id
+      );
+      if (itemAlreadyInCart) {
+        return prev.map((item) =>
+          item.id === clickedItem.id
+            ? { ...item, amount: item.amount + 1 }
+            : item
+        );
+      }
+      return [...prev, { ...clickedItem, amount: 1 }];
+    });
+  };
+  const handleRemoveCart = (id: number) => {
+    setCartItems((prev) =>
+      prev.reduce((ack, item) => {
+        if (item.id === id) {
+          if (item.amount === 1) return ack;
+          return [...ack, { ...item, amount: item.amount - 1 }];
+        } else {
+          return [...ack, item];
+        }
+      }, [] as CartItemType[])
+    );
+  };
 
-//   if (isLoading) return <LinearProgress />;
-//   if (error) return <p>'Someting went wrong'</p>;
+  if (isLoading) return <LinearProgress />;
+  if (error) return <p>'Someting went wrong'</p>;
 
   return (
     <div className="container">
-      {/* <Wrapper>
+      <Wrapper>
         <Drawer
           anchor="right"
           open={cartOpen}
@@ -100,8 +100,7 @@ const LandingPage: React.FC<ILandingPageProps> = (props) => {
             </Grid>
           ))}
         </Grid>
-      </Wrapper> */}
-<p>sumetin wung</p>
+      </Wrapper>
     </div>
   );
 };
