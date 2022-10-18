@@ -23,7 +23,7 @@ const WishlistPage: React.FC<IWishlistPageProps> = (props) => {
     <div>
       {/* gql */}
       <ul>
-        {data?.Items?.map((item, i) => (
+        {data?.Items.map((item, i) => (
           <li key={i}>{item.title}</li>
         ))}
       </ul>

@@ -1,18 +1,28 @@
-export interface ProductCategory {
-  name: string;
+// Categories
+export interface Category {
+  title: string;
 }
 
+export interface CategoryData {
+  categories: Category[];
+}
+
+// Products
 export interface Product {
   id: number;
   title: string;
   price: number;
-  categories?: ProductCategory[];
+  description: string;
+  categoryId: number;
+  adminId: number;
+  category?: Category[];
 }
 
 export interface ProductsData {
   Items: Product[];
 }
 
+// Accounts
 export interface Account {
   id: number;
   userName: string;

@@ -9,11 +9,13 @@ import { Category } from './entities/category.entity';
 export class CategoriesService {
   constructor(
     @InjectRepository(Category)
-    private categoriesRepository: Repository<Category>,
+    private categoriesRepository: Repository<Category>
   ) {}
 
   create(createCategoryInput: CreateCategoryInput) {
-    const newCategory = this.categoriesRepository.create(createCategoryInput);
+    const newCategory = this.categoriesRepository.create(
+      createCategoryInput
+    );
     return this.categoriesRepository.save(newCategory);
   }
 
@@ -25,6 +27,11 @@ export class CategoriesService {
   // Find Category on ID
   getCategory(id: number): Promise<Category> {
     return this.categoriesRepository.findOneByOrFail({ id });
+  }
+
+  // Find Category on Title
+  getCategoryTitle(title: string): Promise<Category> {
+    return this.categoriesRepository.findOneByOrFail({ title });
   }
 
   update(id: number, updateCategoryInput: UpdateCategoryInput) {
