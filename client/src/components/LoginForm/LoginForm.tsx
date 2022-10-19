@@ -5,7 +5,7 @@ import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import { ROUTES } from '../../constants/routes';
 
-export const LoginForm: React.FC = () => {
+const LoginForm: React.FC = () => {
   return (
     <form className="form-container" action="">
       <div className="form-box">
@@ -51,3 +51,5 @@ export const LoginForm: React.FC = () => {
     </form>
   );
 };
+
+export default LoginForm;

@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { ROUTES } from '../../constants/routes';
 import React from 'react';
 import styles from './Header.module.css';
 
@@ -9,11 +10,9 @@ import {
   Collapse,
   Button,
 } from 'reactstrap';
-import { ROUTES } from '../../constants/routes';
 
 // Custom components
-import Navigation from './Navigation/Navigation';
-import { Searchbar } from './Searchbar/Searchbar';
+import { SearchBar, Navigation } from '../../components';
 
 const Header: React.FC = () => {
   return (
@@ -66,7 +65,7 @@ const Header: React.FC = () => {
         </div>
       </div>
       <div>
-        <Searchbar />
+        <SearchBar />
       </div>
       <Navbar expand="md" light>
         <NavbarToggler onClick={function noRefCheck() {}} />

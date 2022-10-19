@@ -1,9 +1,7 @@
 import { useQuery } from '@apollo/client';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import AddToCart from '../components/AddToCart/AddToCart';
-import Article from '../components/Article/Article';
-import FilterProducts from '../components/FilterProducts/FilterProducts';
+import { Article, FilterProducts, ProductCard } from '../components';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { Lowercase } from '../hooks/TextTransform';
 import { ProductsData } from '../interfaces';
@@ -28,20 +26,14 @@ const Categories: React.FC<ICategoriesProps> = (props) => {
     <div className="container">
       <FilterProducts />
       <div className="product-container">
+        {/* Total amount of products */}
         {result && (
           <p className="product__total">
             {result.length} products found.
           </p>
         )}
         {result?.map((item, i) => (
-          <div className="product-item" key={i}>
-            <div className="product__img"></div>
-            <section className="product__text">
-              <h4>{item.title}</h4>
-              <span className="product__price">€{item.price}.-</span>
-              <AddToCart />
-            </section>
-          </div>
+          <ProductCard item={item} i={i} />
         ))}
       </div>
       <Article />

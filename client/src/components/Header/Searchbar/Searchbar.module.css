@@ -17,17 +17,24 @@
   width: 20rem;
   border-radius: 0.25rem;
 }
+.searchBtn,
 .searchCart {
   cursor: pointer;
   margin-right: 1rem;
   width: 4rem;
-  height: 2rem;
+  height: 2.5rem;
   background-color: var(--cta-color);
   border-radius: 0.5rem;
   color: var(--darkest-grey);
   transition: all ease 0.2s;
   border: 1px solid var(--darkest-grey);
 }
+.searchBtn:hover,
 .searchCart:hover {
   background-color: var(--dark-color);
+}
+.searchBtn {
+  border-radius: 0 0.25rem 0.25rem 0;
+  border: 1px solid var(--dark-grey);
+  background-color: var(--light-grey);
 }

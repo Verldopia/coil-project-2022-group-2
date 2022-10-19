@@ -1,14 +1,14 @@
 import { TextField } from '@mui/material';
-import styles from './Searchbar.module.css';
+import styles from './SearchBar.module.css';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
-import { AllLowerCase } from '../../../hooks/TextTransform';
+import { Lowercase } from '../../../hooks/TextTransform';
 
-export const Searchbar: React.FC = () => {
+const SearchBar: React.FC = () => {
   // Set search param
   const [param, setParam] = useState('');
-  const route = param ? '../search/' + AllLowerCase(param) : '/';
+  const route = param ? '../search/' + Lowercase(param) : '/';
 
   return (
     <div className={styles.searchBarContainer}>
@@ -23,7 +23,9 @@ export const Searchbar: React.FC = () => {
             type="search"
             onChange={(event) => setParam(event.target.value)}
           />
-          <Button to={route}>submit</Button>
+          <Button className={styles.searchBtn} to={route}>
+            Search
+          </Button>
         </form>
         <button className={styles.searchCart}>
           <ShoppingCartOutlinedIcon />
@@ -32,3 +34,5 @@ export const Searchbar: React.FC = () => {
     </div>
   );
 };
+
+export default SearchBar;

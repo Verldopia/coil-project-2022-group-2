@@ -4,7 +4,7 @@ import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import { ROUTES } from '../../constants/routes';
 
-export const RegisterForm: React.FC = () => {
+const RegisterForm: React.FC = () => {
   return (
     <form className="form-container" action="">
       <div className="form-box">
@@ -59,3 +59,5 @@ export const RegisterForm: React.FC = () => {
     </form>
   );
 };
+
+export default RegisterForm;

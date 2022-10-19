@@ -5,9 +5,5 @@ export const Capitalize = (text: string) => {
 
 export const Lowercase = (text: string) => {
   if (typeof text !== 'string') return '';
-  return text.charAt(0).toLowerCase() + text.slice(1);
-};
-
-export const AllLowerCase = (text: string) => {
   return text.toLowerCase();
 };
