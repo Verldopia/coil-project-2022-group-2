@@ -11,7 +11,6 @@ const BaseLayout: React.FC<IBaseLayoutProps> = (props) => {
       <Header />
       <div className="baseLayout">
         <Outlet />
-        {/* Yeet */}
       </div>
       <Footer />
     </>
