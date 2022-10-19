@@ -6,6 +6,7 @@ import ItemPage from './ItemPage';
 import LandingPage from './LandingPage';
 import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
+import ResultsPage from './ResultsPage';
 import WishlistPage from './WishlistPage';
 
 export {
@@ -17,5 +18,6 @@ export {
   LandingPage,
   LoginPage,
   RegisterPage,
+  ResultsPage,
   WishlistPage,
 };

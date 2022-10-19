@@ -11,6 +11,7 @@ export const ROUTES = Object.freeze({
   ADMINPayments: 'x-payments',
   ADMINDiscount: 'x-discount',
   ADMINCustomers: 'x-customers',
+
   // User
   ABOUT: 'about',
   ACCOUNT: 'account',
@@ -20,5 +21,6 @@ export const ROUTES = Object.freeze({
   LANDING: '/',
   LOGIN: 'login',
   REGISTER: 'register',
+  RESULTS: 'search/:title',
   WISHLIST: 'wishlist',
 });

@@ -1,13 +1,28 @@
 import { Button, TextField } from '@mui/material';
 import React from 'react';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
+import { GET_ALL_CATEGORIES } from '../../graphql/categories';
+import { CategoryData } from '../../interfaces';
+import { useQuery } from '@apollo/client';
+import { Capitalize } from '../../hooks/TextTransform';
 
 const AdminContentPage: React.FC = () => {
+  // Fetch categories
+  const { loading, error, data } = useQuery<CategoryData>(
+    GET_ALL_CATEGORIES,
+    { fetchPolicy: 'cache-first' }
+  );
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>There are no categories</p>;
+  console.log(data);
+
   return (
     <>
       <form className="admin-form-container" action="">
         <div className="admin-form-box">
           <h2 className="form-title">Content uploader</h2>
+
+          {/* Content title box */}
           <div className="admin-form-box">
             <TextField
               className="form-input"
@@ -17,15 +32,22 @@ const AdminContentPage: React.FC = () => {
               type="text"
             />
           </div>
+
+          {/* Content category selector box */}
           <div className="admin-form-box selector">
             <select>
-              <option value="0">Select category</option>
-              <option value="1">Camera</option>
-              <option value="2">Sensor</option>
-              <option value="3">Touchpad</option>
-              <option value="4">Thermostat</option>
+              <option key="0" value="0">
+                Select category
+              </option>
+              {data?.categories.map((item, i) => (
+                <option key={item.id} value={item.id}>
+                  {Capitalize(item.title)}
+                </option>
+              ))}
             </select>
           </div>
+
+          {/* Content description box */}
           <div className="admin-form-box">
             <TextField
               className="form-input"
@@ -35,6 +57,8 @@ const AdminContentPage: React.FC = () => {
               type="text"
             />
           </div>
+
+          {/* Content price box */}
           <div className="admin-form-box--flex">
             <div className="admin-form-box">
               <TextField
@@ -45,6 +69,8 @@ const AdminContentPage: React.FC = () => {
                 type="number"
               />
             </div>
+
+            {/* Content stock box */}
             <div className="admin-form-box">
               <TextField
                 className="form-input"
@@ -55,6 +81,8 @@ const AdminContentPage: React.FC = () => {
               />
             </div>
           </div>
+
+          {/* Content image uploader box */}
           <p>Upload images</p>
           <div className="admin-form-box">
             <TextField
@@ -64,6 +92,8 @@ const AdminContentPage: React.FC = () => {
               type="file"
             />
           </div>
+
+          {/* Content submit button */}
           <div className="form-btn">
             <Button
               variant="contained"

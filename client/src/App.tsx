@@ -12,6 +12,7 @@ import {
   ItemPage,
   LoginPage,
   RegisterPage,
+  ResultsPage,
 } from './pages';
 import {
   AdminLandingPage,
@@ -93,6 +94,7 @@ function App() {
         <Route element={<BaseLayout />}>
           <Route path={ROUTES.LANDING} element={<LandingPage />} />
           <Route path={ROUTES.ITEMS} element={<ItemPage />} />
+          <Route path={ROUTES.RESULTS} element={<ResultsPage />} />
           <Route path={ROUTES.WISHLIST} element={<WishlistPage />} />
 
           {/* Categories */}
