@@ -1,6 +1,8 @@
 import { useQuery } from '@apollo/client';
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import AddToCart from '../components/AddToCart/AddToCart';
+import Article from '../components/Article/Article';
 import FilterProducts from '../components/FilterProducts/FilterProducts';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { Lowercase } from '../hooks/TextTransform';
@@ -16,28 +18,34 @@ const Categories: React.FC<ICategoriesProps> = (props) => {
     { fetchPolicy: 'cache-first' }
   );
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>There are no products</p>;
-  console.log(data);
+  if (error) return <p>An error has ocurred, can't load products.</p>;
 
   let result = data?.Items.filter(
     (item) => Lowercase(item.category?.title) === title
   );
 
-  console.log('title:', title);
-  console.log('result:', result);
-
   return (
-    <>
+    <div className="container">
       <FilterProducts />
-      <ul>
+      <div className="product-container">
+        {result && (
+          <p className="product__total">
+            {result.length} products found.
+          </p>
+        )}
         {result?.map((item, i) => (
-          <li key={i}>
-            <p>{item.title}</p>
-            <p>price: €{item.price}.00</p>
-          </li>
+          <div className="product-item" key={i}>
+            <div className="product__img"></div>
+            <section className="product__text">
+              <h4>{item.title}</h4>
+              <span className="product__price">€{item.price}.-</span>
+              <AddToCart />
+            </section>
+          </div>
         ))}
-      </ul>
-    </>
+      </div>
+      <Article />
+    </div>
   );
 };
 
