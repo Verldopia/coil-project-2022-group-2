@@ -20,6 +20,7 @@ export interface Product {
 }
 
 export interface ProductsData {
+  [x: string]: any;
   Items: Product[];
 }
 

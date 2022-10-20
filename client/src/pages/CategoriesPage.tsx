@@ -23,8 +23,8 @@ const Categories: React.FC<ICategoriesProps> = (props) => {
   );
 
   return (
-    <div className="container">
-      <FilterProducts />
+    <div className="container container--filter">
+      <FilterProducts products={result} />
       <div className="product-container">
         {/* Total amount of products */}
         {result && (
@@ -33,10 +33,10 @@ const Categories: React.FC<ICategoriesProps> = (props) => {
           </p>
         )}
         {result?.map((item, i) => (
-          <ProductCard item={item} i={i} />
+          <ProductCard key={i} item={item} i={i} />
         ))}
+        <Article />
       </div>
-      <Article />
     </div>
   );
 };

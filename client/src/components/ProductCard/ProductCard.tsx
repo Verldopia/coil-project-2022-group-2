@@ -1,5 +1,6 @@
 import { Product } from '../../interfaces';
 import AddToCart from '../AddToCart/AddToCart';
+import styles from './ProductCard.module.css';
 
 type Props = {
   item: Product;
@@ -8,15 +9,15 @@ type Props = {
 
 const ProductCard = ({ item, i }: Props) => {
   return (
-    <div className="product-item" key={i}>
+    <div className={styles.productItem} key={i}>
       <img
         alt={item.title}
-        className="product__img"
+        className={styles.product__img}
         style={{ backgroundImage: 'var(--logo)' }}
       ></img>
-      <section className="product__text">
+      <section className={styles.product__text}>
         <h4>{item.title}</h4>
-        <span className="product__price">€{item.price}.-</span>
+        <span className={styles.product__price}>€{item.price}.-</span>
         <AddToCart />
       </section>
     </div>

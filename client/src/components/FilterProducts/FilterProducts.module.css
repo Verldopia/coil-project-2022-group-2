@@ -1,0 +1,10 @@
+.productContainer {
+  margin-right: 1rem;
+  margin-top: 2.4rem;
+  width: 100%;
+  max-width: 14.5rem;
+}
+.productList {
+  border: 2px solid var(--light-color);
+  border-radius: 0.5rem;
+}
