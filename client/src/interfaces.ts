@@ -13,6 +13,10 @@ export interface Product {
   id: number;
   title: string;
   price: number;
+  popularity: number;
+  stock: number;
+  archived: boolean;
+  approved: boolean;
   description: string;
   categoryId: number;
   adminId: number;
@@ -20,7 +24,6 @@ export interface Product {
 }
 
 export interface ProductsData {
-  [x: string]: any;
   Items: Product[];
 }
 

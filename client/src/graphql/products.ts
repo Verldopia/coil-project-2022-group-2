@@ -6,6 +6,8 @@ export const GET_ALL_PRODUCTS = gql`
       id
       title
       price
+      stock
+      popularity
       description
       approved
       archived

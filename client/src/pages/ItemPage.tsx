@@ -2,8 +2,7 @@ import { useQuery } from '@apollo/client';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { ProductCard } from '../components';
-import { ROUTES } from '../constants/routes';
+import PopularProduct from '../components/PopularProduct/PopularProduct';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { Lowercase } from '../hooks/TextTransform';
 import { ProductsData } from '../interfaces';
@@ -24,9 +23,6 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
   // Find product by ID
   let product = data?.Items.find((item) => item.id === Number(id));
   // Find 4 related products
-  let relatedProduct = data?.Items.filter(
-    (item) => Lowercase(item.category?.title) === title
-  );
 
   return (
     <div className="container--box">
@@ -64,14 +60,11 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
       )}
 
       {/* Select 4 products in same category, and create a card */}
-      <div className="container--preview">
-        <h4>Related products</h4>
-        <div className="product-container">
-          {relatedProduct?.slice(0, 4).map((item, i) => (
-            <ProductCard key={i} item={item} i={i} />
-          ))}
-        </div>
-      </div>
+      <PopularProduct
+        title={title}
+        titleText="Related products"
+        data={data}
+      />
     </div>
   );
 };
