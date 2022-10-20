@@ -153,7 +153,9 @@ h3 {
   border-radius: 0.5rem;
 }
 .product__img {
-  border: 1px solid red;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   height: 16rem;
   width: 16rem;
 }

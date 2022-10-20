@@ -1,14 +1,14 @@
 import React from 'react';
 import { TextField, Button } from '@mui/material';
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
-import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
-import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
-import { ROUTES } from '../../constants/routes';
+// import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
+// import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
+// import { ROUTES } from '../../constants/routes';
 
 const LoginForm: React.FC = () => {
   return (
     <form className="form-container" action="">
-      <div className="form-box">
+      {/* <div className="form-box">
         <h2 className="form-title">Login</h2>
         <div className="form-box-s">
           <TextField
@@ -47,7 +47,7 @@ const LoginForm: React.FC = () => {
             {<QuestionMarkOutlinedIcon />}
           </Button>
         </div>
-      </div>
+      </div> */}
     </form>
   );
 };

@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { ProductCard } from '../components';
 import AddToCart from '../components/AddToCart/AddToCart';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { Lowercase } from '../hooks/TextTransform';
@@ -34,14 +35,7 @@ const ResultsPage: React.FC<IResultsProps> = (props) => {
           </p>
         )}
         {result?.map((item, i) => (
-          <div className="product-item" key={i}>
-            <div className="product__img"></div>
-            <section className="product__text">
-              <h4>{item.title}</h4>
-              <span className="product__price">€{item.price}.-</span>
-              <AddToCart />
-            </section>
-          </div>
+          <ProductCard item={item} i={i} />
         ))}
       </div>
     </div>
