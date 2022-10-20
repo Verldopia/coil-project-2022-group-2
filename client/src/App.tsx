@@ -93,9 +93,9 @@ function App() {
         {/* User layout */}
         <Route element={<BaseLayout />}>
           <Route path={ROUTES.LANDING} element={<LandingPage />} />
-          <Route path={ROUTES.ITEMS} element={<ItemPage />} />
           <Route path={ROUTES.RESULTS} element={<ResultsPage />} />
           <Route path={ROUTES.WISHLIST} element={<WishlistPage />} />
+          <Route path={ROUTES.ITEMS} element={<ItemPage />} />
 
           {/* Categories */}
           <Route

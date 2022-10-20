@@ -8,7 +8,7 @@ import { Lowercase } from '../../../hooks/TextTransform';
 const SearchBar: React.FC = () => {
   // Set search param
   const [param, setParam] = useState('');
-  const route = param ? '../search/' + Lowercase(param) : '';
+  const route = param ? '../../search/' + Lowercase(param) : '';
 
   return (
     <div className={styles.searchBarContainer}>

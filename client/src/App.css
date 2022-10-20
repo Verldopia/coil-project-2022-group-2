@@ -57,10 +57,24 @@ body {
   font-size: var(--md);
   background-color: var(--white-clr);
 }
+.container--preview,
 .container {
   width: 100%;
   max-width: 70rem;
   margin: 0 auto;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+}
+.container--box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.bread--box {
+  max-width: 20rem;
 }
 .container--filter {
   display: flex;
