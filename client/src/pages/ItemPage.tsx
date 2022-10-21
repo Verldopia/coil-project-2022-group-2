@@ -2,7 +2,9 @@ import { useQuery } from '@apollo/client';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { AddToCart } from '../components';
 import PopularProduct from '../components/PopularProduct/PopularProduct';
+import StarRating from '../components/StarRating/StarRating';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { Lowercase } from '../hooks/TextTransform';
 import { ProductsData } from '../interfaces';
@@ -50,12 +52,25 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
               {product.title}
             </Typography>
           </Breadcrumbs>
-
-          <p>this is the product {product.title}.</p>
-          <p>it costs €{product.price}.</p>
-          <p>{product.description}</p>
-          <p>ID: {product.id}</p>
-          <div className="container--related"></div>
+          <div className="container--info">
+            <div className="container--info__images">
+              <p>images</p>
+            </div>
+            <div className="container--info__params">
+              <h1>{product.title}</h1>
+              <p>Brand: {product.category?.title}</p>
+              <StarRating
+                starValue={product.title.length}
+                amount={product.description.length}
+              />
+              <p>€{product.price}.-</p>
+              <AddToCart />
+            </div>
+            <div className="container--info__text">
+              <h2>Description</h2>
+              <p>{product.description.repeat(20)}</p>
+            </div>
+          </div>
         </div>
       )}
 
