@@ -1,9 +1,9 @@
 import React from 'react';
-import { Product, ProductsData } from '../../interfaces';
+import { Product } from '../../interfaces';
 import styles from './FilterProducts.module.css';
 
 type FilterProps = {
-  products: ProductsData;
+  products: Product[] | undefined;
 };
 
 function FilterProducts({ products }: FilterProps) {

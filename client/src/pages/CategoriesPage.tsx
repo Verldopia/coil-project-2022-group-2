@@ -20,7 +20,8 @@ const Categories: React.FC<ICategoriesProps> = (props) => {
   if (error) return <p>An error has ocurred, can't load products.</p>;
 
   let product = data?.Items.filter(
-    (item) => Lowercase(item.category?.title) === title
+    (item) =>
+      item.category?.map((cat) => Lowercase(cat.title)) === title
   );
 
   return (

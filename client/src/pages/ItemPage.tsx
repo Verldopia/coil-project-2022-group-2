@@ -23,7 +23,7 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
   if (error) return <p>Can't load product with ID {id}.</p>;
 
   // Find product by ID
-  let product = data?.Items.find((item) => item.id === Number(id));
+  const product = data?.Items.find((item) => item.id === Number(id));
   // Find 4 related products
 
   return (
@@ -43,10 +43,11 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
               underline="hover"
               color="inherit"
               href={
-                '/categories/' + Lowercase(product.category?.title)
+                '/categories/' +
+                product.category?.map((cat) => Lowercase(cat.title))
               }
             >
-              {product.category?.title}
+              {product.category?.map((cat) => cat.title)}
             </Link>
             <Typography color="text.primary">
               {product.title}
@@ -58,7 +59,9 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
             </div>
             <div className="container--info__params">
               <h1>{product.title}</h1>
-              <p>Brand: {product.category?.title}</p>
+              <p>
+                Brand: {product.category?.map((cat) => cat.title)}
+              </p>
               <StarRating
                 starValue={product.title.length}
                 amount={product.description.length}

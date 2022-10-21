@@ -2,15 +2,14 @@ import { useQuery } from '@apollo/client';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { ProductCard } from '../components';
-import AddToCart from '../components/AddToCart/AddToCart';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { Lowercase } from '../hooks/TextTransform';
 import { ProductsData } from '../interfaces';
 
 export interface IResultsProps {}
 
-const ResultsPage: React.FC<IResultsProps> = (props) => {
-  let { title } = useParams();
+const ResultsPage: React.FC<IResultsProps> = () => {
+  const { title } = useParams();
   // Fetch products
   const { loading, error, data } = useQuery<ProductsData>(
     GET_ALL_PRODUCTS,
@@ -19,11 +18,8 @@ const ResultsPage: React.FC<IResultsProps> = (props) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>An error has ocurred, can't load products.</p>;
 
-  console.log(data);
-  console.log(title);
-
-  let result = data?.Items.filter((item) =>
-    Lowercase(item.title).includes(title)
+  const result = data?.Items.filter((item) =>
+    Lowercase(item.title).includes(title ?? '')
   );
 
   return (

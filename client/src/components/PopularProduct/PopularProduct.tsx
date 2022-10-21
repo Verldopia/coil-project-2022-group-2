@@ -16,7 +16,9 @@ const PopularProduct = ({
 }: PopularProductProps) => {
   // Find 4 related products
   let relatedProduct = data?.Items.filter(
-    (item) => Lowercase(item.category?.title) === title || 'sale'
+    (item) =>
+      item.category?.map((cat) => Lowercase(cat.title)) === title ||
+      'sale'
   );
 
   return (
