@@ -1,12 +1,12 @@
 import React from 'react';
 import { Lowercase } from '../../hooks/TextTransform';
-import { Product, ProductsData } from '../../interfaces';
+import { ProductsData } from '../../interfaces';
 import ProductCard from '../ProductCard/ProductCard';
 
 type PopularProductProps = {
-  title: string;
+  title: string | undefined;
   titleText: string;
-  data: Product[];
+  data: ProductsData | undefined;
 };
 
 const PopularProduct = ({
@@ -16,8 +16,7 @@ const PopularProduct = ({
 }: PopularProductProps) => {
   // Find 4 related products
   let relatedProduct = data?.Items.filter(
-    (item: Product) =>
-      Lowercase(item.category?.title) === title || 'sale'
+    (item) => Lowercase(item.category?.title) === title || 'sale'
   );
 
   return (
@@ -25,7 +24,7 @@ const PopularProduct = ({
       <h4>{titleText}</h4>
       <div className="product-container">
         {relatedProduct
-          ?.map((item: Product, i: number) => (
+          ?.map((item, i: number) => (
             <ProductCard key={i} item={item} i={i} />
           ))
           .slice(0, 4)}
