@@ -42,12 +42,9 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
             <Link
               underline="hover"
               color="inherit"
-              href={
-                '/categories/' +
-                product.category?.map((cat) => Lowercase(cat.title))
-              }
+              href={'/categories/' + product.category?.title}
             >
-              {product.category?.map((cat) => cat.title)}
+              {product.category?.title}
             </Link>
             <Typography color="text.primary">
               {product.title}
@@ -59,9 +56,7 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
             </div>
             <div className="container--info__params">
               <h1>{product.title}</h1>
-              <p>
-                Brand: {product.category?.map((cat) => cat.title)}
-              </p>
+              <p>Brand: {product.category?.title}</p>
               <StarRating
                 starValue={product.title.length}
                 amount={product.description.length}

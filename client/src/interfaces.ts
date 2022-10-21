@@ -20,7 +20,7 @@ export interface Product {
   description: string;
   categoryId: number;
   adminId: number;
-  category?: Category[];
+  category?: Category;
 }
 
 export interface ProductsData {
