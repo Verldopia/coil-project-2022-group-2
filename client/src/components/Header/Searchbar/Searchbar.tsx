@@ -1,6 +1,7 @@
 import { TextField } from '@mui/material';
 import styles from './SearchBar.module.css';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
 import { Lowercase } from '../../../hooks/TextTransform';
@@ -24,7 +25,7 @@ const SearchBar: React.FC = () => {
             onChange={(event) => setParam(event.target.value)}
           />
           <Button className={styles.searchBtn} to={route}>
-            Search
+            <SearchOutlinedIcon />
           </Button>
         </form>
         <button className={styles.searchCart}>
