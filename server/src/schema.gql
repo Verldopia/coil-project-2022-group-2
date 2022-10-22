@@ -35,6 +35,7 @@ type Admin {
 type Category {
   id: Int!
   title: String!
+  description: String!
   items: [Item!]
 }
 
@@ -93,10 +94,12 @@ input CreateItemInput {
 
 input CreateCategoryInput {
   title: String!
+  description: String!
 }
 
 input UpdateCategoryInput {
   title: String
+  description: String
   id: Int!
 }
 

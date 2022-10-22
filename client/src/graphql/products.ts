@@ -14,6 +14,7 @@ export const GET_ALL_PRODUCTS = gql`
       category {
         id
         title
+        description
       }
       images
     }

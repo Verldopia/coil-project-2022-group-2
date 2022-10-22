@@ -13,6 +13,10 @@ export class Category {
   @Field()
   title: string;
 
+  @Column()
+  @Field()
+  description: string;
+
   @OneToMany(() => Item, (item) => item.category)
   @Field((type) => [Item], { nullable: true })
   items?: Item[];
