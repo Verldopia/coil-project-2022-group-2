@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Product } from '../../interfaces';
-import AddToCart from '../AddToCart/AddToCart';
+import { Product } from '../../../interfaces';
+import AddToCart from '../../AddToCart/AddToCart';
 import styles from './ProductCard.module.css';
 import { useParams } from 'react-router-dom';
 

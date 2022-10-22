@@ -1,8 +1,0 @@
-.cartBtn {
-    padding: 0.5rem;
-    color: var(--darkest-grey);
-    background-color: var(--cta-color);
-}
-.cartBtn:hover {
-    background-color: var(--cta-color-dark);
-}

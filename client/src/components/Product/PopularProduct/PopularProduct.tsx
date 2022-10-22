@@ -1,7 +1,8 @@
 import React from 'react';
-import { Lowercase } from '../../hooks/TextTransform';
-import { ProductsData } from '../../interfaces';
-import ProductCard from '../ProductCard/ProductCard';
+import { Lowercase } from '../../../hooks/TextTransform';
+import { Typography } from '@mui/material';
+import { ProductsData } from '../../../interfaces';
+import { ProductCard } from '../../../components';
 
 type PopularProductProps = {
   title: string | undefined;
@@ -21,7 +22,9 @@ const PopularProduct = ({
 
   return (
     <div className="container--preview">
-      <h4>{titleText}</h4>
+      <Typography variant="h5" mt={6} gutterBottom>
+        {titleText}
+      </Typography>
       <div className="product-container">
         {relatedProduct
           ?.map((item, i: number) => (

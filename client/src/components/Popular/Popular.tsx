@@ -1,11 +1,12 @@
 import React from 'react';
+import { ROUTES } from '../../constants/routes';
 import styles from './Popular.module.css';
 
 type Props = {};
 
 const Popular = (props: Props) => {
   return (
-    <a href="./sale" className={styles.popular}>
+    <a href={'../../' + ROUTES.SALE} className={styles.popular}>
       What's popular?
     </a>
   );

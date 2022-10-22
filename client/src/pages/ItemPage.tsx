@@ -2,11 +2,8 @@ import { useQuery } from '@apollo/client';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { AddToCart } from '../components';
-import PopularProduct from '../components/PopularProduct/PopularProduct';
-import StarRating from '../components/StarRating/StarRating';
+import { AddToCart, PopularProduct, StarRating } from '../components';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
-import { Lowercase } from '../hooks/TextTransform';
 import { ProductsData } from '../interfaces';
 
 export interface IItemPageProps {}

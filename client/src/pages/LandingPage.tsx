@@ -8,15 +8,18 @@ import { LinearProgress } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Badge from '@mui/material/Badge';
-import Item from '../components/Item/item';
 import Cart from '../components/Header/Cart/Cart';
 
 //Styles
 import { Wrapper, StyledButton } from '../App.styles';
-import PopularProduct from '../components/PopularProduct/PopularProduct';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { ProductsData } from '../interfaces';
 import { useQuery } from '@apollo/client';
+import {
+  NewestProduct,
+  PopularProduct,
+  LandingHead,
+} from '../components';
 
 // Types
 // export type CartItemType = {
@@ -83,11 +86,13 @@ const LandingPage: React.FC<ILandingPageProps> = (props) => {
   if (error) return <p>Can't load products.</p>;
   return (
     <div className="container">
+      <LandingHead />
       <PopularProduct
         title="sale"
         titleText="Recommended products"
         data={data}
       />
+      <NewestProduct titleText="New arrivals" data={data} />
       {/* <Wrapper>
         <Drawer
           anchor="right"

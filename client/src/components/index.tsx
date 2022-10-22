@@ -7,11 +7,14 @@ import Cart from './Header/Cart/Cart';
 import CartItem from './Header/CartItem/CartItem';
 import SearchBar from './Header/SearchBar/SearchBar';
 import Navigation from './Header/Navigation/Navigation';
-import Item from './Item/item';
 import LoginForm from './LoginForm/LoginForm';
+import LandingHead from './LandingHead/LandingHead';
 import Popular from './Popular/Popular';
-import ProductCard from './ProductCard/ProductCard';
+import ProductCard from './Product/ProductCard/ProductCard';
+import PopularProduct from './Product/PopularProduct/PopularProduct';
+import NewestProduct from './Product/NewestProduct/NewestProduct';
 import RegisterForm from './RegisterForm/RegisterForm';
+import StarRating from './StarRating/StarRating';
 
 export {
   AddToCart,
@@ -23,9 +26,12 @@ export {
   Navigation,
   SearchBar,
   Header,
-  Item,
   LoginForm,
+  LandingHead,
   Popular,
+  PopularProduct,
   ProductCard,
+  NewestProduct,
   RegisterForm,
+  StarRating,
 };
