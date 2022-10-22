@@ -44,3 +44,8 @@
 .descriptionText {
   text-align: center;
 }
+.searchBtn {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

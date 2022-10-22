@@ -17,7 +17,7 @@
 .navContainer {
   width: var(--width);
   margin: 0 auto;
-  padding: 0;
+  padding: 0 1rem;
 }
 .link:hover {
   color: var(--cta-color);

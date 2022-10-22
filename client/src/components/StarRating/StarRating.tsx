@@ -3,7 +3,7 @@ import Rating from '@mui/material/Rating';
 import styles from './StarRating.module.css';
 
 type StarRatingProps = {
-  starValue: number | null;
+  starValue: number | undefined | null;
   amount: number | null;
 };
 

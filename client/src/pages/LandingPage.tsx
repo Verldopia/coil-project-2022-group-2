@@ -17,7 +17,7 @@ import { ProductsData } from '../interfaces';
 import { useQuery } from '@apollo/client';
 import {
   NewestProduct,
-  PopularProduct,
+  RelatedProduct,
   LandingHead,
 } from '../components';
 
@@ -87,8 +87,8 @@ const LandingPage: React.FC<ILandingPageProps> = (props) => {
   return (
     <div className="container">
       <LandingHead />
-      <PopularProduct
-        title="sale"
+      <RelatedProduct
+        title="sensors"
         titleText="Recommended products"
         data={data}
       />

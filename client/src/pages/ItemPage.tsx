@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import {
   AddToCart,
   Descriptinator,
-  PopularProduct,
+  RelatedProduct,
   StarRating,
 } from '../components';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
@@ -63,9 +63,10 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
               <h1>{product.title}</h1>
               <p>Brand: {product.category?.title}</p>
               <StarRating
-                starValue={product.title.length}
-                amount={product.description.length}
+                starValue={product.category?.id}
+                amount={product.popularity}
               />
+              <p>Currently {product.stock} in stock.</p>
               <p>€{product.price}.-</p>
               <AddToCart />
             </div>
@@ -79,7 +80,8 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
       )}
 
       {/* Select 4 products in same category, and create a card */}
-      <PopularProduct
+      <RelatedProduct
+        id={Number(id)}
         title={title}
         titleText="Related products"
         data={data}

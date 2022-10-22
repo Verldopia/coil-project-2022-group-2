@@ -2,22 +2,25 @@ import React from 'react';
 import { Lowercase } from '../../../hooks/TextTransform';
 import { Typography } from '@mui/material';
 import { ProductsData } from '../../../interfaces';
-import { ProductCard } from '../../../components';
+import { ProductCard } from '../..';
 
-type PopularProductProps = {
+type RelatedProductProps = {
+  id?: number | undefined;
   title: string | undefined;
   titleText: string;
   data: ProductsData | undefined;
 };
 
-const PopularProduct = ({
+const RelatedProduct = ({
+  id,
   title,
   titleText,
   data,
-}: PopularProductProps) => {
+}: RelatedProductProps) => {
   // Find 4 related products
-  let relatedProduct = data?.Items.filter(
-    (item) => Lowercase(item.category?.title) === title || 'sale'
+  const relatedProduct = data?.Items.filter(
+    (item) =>
+      Lowercase(item.category?.title) === title && item.id !== id
   );
 
   return (
@@ -36,4 +39,4 @@ const PopularProduct = ({
   );
 };
 
-export default PopularProduct;
+export default RelatedProduct;

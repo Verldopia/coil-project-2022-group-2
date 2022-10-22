@@ -75,7 +75,7 @@ body {
   flex-wrap: wrap;
 }
 .bread--box {
-  max-width: 20rem;
+  max-width: 30rem;
 }
 .container--filter {
   display: flex;
@@ -186,6 +186,7 @@ h4 {
   margin: 1rem 0;
 }
 .product-container {
+  width: var(--width);
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
