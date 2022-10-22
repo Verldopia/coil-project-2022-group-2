@@ -1,6 +1,6 @@
 import AddToCart from './AddToCart/AddToCart';
 // import Article from './Article/Article';
-import FilterProducts from './FilterProducts/FilterProducts';
+import FilterProducts from './Product/FilterProducts/FilterProducts';
 import Descriptinator from './Descriptinator/Descriptinator';
 import DescriptionBox from './Product/DescriptionBox/DescriptionBox';
 import Footer from './Footer/Footer';
