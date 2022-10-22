@@ -1,4 +1,5 @@
-.productItem {
+.productItem,
+.descriptionContainer {
   width: 14rem;
   max-width: 100%;
   display: flex;
@@ -23,6 +24,7 @@
   gap: 1rem;
   flex-direction: column;
   align-items: center;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 .product__price {
   font-size: var(--base);
@@ -30,4 +32,15 @@
 .product__total {
   width: 100%;
   text-align: right;
+}
+.descriptionContainer {
+  border: none;
+  padding: 2rem;
+  justify-content: center;
+  padding-bottom: 4rem;
+  color: var(--bgd-color);
+  background-color: var(--darkest-grey);
+}
+.descriptionText {
+  text-align: center;
 }

@@ -70,7 +70,12 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
               <AddToCart />
             </div>
             <div className="container--info__text">
-              <h2>About the {Lowercase(product.category?.title)}</h2>
+              <h3>
+                About the{' '}
+                {Lowercase(product.category?.title) === 'sale'
+                  ? Lowercase(product.title)
+                  : Lowercase(product.category?.title)}
+              </h3>
               {/* <p>{product.description}</p> */}
               <Descriptinator text={product.description} />
             </div>

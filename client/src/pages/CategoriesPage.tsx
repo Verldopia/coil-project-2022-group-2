@@ -2,7 +2,11 @@ import { useQuery } from '@apollo/client';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Article, FilterProducts, ProductCard } from '../components';
+import {
+  FilterProducts,
+  ProductCard,
+  DescriptionBox,
+} from '../components';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { Capitalize, Lowercase } from '../hooks/TextTransform';
 import { ProductsData } from '../interfaces';
@@ -19,7 +23,7 @@ const Categories: React.FC<ICategoriesProps> = (props) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>An error has ocurred, can't load products.</p>;
 
-  let product = data?.Items.filter(
+  const product = data?.Items.filter(
     (item) => Lowercase(item.category?.title) == title
   );
 
@@ -48,10 +52,17 @@ const Categories: React.FC<ICategoriesProps> = (props) => {
       <div className="container container--filter">
         <FilterProducts products={product} />
         <div className="product-container">
+          <DescriptionBox
+            text={
+              product
+                ? product[0].category?.description
+                : 'There is no description for this category'
+            }
+            title={product ? product[0].category?.title : ''}
+          />
           {product?.map((item, i) => (
             <ProductCard key={i} item={item} i={i} />
           ))}
-          <Article />
         </div>
       </div>
     </div>
