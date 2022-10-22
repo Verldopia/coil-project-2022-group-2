@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product } from '../../interfaces';
+import { Product } from '../../../interfaces';
 import styles from './FilterProducts.module.css';
 
 type FilterProps = {
@@ -7,8 +7,6 @@ type FilterProps = {
 };
 
 function FilterProducts({ products }: FilterProps) {
-  console.log(products);
-
   return (
     <div className={styles.productContainer}>
       <ul className={styles.productList}>

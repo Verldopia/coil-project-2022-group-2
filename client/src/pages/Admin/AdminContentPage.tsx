@@ -14,7 +14,6 @@ const AdminContentPage: React.FC = () => {
   );
   if (loading) return <p>Loading...</p>;
   if (error) return <p>There are no categories</p>;
-  console.log(data);
 
   return (
     <>

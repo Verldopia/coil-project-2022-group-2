@@ -1,12 +1,12 @@
 import React from 'react';
 import { Lowercase } from '../../../hooks/TextTransform';
 import { Typography } from '@mui/material';
-import { ProductsData } from '../../../interfaces';
+import { Product, ProductsData } from '../../../interfaces';
 import { ProductCard } from '../..';
 
 type RelatedProductProps = {
   id?: number | undefined;
-  title: string | undefined;
+  title: string | undefined | Product;
   titleText: string;
   data: ProductsData | undefined;
 };
@@ -23,13 +23,26 @@ const RelatedProduct = ({
       Lowercase(item.category?.title) === title && item.id !== id
   );
 
+  // Sort products on popularity
+  const sortedProduct = relatedProduct
+    ?.filter((prod) => prod.popularity)
+    .sort((c1, c2) => c2.popularity - c1.popularity);
+
+  console.log(
+    'Most popular items: ',
+    sortedProduct
+      ?.map((pro) => `${pro.title} - ${pro.popularity}`)
+      .slice(0, 4)
+  );
+
   return (
     <div className="container--preview">
       <Typography variant="h5" mt={6} gutterBottom>
         {titleText}
       </Typography>
       <div className="product-container">
-        {relatedProduct
+        {/* create card with filtered data */}
+        {sortedProduct
           ?.map((item, i: number) => (
             <ProductCard key={i} item={item} i={i} />
           ))
