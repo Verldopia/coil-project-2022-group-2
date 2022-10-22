@@ -1,6 +1,7 @@
 import AddToCart from './AddToCart/AddToCart';
 import Article from './Article/Article';
 import FilterProducts from './FilterProducts/FilterProducts';
+import Descriptinator from './Descriptinator/Descriptinator';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import Cart from './Header/Cart/Cart';
@@ -20,6 +21,7 @@ export {
   AddToCart,
   Article,
   FilterProducts,
+  Descriptinator,
   Footer,
   CartItem,
   Cart,

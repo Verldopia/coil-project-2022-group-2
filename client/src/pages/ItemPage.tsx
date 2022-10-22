@@ -2,8 +2,14 @@ import { useQuery } from '@apollo/client';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { AddToCart, PopularProduct, StarRating } from '../components';
+import {
+  AddToCart,
+  Descriptinator,
+  PopularProduct,
+  StarRating,
+} from '../components';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
+import { Lowercase } from '../hooks/TextTransform';
 import { ProductsData } from '../interfaces';
 
 export interface IItemPageProps {}
@@ -39,7 +45,9 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
             <Link
               underline="hover"
               color="inherit"
-              href={'/categories/' + product.category?.title}
+              href={
+                '/categories/' + Lowercase(product.category?.title)
+              }
             >
               {product.category?.title}
             </Link>
@@ -62,8 +70,9 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
               <AddToCart />
             </div>
             <div className="container--info__text">
-              <h2>Description</h2>
-              <p>{product.description.repeat(20)}</p>
+              <h2>About the {Lowercase(product.category?.title)}</h2>
+              {/* <p>{product.description}</p> */}
+              <Descriptinator text={product.description} />
             </div>
           </div>
         </div>
