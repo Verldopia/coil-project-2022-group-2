@@ -7,6 +7,8 @@
 }
 .infoBox {
   border-radius: 0.5rem;
+  box-shadow: inset 0 0 16px var(--md-grey);
+
   background-color: var(--light-grey);
   display: flex;
   flex-direction: column;
