@@ -56,8 +56,12 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
             </Typography>
           </Breadcrumbs>
           <div className="container--info">
-            <div className="container--info__images">
-              <p>images</p>
+            <div className="container--info__images images">
+              <img
+                className="images--main"
+                src={product.mainImage}
+                alt={product.title}
+              />
             </div>
             <div className="container--info__params">
               <h1>{product.title}</h1>

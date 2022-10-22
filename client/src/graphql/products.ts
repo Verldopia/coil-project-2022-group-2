@@ -7,6 +7,7 @@ export const GET_ALL_PRODUCTS = gql`
       title
       price
       stock
+      mainImage
       popularity
       description
       approved

@@ -14,8 +14,8 @@ export class CreateItemInput {
   @Field()
   stock: number;
 
-  @Field({ nullable: true })
-  images?: string;
+  @Field()
+  mainImage: string;
 
   @Field({ nullable: true })
   popularity?: number;
@@ -30,5 +30,9 @@ export class CreateItemInput {
   categoryId: number;
 
   @Field((type) => Int)
-  adminId: number;
+  adminId: number;  
+
+  @Field({ nullable: true })
+  images?: string;
+
 }

@@ -45,7 +45,7 @@ type Item {
   description: String!
   price: Float!
   stock: Float!
-  images: String
+  mainImage: String!
   popularity: Float
   approved: Boolean!
   archived: Boolean!
@@ -53,6 +53,7 @@ type Item {
   adminId: Int!
   category: Category!
   admin: Admin!
+  images: String
 }
 
 type Query {
@@ -84,12 +85,13 @@ input CreateItemInput {
   description: String!
   price: Float!
   stock: Float!
-  images: String
+  mainImage: String!
   popularity: Float
   approved: Boolean!
   archived: Boolean!
   categoryId: Int!
   adminId: Int!
+  images: String
 }
 
 input CreateCategoryInput {

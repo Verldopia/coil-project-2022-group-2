@@ -15,6 +15,7 @@ export interface Product {
   title: string;
   price: number;
   popularity: number;
+  mainImage: string;
   stock: number;
   archived: boolean;
   approved: boolean;

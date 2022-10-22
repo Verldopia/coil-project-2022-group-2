@@ -3,6 +3,7 @@ import { Product } from '../../../interfaces';
 import AddToCart from '../../AddToCart/AddToCart';
 import styles from './ProductCard.module.css';
 import { useParams } from 'react-router-dom';
+import { Lowercase } from '../../../hooks/TextTransform';
 
 type Props = {
   item: Product;
@@ -14,7 +15,11 @@ const ProductCard = ({ item, i }: Props) => {
   const [id, setId] = useState(0);
 
   // Define route for clicked item
-  const route = id ? `../../categories/${title}/${id}` : '';
+  const route = id
+    ? `../../categories/${
+        title ?? Lowercase(item.category?.title)
+      }/${id}`
+    : '';
 
   return (
     <div
@@ -22,11 +27,17 @@ const ProductCard = ({ item, i }: Props) => {
       key={i}
       onClick={(e) => setId(item.id)}
     >
-      <img
-        alt={item.title}
-        className={styles.product__img}
-        style={{ backgroundImage: 'var(--logo)' }}
-      ></img>
+      {' '}
+      <div className={styles.product__imgBox}>
+        <a href={route}>
+          <img
+            src={item.mainImage}
+            alt={item.title}
+            className={styles.product__img}
+            style={{ backgroundImage: 'var(--logo)' }}
+          />
+        </a>
+      </div>
       <section className={styles.product__text}>
         <a href={route} className={styles.searchBtn}>
           {item.title}

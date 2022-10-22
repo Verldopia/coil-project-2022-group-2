@@ -1,7 +1,12 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { Admin } from 'src/admin/entities/admin.entity';
 import { Category } from 'src/categories/entities/category.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 @ObjectType()
@@ -26,9 +31,9 @@ export class Item {
   @Field()
   stock: number;
 
-  @Column({ nullable: true })
-  @Field({ nullable: true })
-  images?: string;
+  @Column()
+  @Field()
+  mainImage: string;
 
   @Column({ nullable: true })
   @Field({ nullable: true })
@@ -57,4 +62,8 @@ export class Item {
   @ManyToOne(() => Admin, (admin) => admin.items)
   @Field((type) => Admin)
   admin: Admin;
+
+  @Column({ nullable: true })
+  @Field({ nullable: true })
+  images?: string;
 }
