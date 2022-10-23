@@ -34,7 +34,6 @@ const ProductCard = ({ item, i }: Props) => {
             src={item.mainImage}
             alt={item.title}
             className={styles.product__img}
-            style={{ backgroundImage: 'var(--logo)' }}
           />
         </a>
       </div>

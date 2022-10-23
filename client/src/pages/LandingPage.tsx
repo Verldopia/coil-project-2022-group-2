@@ -23,11 +23,11 @@ const LandingPage: React.FC<ILandingPageProps> = (props) => {
   return (
     <div className="container">
       <LandingHead />
-      <RelatedProduct
-        title="sensors"
-        titleText="Recommended products"
-        data={data}
-      />
+
+      {/* 4 Globally most popular products */}
+      <RelatedProduct titleText="Recommended products" data={data} />
+
+      {/* 4 Newest products added to database */}
       <NewestProduct titleText="New arrivals" data={data} />
     </div>
   );

@@ -6,7 +6,7 @@ import { ProductCard } from '../..';
 
 type RelatedProductProps = {
   id?: number | undefined;
-  title: string | undefined | Product;
+  title?: string | undefined | Product;
   titleText: string;
   data: ProductsData | undefined;
 };
@@ -18,10 +18,15 @@ const RelatedProduct = ({
   data,
 }: RelatedProductProps) => {
   // Find 4 related products
-  const relatedProduct = data?.Items.filter(
+  let relatedProduct = data?.Items.filter(
     (item) =>
       Lowercase(item.category?.title) === title && item.id !== id
   );
+
+  // If there's no specific category, display all products (for landing page)
+  if (!title) {
+    relatedProduct = data?.Items;
+  }
 
   // Sort products on popularity
   const sortedProduct = relatedProduct

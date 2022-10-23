@@ -15,7 +15,7 @@ export default function ImageModal({ src, alt }: ImageModalProps) {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
+    <div className={styles.ImgContainer}>
       <img
         className={styles.img}
         onClick={handleOpen}

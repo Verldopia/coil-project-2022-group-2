@@ -1,3 +1,7 @@
+.ImgContainer {
+  display: flex;
+  align-items: center;
+}
 .imgBox {
   position: absolute;
   top: 48%;
@@ -13,6 +17,7 @@
 }
 .imgBoxImage {
   max-width: 50rem;
+  background-color: var(--bgd-color);
 }
 .imgBoxClose {
   cursor: pointer;
