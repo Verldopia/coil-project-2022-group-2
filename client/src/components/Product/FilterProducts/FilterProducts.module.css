@@ -4,6 +4,16 @@
 .productList {
   max-width: 100%;
   width: 12rem;
-  border: 2px solid var(--light-color);
+  box-shadow: inset 0 0 16px var(--md-grey);
   border-radius: 0.5rem;
+  padding: 1rem;
+}
+.productListItem {
+  display: flex;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+.productFilterTitle {
+  padding-bottom: 0.5rem;
+  width: 100%;
 }

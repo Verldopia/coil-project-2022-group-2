@@ -2,15 +2,12 @@ import React from 'react';
 import styles from './FilterProducts.module.css';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import { OverridableComponent } from '@mui/material/OverridableComponent';
-import { SvgIconTypeMap } from '@mui/material';
 
 export interface FilterProductsProps {
   title: string;
   low: string;
-  iconLow: string;
+  icon: React.ReactNode;
   high: string;
-  iconHigh: string;
   handleFilter: (
     e: React.MouseEvent<HTMLElement>,
     newFilter: string | null
@@ -21,9 +18,8 @@ export interface FilterProductsProps {
 function FilterProducts({
   title,
   low,
-  iconLow,
+  icon,
   high,
-  iconHigh,
   handleFilter,
   filter,
 }: FilterProductsProps) {
@@ -37,21 +33,13 @@ function FilterProducts({
         onChange={handleFilter}
         aria-label="text filter"
       >
-        <ToggleButton
-          className={styles.productFilterButton}
-          value={low}
-          aria-label={low}
-          // disabled={true}
-        >
-          {iconLow}
+        <ToggleButton color="warning" value={low} aria-label={low}>
+          {icon}
         </ToggleButton>
-        <ToggleButton
-          className={styles.productFilterButton}
-          value={high}
-          aria-label={high}
-          // disabled={false}
-        >
-          {iconHigh}
+        <ToggleButton color="info" value={high} aria-label={high}>
+          {icon}
+          {icon}
+          {icon}
         </ToggleButton>
       </ToggleButtonGroup>
     </>

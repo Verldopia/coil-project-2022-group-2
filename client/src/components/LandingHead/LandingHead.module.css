@@ -19,5 +19,8 @@
   flex-grow: 1;
 }
 .h1 {
-  max-width: 9rem;
+  max-width: 16rem;
+}
+.btn {
+  width: 16rem;
 }

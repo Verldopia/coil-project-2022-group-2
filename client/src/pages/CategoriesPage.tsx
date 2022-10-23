@@ -13,6 +13,8 @@ import { ProductsData } from '../interfaces';
 import styles from '../components/Product/FilterProducts/FilterProducts.module.css';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import { Capitalize, Lowercase } from '../hooks/TextTransform';
+import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined';
+import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 
 const Categories: React.FC = () => {
   const [filter, setFilter] = React.useState<string | null>('left');
@@ -50,9 +52,11 @@ const Categories: React.FC = () => {
   filter === 'popularity-low' &&
     product?.sort((c1, c2) => c1.popularity - c2.popularity);
 
+  console.log(product);
   return (
     <div className="box">
       <div className="container--box">
+        {/* Breadcrumbing */}
         <Breadcrumbs
           className="bread--box"
           separator="›"
@@ -74,14 +78,14 @@ const Categories: React.FC = () => {
       </div>
       <div className="container container--filter">
         <div className={styles.productContainer}>
+          {/* Filterlist */}
           <ul className={styles.productList}>
             <li>
               <FilterProducts
                 title="Price"
                 low="price-low"
-                iconLow="low"
+                icon={<MonetizationOnOutlinedIcon />}
                 high="price-high"
-                iconHigh="high"
                 handleFilter={handleFilter}
                 filter={filter}
               />
@@ -90,15 +94,15 @@ const Categories: React.FC = () => {
               <FilterProducts
                 title="Popularity"
                 low="popularity-low"
-                iconLow="low"
+                icon={<LocalFireDepartmentOutlinedIcon />}
                 high="popularity-high"
-                iconHigh="high"
                 handleFilter={handleFilter}
                 filter={filter}
               />
             </li>
           </ul>
         </div>
+        {/* Category description card */}
         <div className="product-container">
           <DescriptionBox
             text={
@@ -108,6 +112,7 @@ const Categories: React.FC = () => {
             }
             title={product ? product[0].category?.title : ''}
           />
+          {/* Productslist */}
           {product?.map((item, i) => (
             <ProductCard key={i} item={item} i={i} />
           ))}

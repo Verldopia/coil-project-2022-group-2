@@ -100,7 +100,8 @@ body {
 .images {
   display: flex;
   justify-content: center;
-  width: calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
+  overflow: hidden;
 }
 .container--info__params {
   display: flex;
