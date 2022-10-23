@@ -94,9 +94,6 @@ body {
   width: 50%;
   padding: 1rem;
 }
-.images--main {
-  max-width: 20rem;
-}
 .images {
   display: flex;
   justify-content: center;

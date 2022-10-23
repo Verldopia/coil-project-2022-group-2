@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import {
   AddToCart,
   Descriptinator,
+  ImageModal,
   RelatedProduct,
   StarRating,
 } from '../components';
@@ -57,8 +58,7 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
           </Breadcrumbs>
           <div className="container--info">
             <div className="container--info__images images">
-              <img
-                className="images--main"
+              <ImageModal
                 src={product.mainImage}
                 alt={product.title}
               />

@@ -1,0 +1,25 @@
+.imgBox {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 24;
+}
+.img {
+  max-width: 20rem;
+}
+.img:hover {
+  cursor: zoom-in;
+}
+.imgBoxImage {
+  max-width: 50rem;
+}
+.imgBoxClose {
+  cursor: pointer;
+  padding: 0.5rem 0;
+  color: var(--dark-color);
+  transition: ease all 0.2s;
+}
+.imgBoxClose:hover {
+  color: var(--light-color);
+}
