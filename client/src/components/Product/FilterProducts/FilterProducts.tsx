@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './FilterProducts.module.css';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import { Capitalize } from '../../../hooks/TextTransform';
 
 export interface FilterProductsProps {
   title: string;
@@ -25,7 +26,7 @@ function FilterProducts({
 }: FilterProductsProps) {
   return (
     <>
-      <p className={styles.productFilterTitle}>{title}</p>
+      <p className={styles.productFilterTitle}>{Capitalize(title)}</p>
       <ToggleButtonGroup
         className={styles.productListItem}
         value={filter}
