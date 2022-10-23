@@ -17,6 +17,7 @@
 }
 .imgBoxImage {
   max-width: 50rem;
+  max-height: 85vh;
   background-color: var(--bgd-color);
 }
 .imgBoxClose {

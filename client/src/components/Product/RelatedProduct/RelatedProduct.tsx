@@ -2,7 +2,7 @@ import React from 'react';
 import { Lowercase } from '../../../hooks/TextTransform';
 import { Typography } from '@mui/material';
 import { Product, ProductsData } from '../../../interfaces';
-import { ProductCard } from '../..';
+import { ProductCard } from '../../../components';
 
 type RelatedProductProps = {
   id?: number | undefined;
@@ -31,12 +31,16 @@ const RelatedProduct = ({
   // Sort products on popularity
   const sortedProduct = relatedProduct
     ?.filter((prod) => prod.popularity)
-    .sort((c1, c2) => c2.popularity - c1.popularity);
+    .sort((c1, c2) => c2.popularity - c1.popularity)
+    .slice(0, 4);
 
   console.log(
     'Most popular items: ',
     sortedProduct
-      ?.map((pro) => `${pro.title} - ${pro.popularity}`)
+      ?.map(
+        (pro) =>
+          `${pro.title} - ${pro.popularity} - ${pro.category?.title}`
+      )
       .slice(0, 4)
   );
 
@@ -47,11 +51,9 @@ const RelatedProduct = ({
       </Typography>
       <div className="product-container">
         {/* create card with filtered data */}
-        {sortedProduct
-          ?.map((item, i: number) => (
-            <ProductCard key={i} item={item} i={i} />
-          ))
-          .slice(0, 4)}
+        {sortedProduct?.map((item, i: number) => (
+          <ProductCard key={i} item={item} i={i} />
+        ))}
       </div>
     </div>
   );
