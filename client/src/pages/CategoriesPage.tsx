@@ -1,20 +1,23 @@
 import { useQuery } from '@apollo/client';
-import { Breadcrumbs, Link, Typography } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
-  FilterProducts,
   ProductCard,
   DescriptionBox,
+  FilterProducts,
 } from '../components';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
-import { Capitalize, Lowercase } from '../hooks/TextTransform';
 import { ProductsData } from '../interfaces';
 
-export interface ICategoriesProps {}
+// Styles
+import styles from '../components/Product/FilterProducts/FilterProducts.module.css';
+import { Breadcrumbs, Link, Typography } from '@mui/material';
+import { Capitalize, Lowercase } from '../hooks/TextTransform';
 
-const Categories: React.FC<ICategoriesProps> = (props) => {
+const Categories: React.FC = () => {
+  const [filter, setFilter] = React.useState<string | null>('left');
   let { title } = useParams();
+
   // Fetch products
   const { loading, error, data } = useQuery<ProductsData>(
     GET_ALL_PRODUCTS,
@@ -26,6 +29,26 @@ const Categories: React.FC<ICategoriesProps> = (props) => {
   const product = data?.Items.filter(
     (item) => Lowercase(item.category?.title) == title
   );
+
+  // Filter products
+  const handleFilter = (
+    e: React.MouseEvent<HTMLElement>,
+    newFilter: string | null
+  ) => {
+    setFilter(newFilter);
+  };
+
+  // Filter price
+  filter === 'price-high' &&
+    product?.sort((c1, c2) => c2.price - c1.price);
+  filter === 'price-low' &&
+    product?.sort((c1, c2) => c1.price - c2.price);
+
+  // Filter popularity
+  filter === 'popularity-high' &&
+    product?.sort((c1, c2) => c2.popularity - c1.popularity);
+  filter === 'popularity-low' &&
+    product?.sort((c1, c2) => c1.popularity - c2.popularity);
 
   return (
     <div className="box">
@@ -50,7 +73,32 @@ const Categories: React.FC<ICategoriesProps> = (props) => {
         )}
       </div>
       <div className="container container--filter">
-        <FilterProducts products={product} />
+        <div className={styles.productContainer}>
+          <ul className={styles.productList}>
+            <li>
+              <FilterProducts
+                title="Price"
+                low="price-low"
+                iconLow="low"
+                high="price-high"
+                iconHigh="high"
+                handleFilter={handleFilter}
+                filter={filter}
+              />
+            </li>
+            <li>
+              <FilterProducts
+                title="Popularity"
+                low="popularity-low"
+                iconLow="low"
+                high="popularity-high"
+                iconHigh="high"
+                handleFilter={handleFilter}
+                filter={filter}
+              />
+            </li>
+          </ul>
+        </div>
         <div className="product-container">
           <DescriptionBox
             text={

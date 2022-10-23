@@ -12,7 +12,7 @@ import Navigation from './Header/Navigation/Navigation';
 import NewestProduct from './Product/NewestProduct/NewestProduct';
 import Popular from './Popular/Popular';
 import ProductCard from './Product/ProductCard/ProductCard';
-// import PopularProduct from './Product/PopularProduct/PopularProduct';
+import ImageBox from './Product/ImageBox/ImageBox';
 import RelatedProduct from './Product/RelatedProduct/RelatedProduct';
 import RegisterForm from './RegisterForm/RegisterForm';
 import SearchBar from './Header/SearchBar/SearchBar';
@@ -33,7 +33,7 @@ export {
   NewestProduct,
   Popular,
   ProductCard,
-  // PopularProduct,
+  ImageBox,
   RelatedProduct,
   RegisterForm,
   SearchBar,

@@ -11,9 +11,15 @@ function LandingHead({}: Props) {
       </div>
       <div className={styles.infoBox}>
         <h1 className={styles.h1}>
-          Connection is evolving and so are we
+          Connection is evolving and so are we!
         </h1>
-        <Popular />
+        <p className={styles.h1}>
+          We have everything you need to keep your home safe,
+          monitored, and smart.
+        </p>
+        <div className={styles.btn}>
+          <Popular />
+        </div>
       </div>
     </div>
   );
