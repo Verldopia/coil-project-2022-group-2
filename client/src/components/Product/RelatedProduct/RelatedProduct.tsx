@@ -34,15 +34,7 @@ const RelatedProduct = ({
     .sort((c1, c2) => c2.popularity - c1.popularity)
     .slice(0, 4);
 
-  console.log(
-    'Most popular items: ',
-    sortedProduct
-      ?.map(
-        (pro) =>
-          `${pro.title} - ${pro.popularity} - ${pro.category?.title}`
-      )
-      .slice(0, 4)
-  );
+  console.table(sortedProduct);
 
   return (
     <div className="container--preview">

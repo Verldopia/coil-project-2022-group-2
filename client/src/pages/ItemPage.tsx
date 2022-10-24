@@ -28,13 +28,12 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
 
   // Find product by ID
   const product = data?.Items.find((item) => item.id === Number(id));
-  // Find 4 related products
 
   return (
     <div className="container--box">
       {product && (
         <div className="container">
-          {/* Breadcrumbing */}
+          {/* // Breadcrumbing */}
           <Breadcrumbs
             className="bread--box"
             separator="›"
@@ -76,14 +75,15 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
             </div>
             <div className="container--info__text">
               <h3>About the {product.title}</h3>
-              {/* <p>{product.description}</p> */}
+
+              {/* // <p>{product.description}</p> */}
               <Descriptinator text={product.description} />
             </div>
           </div>
         </div>
       )}
 
-      {/* Select 4 products in same category, and create a card */}
+      {/* // Select 4 products in same category, and create a card */}
       <RelatedProduct
         id={Number(id)}
         title={title}

@@ -8,9 +8,9 @@ const BaseLayout: React.FC<IBaseLayoutProps> = (props) => {
   return (
     <>
       <Header />
-      <div className="baseLayout">
+      <main className="baseLayout">
         <Outlet />
-      </div>
+      </main>
       <Footer />
     </>
   );

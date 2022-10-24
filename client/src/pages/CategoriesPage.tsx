@@ -40,19 +40,27 @@ const Categories: React.FC = () => {
     setFilter(newFilter);
   };
 
-  // Filter price
-  filter === 'price-high' &&
+  // Filter high price
+  const priceHigh = 'price-high';
+  filter === priceHigh &&
     product?.sort((c1, c2) => c2.price - c1.price);
-  filter === 'price-low' &&
+
+  // Filter low price
+  const priceLow = 'price-low';
+  filter === priceLow &&
     product?.sort((c1, c2) => c1.price - c2.price);
 
-  // Filter popularity
-  filter === 'popularity-high' &&
+  // Filter high popularity
+  const popularityHigh = 'popularity-high';
+  filter === popularityHigh &&
     product?.sort((c1, c2) => c2.popularity - c1.popularity);
-  filter === 'popularity-low' &&
+
+  // Filter low popularity
+  const popularityLow = 'popularity-low';
+  filter === popularityLow &&
     product?.sort((c1, c2) => c1.popularity - c2.popularity);
 
-  console.log(product);
+  console.table(product);
   return (
     <div className="box">
       <div className="container--box">
@@ -78,14 +86,14 @@ const Categories: React.FC = () => {
       </div>
       <div className="container container--filter">
         <div className={styles.productContainer}>
-          {/* Filterlist */}
+          {/* // Filterlist */}
           <ul className={styles.productList}>
             <li>
               <FilterProducts
                 title="Price"
-                low="price-low"
+                low={priceLow}
                 icon={<MonetizationOnOutlinedIcon />}
-                high="price-high"
+                high={priceHigh}
                 handleFilter={handleFilter}
                 filter={filter}
               />
@@ -93,16 +101,16 @@ const Categories: React.FC = () => {
             <li>
               <FilterProducts
                 title="Popularity"
-                low="popularity-low"
+                low={popularityLow}
                 icon={<LocalFireDepartmentOutlinedIcon />}
-                high="popularity-high"
+                high={popularityHigh}
                 handleFilter={handleFilter}
                 filter={filter}
               />
             </li>
           </ul>
         </div>
-        {/* Category description card */}
+        {/* // Category description card */}
         <div className="product-container">
           <DescriptionBox
             text={
@@ -112,7 +120,7 @@ const Categories: React.FC = () => {
             }
             title={product ? product[0].category?.title : ''}
           />
-          {/* Productslist */}
+          {/* // Productslist */}
           {product?.map((item, i) => (
             <ProductCard key={i} item={item} i={i} />
           ))}
