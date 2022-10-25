@@ -201,3 +201,7 @@ h4 {
   width: 100%;
   text-align: right;
 }
+.productFilterTitle {
+  padding-bottom: 0.5rem;
+  width: 100%;
+}

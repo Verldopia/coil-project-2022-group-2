@@ -1,0 +1,24 @@
+.productContainer {
+  margin-right: 1rem;
+}
+.productList {
+  max-width: 100%;
+  width: 12rem;
+  box-shadow: inset 0 0 16px var(--md-grey);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.productListItem,
+.typeItem {
+  display: flex;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+.typeItem {
+  padding-bottom: 0.5rem;
+  max-width: 9rem;
+}
+.productFilterTitle {
+  padding-bottom: 0.5rem;
+  width: 100%;
+}

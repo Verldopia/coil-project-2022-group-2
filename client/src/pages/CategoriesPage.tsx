@@ -5,6 +5,7 @@ import {
   ProductCard,
   DescriptionBox,
   FilterProducts,
+  FilterProductsTitle,
 } from '../components';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { ProductsData } from '../interfaces';
@@ -28,7 +29,7 @@ const Categories: React.FC = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>An error has ocurred, can't load products.</p>;
 
-  const product = data?.Items.filter(
+  let product = data?.Items.filter(
     (item) => Lowercase(item.category?.title) == title
   );
 
@@ -60,7 +61,13 @@ const Categories: React.FC = () => {
   filter === popularityLow &&
     product?.sort((c1, c2) => c1.popularity - c2.popularity);
 
+  // Filter product types, and remove duplicates
+  const types = [...new Set(product?.map((prod) => prod.type))];
+  const typeItem = product?.filter((prod) => prod.type === filter);
+
   console.table(product);
+
+  // console.table(product);
   return (
     <div className="box">
       <div className="container--box">
@@ -77,10 +84,15 @@ const Categories: React.FC = () => {
             {Capitalize(title)}
           </Typography>
         </Breadcrumbs>
-        {/* Total amount of products */}
-        {product && (
+        {/* // Total amount of products */}
+        {typeItem?.length === 0 ? (
           <p className="bread--box">
-            {product.length} products found.
+            {product?.length} products found.
+          </p>
+        ) : (
+          // If subcategory is selected, display total items
+          <p className="bread--box">
+            {typeItem?.length} products found.
           </p>
         )}
       </div>
@@ -108,6 +120,18 @@ const Categories: React.FC = () => {
                 filter={filter}
               />
             </li>
+            {/* // If there's more than 1 type, make filter component */}
+            {types[1] && <p className="productFilterTitle">Types</p>}
+            {types[1] &&
+              types.map((type, i) => (
+                <li key={i}>
+                  <FilterProductsTitle
+                    title={type.valueOf()}
+                    handleFilter={handleFilter}
+                    filter={filter}
+                  />
+                </li>
+              ))}
           </ul>
         </div>
         {/* // Category description card */}
@@ -120,10 +144,16 @@ const Categories: React.FC = () => {
             }
             title={product ? product[0].category?.title : ''}
           />
+
           {/* // Productslist */}
-          {product?.map((item, i) => (
-            <ProductCard key={i} item={item} i={i} />
-          ))}
+          {typeItem?.length === 0
+            ? product?.map((item, i) => (
+                <ProductCard key={i} item={item} i={i} />
+              ))
+            : // If subcategory is selected, display items
+              typeItem?.map((item, i) => (
+                <ProductCard key={i} item={item} i={i} />
+              ))}
         </ul>
       </div>
     </div>

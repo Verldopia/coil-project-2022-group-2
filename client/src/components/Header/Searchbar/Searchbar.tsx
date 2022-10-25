@@ -13,11 +13,12 @@ const SearchBar: React.FC = () => {
   const route = param ? '../../search/' + Lowercase(param) : '';
 
   const { openCart, cartQuantity } = UseShoppingCart();
+  console.log(typeof cartQuantity);
 
   return (
     <div className={styles.searchBarContainer}>
       <div className={styles.searchBarBox}>
-        {/* If there's no param, redirect to homepage */}
+        {/* // If there's no param, redirect to homepage */}
         <form action={route}>
           <TextField
             className={styles.searchBar}
@@ -31,12 +32,14 @@ const SearchBar: React.FC = () => {
             <SearchOutlinedIcon />
           </Button>
         </form>
-        <button className={styles.searchCart} onClick={openCart}>
-          <ShoppingCartOutlinedIcon />
-          <div className={styles.searchCartIndicator}>
-            {cartQuantity}
-          </div>
-        </button>
+        {cartQuantity !== 0 && (
+          <button className={styles.searchCart} onClick={openCart}>
+            <ShoppingCartOutlinedIcon />
+            <div className={styles.searchCartIndicator}>
+              {cartQuantity}
+            </div>
+          </button>
+        )}
       </div>
     </div>
   );

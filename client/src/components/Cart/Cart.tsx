@@ -1,3 +1,5 @@
+// !! Code may be similar to Web Dev Simplified: https://www.youtube.com/watch?v=lATafp15HWA.
+
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { UseShoppingCart } from '../../context/ShoppingCartContext';

@@ -12,6 +12,7 @@ export const GET_ALL_PRODUCTS = gql`
       description
       approved
       archived
+      type
       category {
         id
         title

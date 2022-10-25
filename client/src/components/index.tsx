@@ -4,6 +4,7 @@ import CartItem from './CartItem/CartItem';
 import Descriptinator from './Descriptinator/Descriptinator';
 import DescriptionBox from './Product/DescriptionBox/DescriptionBox';
 import FilterProducts from './Product/FilterProducts/FilterProducts';
+import FilterProductsTitle from './Product/FilterProductsTitle/FilterProductsTitle';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import LoginForm from './LoginForm/LoginForm';
@@ -25,6 +26,7 @@ export {
   CartItem,
   Descriptinator,
   DescriptionBox,
+  FilterProductsTitle,
   FilterProducts,
   Footer,
   Header,

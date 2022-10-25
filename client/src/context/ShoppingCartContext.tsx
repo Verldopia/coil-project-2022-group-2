@@ -1,3 +1,5 @@
+// !! Code may be similar to Web Dev Simplified: https://www.youtube.com/watch?v=lATafp15HWA.
+
 import React, { useContext, createContext, useState } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 import Cart from '../components/Cart/Cart';

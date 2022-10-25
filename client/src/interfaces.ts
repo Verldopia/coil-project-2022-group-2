@@ -22,6 +22,7 @@ export interface Product {
   description: string;
   categoryId: number;
   adminId: number;
+  type: string;
   category?: Category;
 }
 

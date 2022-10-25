@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+// !! Code may be similar to Web Dev Simplified: https://www.youtube.com/watch?v=lATafp15HWA.
 
-type Props = {};
+import { useState, useEffect } from 'react';
 
 function useLocalStorage<T>(
   key: string,
