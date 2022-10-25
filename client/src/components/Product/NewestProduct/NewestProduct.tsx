@@ -18,13 +18,13 @@ const NewestProduct = ({ titleText, data }: NewestProductProps) => {
       <Typography variant="h5" mt={6} gutterBottom>
         {titleText}
       </Typography>
-      <div className="product-container">
+      <ul className="product-container">
         {relatedProduct
           ?.map((item, i: number) => (
             <ProductCard key={i} item={item} i={i} />
           ))
           .reverse()}
-      </div>
+      </ul>
     </div>
   );
 };

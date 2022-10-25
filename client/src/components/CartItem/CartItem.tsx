@@ -1,10 +1,17 @@
 import { useQuery } from '@apollo/client';
-import React from 'react';
-import { Stack } from 'react-bootstrap';
+import React, { useState } from 'react';
 import { UseShoppingCart } from '../../context/ShoppingCartContext';
 import { GET_ALL_PRODUCTS } from '../../graphql/products';
 import { ProductsData } from '../../interfaces';
 import { FormatCurrency } from '../../utilities/FormatCurrency';
+
+// Styles
+import styles from './CartItem.module.css';
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
+import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import { Lowercase } from '../../utilities/TextTransform';
+import { useParams } from 'react-router-dom';
 
 type CartItemProps = {
   id?: number;
@@ -12,6 +19,9 @@ type CartItemProps = {
 };
 
 function CartItem({ id, quantity }: CartItemProps) {
+  const { title } = useParams();
+  const [i, setId] = useState(0);
+
   // Fetch products
   const { loading, error, data } = useQuery<ProductsData>(
     GET_ALL_PRODUCTS,
@@ -31,22 +41,60 @@ function CartItem({ id, quantity }: CartItemProps) {
   });
   if (product == null) return null;
 
+  // Define route for clicked item
+  const route = i
+    ? `../../categories/${
+        title ?? Lowercase(product.category?.title)
+      }/${id}`
+    : '';
+
   return (
-    <Stack direction="horizontal" gap={2}>
-      <p>{product.title}</p>
-      <span>x{quantity}</span>
-      <div>{FormatCurrency(product.price)}</div>
-      <div>{FormatCurrency(product.price * quantity)}</div>
-      <button onClick={() => removeFromCart(product.id)}>
-        &times;
-      </button>
-      <button onClick={() => increaseCartQuantity(product.id)}>
-        &times;
-      </button>
-      <button onClick={() => decreaseCartQuantity(product.id)}>
-        &times;
-      </button>
-    </Stack>
+    <li
+      key={product.id}
+      className={styles.cartItem}
+      onClick={(e) => setId(product.id)}
+    >
+      <div className={styles.cartItemImgBox}>
+        <a href={route}>
+          <img
+            className={styles.cartItemImg}
+            src={product.mainImage}
+            alt={product.title}
+          />
+        </a>
+      </div>
+      <div className={styles.cartItemTextBox}>
+        <div className={styles.cartItemHeadBox}>
+          <a href={route}>
+            <h5>{product.title}</h5>
+          </a>
+          <span>{FormatCurrency(product.price * quantity)}</span>
+        </div>
+        <div className={styles.cartItemAmountBox}>
+          <div className={styles.cartItemAmount}>
+            <button
+              className={styles.cartBtn}
+              onClick={() => decreaseCartQuantity(product.id)}
+            >
+              <RemoveOutlinedIcon fontSize="small" />
+            </button>
+            <span>x{quantity}</span>
+            <button
+              className={styles.cartBtn}
+              onClick={() => increaseCartQuantity(product.id)}
+            >
+              <AddOutlinedIcon fontSize="small" />
+            </button>
+          </div>
+          <button
+            className={styles.cartBtn}
+            onClick={() => removeFromCart(product.id)}
+          >
+            <DeleteOutlineOutlinedIcon />
+          </button>
+        </div>
+      </div>
+    </li>
   );
 }
 

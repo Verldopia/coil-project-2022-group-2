@@ -71,7 +71,7 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
               />
               <p>Currently {product.stock} in stock.</p>
               <p>€{product.price}.-</p>
-              <AddToCart />
+              <AddToCart item={product} />
             </div>
             <div className="container--info__text">
               <h3>About the {product.title}</h3>

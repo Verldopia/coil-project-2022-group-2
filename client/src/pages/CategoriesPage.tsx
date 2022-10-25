@@ -111,7 +111,7 @@ const Categories: React.FC = () => {
           </ul>
         </div>
         {/* // Category description card */}
-        <div className="product-container">
+        <ul className="product-container">
           <DescriptionBox
             text={
               product
@@ -124,7 +124,7 @@ const Categories: React.FC = () => {
           {product?.map((item, i) => (
             <ProductCard key={i} item={item} i={i} />
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

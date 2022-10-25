@@ -1,12 +1,15 @@
-import { useQuery } from '@apollo/client';
 import React from 'react';
-import { Offcanvas, Stack } from 'react-bootstrap';
+import { useQuery } from '@apollo/client';
 import { UseShoppingCart } from '../../context/ShoppingCartContext';
 import { GET_ALL_PRODUCTS } from '../../graphql/products';
 import { ProductsData } from '../../interfaces';
 import { FormatCurrency } from '../../utilities/FormatCurrency';
-import CartItem from '../CartItem/CartItem';
+import { CartItem } from '../../components';
+
+// Styles
 import styles from './Cart.module.css';
+import { Offcanvas } from 'react-bootstrap';
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
 type CartProps = {
   isOpen: boolean;
@@ -25,22 +28,23 @@ function Cart({ isOpen }: CartProps) {
 
   return (
     <Offcanvas
-      className={styles.cart}
+      className={styles.cartContainer}
       show={isOpen}
       onHide={closeCart}
-      placement="top"
     >
-      <Offcanvas.Header>
-        <button onClick={closeCart}>close</button>
-        <Offcanvas.Title>Cart</Offcanvas.Title>
-      </Offcanvas.Header>
-      <Offcanvas.Body>
-        <Stack gap={3}>
+      <div className={styles.cartHeader}>
+        <h2>Cart</h2>
+        <button className={styles.cartBtn} onClick={closeCart}>
+          <CloseOutlinedIcon fontSize="large" />
+        </button>
+      </div>
+      <div className={styles.cartBody}>
+        <ul className={styles.cartItems}>
           {cartItems.map((prod) => (
             <CartItem key={prod.id} {...prod} />
           ))}
-          <div>
-            total:{' '}
+          <div className={styles.cartTotal}>
+            Total:{' '}
             {FormatCurrency(
               cartItems.reduce((total, cartItem) => {
                 const product = data?.Items.find(
@@ -52,8 +56,8 @@ function Cart({ isOpen }: CartProps) {
               }, 0)
             )}
           </div>
-        </Stack>
-      </Offcanvas.Body>
+        </ul>
+      </div>
     </Offcanvas>
   );
 }

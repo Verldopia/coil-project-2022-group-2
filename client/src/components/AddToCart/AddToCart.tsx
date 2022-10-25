@@ -6,9 +6,7 @@ import styles from './AddToCart.module.css';
 type AddToCartProps = { item: Product };
 
 const AddToCart = ({ item }: AddToCartProps) => {
-  const { getItemQuantity, increaseCartQuantity } = UseShoppingCart();
-
-  const quantity = getItemQuantity(item?.id);
+  const { increaseCartQuantity } = UseShoppingCart();
 
   return (
     <button

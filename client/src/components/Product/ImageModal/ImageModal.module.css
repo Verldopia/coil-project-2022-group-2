@@ -16,7 +16,7 @@
   cursor: zoom-in;
 }
 .imgBoxImage {
-  max-width: 50rem;
+  max-width: 60rem;
   max-height: 85vh;
   background-color: var(--bgd-color);
 }

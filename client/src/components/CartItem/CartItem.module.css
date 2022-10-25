@@ -1,0 +1,33 @@
+.cartItem,
+.cartItemHeadBox,
+.cartItemAmountBox,
+.cartItemAmount,
+.cartItemTextBox,
+.cartItemImgBox {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.cartItemTextBox {
+  width: 100%;
+  flex-direction: column;
+  align-self: center;
+}
+.cartItem {
+  box-shadow: inset 0 0 16px var(--md-grey);
+  background-color: var(--bgd-color);
+  padding: 1rem;
+  gap: 1rem;
+}
+.cartItemImgBox {
+  height: 6rem;
+  width: 10rem;
+}
+.cartBtn {
+  cursor: pointer;
+}
+.cartItemImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -41,12 +41,12 @@ const RelatedProduct = ({
       <Typography variant="h5" mt={6} gutterBottom>
         {titleText}
       </Typography>
-      <div className="product-container">
+      <ul className="product-container">
         {/* // create card with filtered data */}
         {sortedProduct?.map((item, i: number) => (
           <ProductCard key={i} item={item} i={i} />
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

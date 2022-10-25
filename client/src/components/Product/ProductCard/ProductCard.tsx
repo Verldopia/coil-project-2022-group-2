@@ -23,7 +23,7 @@ const ProductCard = ({ item, i }: ProductCardProps) => {
     : '';
 
   return (
-    <div
+    <li
       className={styles.productItem}
       key={i}
       onClick={(e) => setId(item.id)}
@@ -47,7 +47,7 @@ const ProductCard = ({ item, i }: ProductCardProps) => {
         </span>
         <AddToCart item={item} />
       </section>
-    </div>
+    </li>
   );
 };
 

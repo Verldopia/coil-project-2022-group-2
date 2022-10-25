@@ -24,16 +24,16 @@ const ResultsPage: React.FC<IResultsProps> = () => {
 
   return (
     <div className="container">
-      <div className="product-container">
+      <ul className="product-container">
         {result && (
           <p className="product__total">
             {result.length} products found.
           </p>
         )}
         {result?.map((item, i) => (
-          <ProductCard item={item} i={i} />
+          <ProductCard key={item.id} item={item} i={i} />
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

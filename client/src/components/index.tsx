@@ -1,5 +1,6 @@
 import AddToCart from './AddToCart/AddToCart';
-// import Cart from './Header/Cart/Cart';
+import Cart from './Cart/Cart';
+import CartItem from './CartItem/CartItem';
 import Descriptinator from './Descriptinator/Descriptinator';
 import DescriptionBox from './Product/DescriptionBox/DescriptionBox';
 import FilterProducts from './Product/FilterProducts/FilterProducts';
@@ -20,7 +21,8 @@ import StarRating from './StarRating/StarRating';
 
 export {
   AddToCart,
-  // Cart,
+  Cart,
+  CartItem,
   Descriptinator,
   DescriptionBox,
   FilterProducts,

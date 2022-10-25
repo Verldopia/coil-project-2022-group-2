@@ -23,6 +23,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  max-height: 15rem;
   width: 16rem;
 }
 .product__text {
