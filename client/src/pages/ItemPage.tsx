@@ -10,7 +10,7 @@ import {
   StarRating,
 } from '../components';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
-import { Lowercase } from '../hooks/TextTransform';
+import { Lowercase } from '../utilities/TextTransform';
 import { ProductsData } from '../interfaces';
 
 export interface IItemPageProps {}

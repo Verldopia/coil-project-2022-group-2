@@ -4,7 +4,7 @@ import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import { GET_ALL_CATEGORIES } from '../../graphql/categories';
 import { CategoryData } from '../../interfaces';
 import { useQuery } from '@apollo/client';
-import { Capitalize } from '../../hooks/TextTransform';
+import { Capitalize } from '../../utilities/TextTransform';
 
 const AdminContentPage: React.FC = () => {
   // Fetch categories

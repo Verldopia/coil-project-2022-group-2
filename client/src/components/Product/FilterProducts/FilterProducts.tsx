@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './FilterProducts.module.css';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import { Capitalize } from '../../../hooks/TextTransform';
+import { Capitalize } from '../../../utilities/TextTransform';
 
 export interface FilterProductsProps {
   title: string;

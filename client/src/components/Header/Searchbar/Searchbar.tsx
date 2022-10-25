@@ -4,12 +4,15 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
-import { Lowercase } from '../../../hooks/TextTransform';
+import { Lowercase } from '../../../utilities/TextTransform';
+import { UseShoppingCart } from '../../../context/ShoppingCartContext';
 
 const SearchBar: React.FC = () => {
   // Set search param
   const [param, setParam] = useState('');
   const route = param ? '../../search/' + Lowercase(param) : '';
+
+  const { openCart, cartQuantity } = UseShoppingCart();
 
   return (
     <div className={styles.searchBarContainer}>
@@ -28,8 +31,11 @@ const SearchBar: React.FC = () => {
             <SearchOutlinedIcon />
           </Button>
         </form>
-        <button className={styles.searchCart}>
+        <button className={styles.searchCart} onClick={openCart}>
           <ShoppingCartOutlinedIcon />
+          <div className={styles.searchCartIndicator}>
+            {cartQuantity}
+          </div>
         </button>
       </div>
     </div>

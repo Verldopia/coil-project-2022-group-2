@@ -3,15 +3,16 @@ import { Product } from '../../../interfaces';
 import AddToCart from '../../AddToCart/AddToCart';
 import styles from './ProductCard.module.css';
 import { useParams } from 'react-router-dom';
-import { Lowercase } from '../../../hooks/TextTransform';
+import { Lowercase } from '../../../utilities/TextTransform';
+import { FormatCurrency } from '../../../utilities/FormatCurrency';
 
-type Props = {
+type ProductCardProps = {
   item: Product;
   i: number;
 };
 
-const ProductCard = ({ item, i }: Props) => {
-  let { title } = useParams();
+const ProductCard = ({ item, i }: ProductCardProps) => {
+  const { title } = useParams();
   const [id, setId] = useState(0);
 
   // Define route for clicked item
@@ -41,8 +42,10 @@ const ProductCard = ({ item, i }: Props) => {
         <a href={route} className={styles.searchBtn}>
           {item.title}
         </a>
-        <span className={styles.product__price}>€{item.price}.-</span>
-        <AddToCart />
+        <span className={styles.product__price}>
+          {FormatCurrency(item.price)}
+        </span>
+        <AddToCart item={item} />
       </section>
     </div>
   );

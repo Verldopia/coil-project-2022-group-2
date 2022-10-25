@@ -36,10 +36,11 @@ import FormLayout from './components/.layouts/FormLayout';
 // Styles
 import './assets/css/reset.css';
 import './App.css';
+import { ShoppingCartProvider } from './context/ShoppingCartContext';
 
 function App() {
   return (
-    <>
+    <ShoppingCartProvider>
       <Routes>
         {/* Admin login layout */}
         <Route element={<FormLayout />}>
@@ -116,7 +117,7 @@ function App() {
         <Route path={ROUTES.ABOUT} element={<AboutPage />} />
         <Route path={ROUTES.ACCOUNT} element={<AccountPage />} />
       </Routes>
-    </>
+    </ShoppingCartProvider>
   );
 }
 

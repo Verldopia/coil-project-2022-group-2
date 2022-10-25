@@ -3,7 +3,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { ProductCard } from '../components';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
-import { Lowercase } from '../hooks/TextTransform';
+import { Lowercase } from '../utilities/TextTransform';
 import { ProductsData } from '../interfaces';
 
 export interface IResultsProps {}
