@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lowercase } from '../../../hooks/TextTransform';
+import { Lowercase } from '../../../utilities/TextTransform';
 import { Typography } from '@mui/material';
 import { Product, ProductsData } from '../../../interfaces';
 import { ProductCard } from '../../../components';
@@ -42,7 +42,7 @@ const RelatedProduct = ({
         {titleText}
       </Typography>
       <div className="product-container">
-        {/* create card with filtered data */}
+        {/* // create card with filtered data */}
         {sortedProduct?.map((item, i: number) => (
           <ProductCard key={i} item={item} i={i} />
         ))}

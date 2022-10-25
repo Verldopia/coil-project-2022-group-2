@@ -42,7 +42,7 @@
   padding: 1rem;
 }
 .admin {
-  /* Code to be removed for production (also btn itself) */
+  /* !! Code to be removed for production (also btn itself) */
   color: red;
 }
 .headerBottom {
