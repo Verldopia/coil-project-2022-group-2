@@ -6,7 +6,7 @@ type Props = {};
 
 const Popular = (props: Props) => {
   return (
-    <a href={'../../' + ROUTES.SALE} className={styles.popular}>
+    <a href={'../../' + ROUTES.SALE} className={styles.actionBtn}>
       What's popular?
     </a>
   );

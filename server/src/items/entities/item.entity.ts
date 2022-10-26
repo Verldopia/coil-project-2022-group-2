@@ -48,6 +48,10 @@ export class Item {
   archived: boolean;
 
   @Column()
+  @Field()
+  type: string;
+
+  @Column()
   @Field((type) => Int)
   categoryId: number;
 

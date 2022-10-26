@@ -49,6 +49,7 @@ type Item {
   popularity: Float
   approved: Boolean!
   archived: Boolean!
+  type: String!
   categoryId: Int!
   adminId: Int!
   category: Category!
@@ -86,6 +87,7 @@ input CreateItemInput {
   price: Float!
   stock: Float!
   mainImage: String!
+  type: String!
   popularity: Float
   approved: Boolean!
   archived: Boolean!

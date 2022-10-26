@@ -7,11 +7,14 @@ import { GET_ALL_PRODUCTS } from '../../graphql/products';
 import { ProductsData } from '../../interfaces';
 import { FormatCurrency } from '../../utilities/FormatCurrency';
 import { CartItem } from '../../components';
+import { NavLink } from 'react-router-dom';
+import { ROUTES } from '../../constants/routes';
 
 // Styles
 import styles from './Cart.module.css';
 import { Offcanvas } from 'react-bootstrap';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import { Button } from 'reactstrap';
 
 type CartProps = {
   isOpen: boolean;
@@ -59,6 +62,15 @@ function Cart({ isOpen }: CartProps) {
             )}
           </div>
         </ul>
+      </div>
+      <div className={styles.actionBtnBox}>
+        <Button
+          className={styles.actionBtn}
+          tag={NavLink}
+          to={ROUTES.CHECKOUT}
+        >
+          Check out
+        </Button>
       </div>
     </Offcanvas>
   );

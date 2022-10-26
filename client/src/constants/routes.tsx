@@ -17,6 +17,7 @@ export const ROUTES = Object.freeze({
   ACCOUNT: 'account',
   CATEGORIES: 'categories/:title',
   CONTACT: 'contact',
+  CHECKOUT: 'checkout',
   ITEMS: 'categories/:title/:id',
   LANDING: '/',
   LOGIN: 'login',

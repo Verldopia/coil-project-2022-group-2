@@ -54,13 +54,6 @@ const Header: React.FC = () => {
             >
               Register
             </Button>
-            <Button
-              className={styles.btn}
-              tag={NavLink}
-              to="/toggler"
-            >
-              EN
-            </Button>
           </div>
         </div>
       </div>

@@ -37,6 +37,7 @@ import FormLayout from './components/.layouts/FormLayout';
 import './assets/css/reset.css';
 import './App.css';
 import { ShoppingCartProvider } from './context/ShoppingCartContext';
+import CheckOutPage from './pages/CheckOutPage';
 
 function App() {
   return (
@@ -97,6 +98,7 @@ function App() {
           <Route path={ROUTES.RESULTS} element={<ResultsPage />} />
           <Route path={ROUTES.WISHLIST} element={<WishlistPage />} />
           <Route path={ROUTES.ITEMS} element={<ItemPage />} />
+          <Route path={ROUTES.CHECKOUT} element={<CheckOutPage />} />
 
           {/* Categories */}
           <Route

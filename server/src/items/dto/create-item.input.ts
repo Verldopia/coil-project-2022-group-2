@@ -17,6 +17,9 @@ export class CreateItemInput {
   @Field()
   mainImage: string;
 
+  @Field()
+  type: string;
+
   @Field({ nullable: true })
   popularity?: number;
 
