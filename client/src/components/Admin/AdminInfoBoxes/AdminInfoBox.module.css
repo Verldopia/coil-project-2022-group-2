@@ -34,7 +34,7 @@
 }
 #iconBox {
   background-image: url(../../../assets/icons/box.png);
-  background-color: var(--cta-color-dark);
+  background-color: var(--dark-color);
 }
 #iconGlobe {
   background-image: url(../../../assets/icons/globe.png);

@@ -23,7 +23,8 @@
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "reactstrap": "^9.1.4",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

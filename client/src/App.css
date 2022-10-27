@@ -23,9 +23,9 @@
   --dark-grey: #99979d;
   --darkest-grey: #34303d;
   --cta-color: #ffeb6e;
-  --cta-color-dark: #dddb48;
   --light-color: #b6b1ff;
   --dark-color: #dddb48;
+  --error-color: red;
 
   /* font family css variables */
   --primary-ff: 'Myriad';
