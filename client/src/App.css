@@ -205,3 +205,14 @@ h4 {
   padding-bottom: 0.5rem;
   width: 100%;
 }
+.fa {
+  padding: 1rem;
+  width: 3rem;
+  text-align: center;
+  border: 1px solid var(--bgd-color);
+  border-radius: 50%;
+  transition: all ease 0.2s;
+}
+.fa:hover {
+  background-color: var(--light-color);
+}

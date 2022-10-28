@@ -1,7 +1,50 @@
-.footerContainer {
+.container {
   color: var(--bgd-color);
   padding: 1rem;
   background-color: var(--darkest-grey);
+}
+.footerContainer {
   width: var(--width);
-  margin: 2rem auto;
+  margin: 0 auto;
+}
+.footerBox,
+.socials {
+  margin: 2rem 1rem;
+}
+.title {
+  margin-bottom: 1rem;
+}
+.footerBox,
+.footerBoxList,
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.socials {
+  gap: 1rem;
+  justify-content: center;
+}
+.listItem {
+  padding: 0.25rem 0;
+}
+.footerBox {
+  justify-content: space-between;
+}
+.searchBar {
+  background-color: var(--bgd-color);
+  border-radius: 0.25rem;
+}
+.searchBtn {
+  position: relative;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  height: 2.5rem;
+  color: var(--darkest-grey);
+  transition: all ease 0.2s;
+  border-radius: 0 0.25rem 0.25rem 0;
+  background-color: var(--cta-color);
+}
+.searchBtn:hover {
+  background-color: var(--dark-color);
 }
