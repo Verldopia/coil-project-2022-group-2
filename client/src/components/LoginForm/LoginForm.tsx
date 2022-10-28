@@ -4,11 +4,15 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 // Styles
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Tooltip } from '@mui/material';
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
 import styles from './LoginForm.module.css';
+import LoginUser from '../../hooks/LoginUser';
+import { useQuery } from '@apollo/client';
+import { User } from '../../interfaces';
+import { GET_USER_LOGIN } from '../../graphql/users';
 
 const LoginForm: React.FC = () => {
   const formik = useFormik({
@@ -20,12 +24,13 @@ const LoginForm: React.FC = () => {
       userName: Yup.string().required(ERRORS.NAME_REQUIRED),
       password: Yup.string().required(ERRORS.PASS_REQUIRED),
     }),
-    onSubmit: (values) => {
-      console.log(values);
-      // formik.submitForm();
+    onSubmit: (values, { setSubmitting }) => {
+      console.log(typeof values.userName, values.userName);
+      setTimeout(() => {
+        setSubmitting(false);
+      }, 400);
     },
   });
-
   return (
     <form className="form-container" onSubmit={formik.handleSubmit}>
       <div className="form-box">
@@ -70,6 +75,7 @@ const LoginForm: React.FC = () => {
         </div>
         <div className="form-btn">
           <Button
+            disabled={formik.isSubmitting}
             type="submit"
             variant="contained"
             startIcon={<CheckOutlinedIcon />}
@@ -77,16 +83,28 @@ const LoginForm: React.FC = () => {
           >
             Login
           </Button>
-          <Button
-            variant="outlined"
-            startIcon={<VpnKeyOutlinedIcon />}
-            href={ROUTES.REGISTER}
+          <Tooltip
+            title="Register new account"
+            arrow
+            placement="bottom"
           >
-            Register
-          </Button>
-          <Button className="form-btn--password" variant="text">
-            {<QuestionMarkOutlinedIcon />}
-          </Button>
+            <Button
+              variant="outlined"
+              startIcon={<VpnKeyOutlinedIcon />}
+              href={ROUTES.REGISTER}
+            >
+              Register
+            </Button>
+          </Tooltip>
+          <Tooltip
+            title="Don't have an account? Go to register"
+            arrow
+            placement="bottom"
+          >
+            <Button className="form-btn--password" variant="text">
+              {<QuestionMarkOutlinedIcon />}
+            </Button>
+          </Tooltip>
         </div>
       </div>
     </form>

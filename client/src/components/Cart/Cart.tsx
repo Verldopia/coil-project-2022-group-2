@@ -15,6 +15,7 @@ import styles from './Cart.module.css';
 import { Offcanvas } from 'react-bootstrap';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import { Button } from 'reactstrap';
+import { Tooltip } from '@mui/material';
 
 type CartProps = {
   isOpen: boolean;
@@ -40,7 +41,9 @@ function Cart({ isOpen }: CartProps) {
       <div className={styles.cartHeader}>
         <h2>Cart</h2>
         <button className={styles.cartBtn} onClick={closeCart}>
-          <CloseOutlinedIcon fontSize="large" />
+          <Tooltip title="Close cart" arrow placement="bottom">
+            <CloseOutlinedIcon fontSize="large" />
+          </Tooltip>
         </button>
       </div>
       <div className={styles.cartBody}>

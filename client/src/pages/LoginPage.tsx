@@ -4,6 +4,8 @@ import { LoginForm } from '../components';
 export interface ILoginPageProps {}
 
 const LoginPage: React.FC<ILoginPageProps> = (props) => {
+  // console.log(values);
+
   return (
     <div>
       <LoginForm />

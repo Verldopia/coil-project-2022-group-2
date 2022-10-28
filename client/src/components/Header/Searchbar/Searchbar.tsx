@@ -13,7 +13,6 @@ const SearchBar: React.FC = () => {
   const route = param ? '../../search/' + Lowercase(param) : '';
 
   const { openCart, cartQuantity } = UseShoppingCart();
-  console.log(typeof cartQuantity);
 
   return (
     <div className={styles.searchBarContainer}>

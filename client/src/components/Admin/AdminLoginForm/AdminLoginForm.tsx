@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 // Styles
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Tooltip } from '@mui/material';
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
 import styles from './AdminLoginForm.module.css';
@@ -76,9 +76,15 @@ export const AdminLoginForm: React.FC = () => {
           >
             Login
           </Button>
-          <Button className="form-btn--password" variant="text">
-            {<QuestionMarkOutlinedIcon />}
-          </Button>
+          <Tooltip
+            title="Contact application owner to gain access"
+            arrow
+            placement="bottom"
+          >
+            <Button className="form-btn--password" variant="text">
+              {<QuestionMarkOutlinedIcon />}
+            </Button>
+          </Tooltip>
         </div>
       </div>
     </form>

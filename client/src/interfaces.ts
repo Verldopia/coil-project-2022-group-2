@@ -30,12 +30,13 @@ export interface ProductsData {
   Items: Product[];
 }
 
-// Accounts
-export interface Account {
+// Users
+export interface User {
   id: number;
   userName: string;
+  email: string;
 }
 
-export interface AccountsData {
-  accounts: Account[];
+export interface UsersData {
+  accounts: User[];
 }

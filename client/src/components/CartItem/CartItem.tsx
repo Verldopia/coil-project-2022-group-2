@@ -14,6 +14,7 @@ import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import { Lowercase } from '../../utilities/TextTransform';
 import { useParams } from 'react-router-dom';
+import { Tooltip } from '@mui/material';
 
 type CartItemProps = {
   id?: number;
@@ -78,21 +79,39 @@ function CartItem({ id, quantity }: CartItemProps) {
               className={styles.cartBtn}
               onClick={() => decreaseCartQuantity(product.id)}
             >
-              <RemoveOutlinedIcon fontSize="small" />
+              <Tooltip
+                title="Decrease amount"
+                arrow
+                placement="bottom"
+              >
+                <RemoveOutlinedIcon fontSize="small" />
+              </Tooltip>
             </button>
             <span>x{quantity}</span>
             <button
               className={styles.cartBtn}
               onClick={() => increaseCartQuantity(product.id)}
             >
-              <AddOutlinedIcon fontSize="small" />
+              <Tooltip
+                title="Increase amount"
+                arrow
+                placement="bottom"
+              >
+                <AddOutlinedIcon fontSize="small" />
+              </Tooltip>
             </button>
           </div>
           <button
             className={styles.cartBtn}
             onClick={() => removeFromCart(product.id)}
           >
-            <DeleteOutlineOutlinedIcon />
+            <Tooltip
+              title="Delete from cart"
+              arrow
+              placement="bottom"
+            >
+              <DeleteOutlineOutlinedIcon />
+            </Tooltip>
           </button>
         </div>
       </div>

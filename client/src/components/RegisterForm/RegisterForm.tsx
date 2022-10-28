@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 // Styles
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Tooltip } from '@mui/material';
 import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import styles from './RegisterForm.module.css';
@@ -103,13 +103,19 @@ const RegisterForm: React.FC = () => {
           >
             Register
           </Button>
-          <Button
-            variant="outlined"
-            startIcon={<VpnKeyOutlinedIcon />}
-            href={ROUTES.LOGIN}
+          <Tooltip
+            title="Login with existing account"
+            arrow
+            placement="bottom"
           >
-            Login
-          </Button>
+            <Button
+              variant="outlined"
+              startIcon={<VpnKeyOutlinedIcon />}
+              href={ROUTES.LOGIN}
+            >
+              Login
+            </Button>
+          </Tooltip>
         </div>
       </div>
     </form>
