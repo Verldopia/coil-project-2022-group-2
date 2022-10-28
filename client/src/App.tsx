@@ -38,6 +38,7 @@ import './assets/css/reset.css';
 import './App.css';
 import { ShoppingCartProvider } from './context/ShoppingCartContext';
 import CheckOutPage from './pages/CheckOutPage';
+import PopularPage from './pages/PopularPage';
 
 function App() {
   return (
@@ -105,6 +106,8 @@ function App() {
             path={ROUTES.CATEGORIES}
             element={<CategoriesPage />}
           />
+          {/* <Route path={ROUTES.POPULAR} element={<PopularPage />} /> */}
+
           <Route element={<FormLayout />}>
             <Route path={ROUTES.LOGIN} element={<LoginPage />} />
             <Route

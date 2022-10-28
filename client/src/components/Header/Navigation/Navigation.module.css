@@ -2,7 +2,7 @@
   transition: all ease 0.2s;
   color: var(--bgd-color);
 }
-.sale {
+.popular {
   transition: all ease 0.2s;
   color: var(--cta-color);
 }
@@ -22,6 +22,6 @@
 .link:hover {
   color: var(--cta-color);
 }
-.sale:hover {
+.popular:hover {
   color: var(--bgd-color);
 }

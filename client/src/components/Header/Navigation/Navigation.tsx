@@ -9,6 +9,7 @@ import {
   Capitalize,
   Lowercase,
 } from '../../../utilities/TextTransform';
+import { ROUTES } from '../../../constants';
 
 const Navigation: React.FC = () => {
   // Fetch categories for navigation
@@ -23,12 +24,19 @@ const Navigation: React.FC = () => {
     <>
       <Nav className={styles.nav}>
         <div className={styles.navContainer}>
+          <NavItem key="1">
+            <NavLink
+              className={styles.popular}
+              tag={RRNavLink}
+              to={`${ROUTES.POPULAR}`}
+            >
+              Popular
+            </NavLink>
+          </NavItem>
           {data?.categories.map((item, i) => (
             <NavItem key={i}>
               <NavLink
-                className={
-                  item.title == 'Sale' ? styles.sale : styles.link
-                }
+                className={styles.link}
                 tag={RRNavLink}
                 to={`categories/` + Lowercase(item.title)}
               >

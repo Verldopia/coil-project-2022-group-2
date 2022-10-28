@@ -17,7 +17,7 @@ import { Capitalize, Lowercase } from '../utilities/TextTransform';
 import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 
-const Categories: React.FC = () => {
+const PopularPage: React.FC = () => {
   const [filter, setFilter] = React.useState<string | null>('left');
   let { title } = useParams();
 
@@ -32,12 +32,6 @@ const Categories: React.FC = () => {
   let product = data?.Items.filter(
     (item) => Lowercase(item.category?.title) == title
   );
-
-  // Filter most popular products
-  product?.[1] ??
-    (product = data?.Items.filter((item) => item.popularity)
-      .sort((c1, c2) => c2.popularity - c1.popularity)
-      .slice(0, 32));
 
   // Filter products
   const handleFilter = (
@@ -60,9 +54,8 @@ const Categories: React.FC = () => {
   // Filter high popularity
   const popularityHigh = 'popularity-high';
   filter === popularityHigh &&
-    product?.sort((c1, c2) => {
-      return c2.popularity - c1.popularity;
-    });
+    product?.sort((c1, c2) => c2.popularity - c1.popularity);
+
   // Filter low popularity
   const popularityLow = 'popularity-low';
   filter === popularityLow &&
@@ -72,8 +65,7 @@ const Categories: React.FC = () => {
   const types = [...new Set(product?.map((prod) => prod.type))];
   const typeItem = product?.filter((prod) => prod.type === filter);
 
-  console.log('🚀 - product', product);
-
+  console.table(product);
   return (
     <div className="box">
       <div className="container--box">
@@ -142,21 +134,14 @@ const Categories: React.FC = () => {
         </div>
         {/* // Category description card */}
         <ul className="product-container">
-          {title !== 'popular' ? (
-            <DescriptionBox
-              title={Capitalize(title)}
-              text={
-                product?.[0].category?.description ??
-                'There is no description for this category'
-              }
-            />
-          ) : (
-            // If popular category is selected: show this description
-            <DescriptionBox
-              title={Capitalize(title)}
-              text={'See what everyone is buying!'}
-            />
-          )}
+          {/* <DescriptionBox
+            text={
+              product
+                ? product[0].category?.description
+                : 'There is no description for this category'
+            }
+            title={product ? product[0].category?.title : ''}
+          /> */}
 
           {/* // Productslist */}
           {typeItem?.length === 0
@@ -173,4 +158,4 @@ const Categories: React.FC = () => {
   );
 };
 
-export default Categories;
+export default PopularPage;

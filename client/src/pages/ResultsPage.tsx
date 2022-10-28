@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { ProductCard } from '../components';
+import { Popular, ProductCard } from '../components';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { Lowercase } from '../utilities/TextTransform';
 import { ProductsData } from '../interfaces';
@@ -18,21 +18,31 @@ const ResultsPage: React.FC<IResultsProps> = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>An error has ocurred, can't load products.</p>;
 
-  const result = data?.Items.filter((item) =>
-    Lowercase(item.title).includes(title ?? '')
+  const result = data?.Items.filter(
+    (item) =>
+      Lowercase(item.title).includes(title ?? '') ||
+      Lowercase(item.type).includes(title ?? '')
   );
 
   return (
     <div className="container">
       <ul className="product-container">
-        {result && (
+        {result?.[0] && (
           <p className="product__total">
             {result.length} products found.
           </p>
         )}
-        {result?.map((item, i) => (
-          <ProductCard key={item.id} item={item} i={i} />
-        ))}
+        {result?.[0] ? (
+          result.map((item, i) => (
+            <ProductCard key={item.id} item={item} i={i} />
+          ))
+        ) : (
+          <div className="form-container">
+            <p>There seem to be no results for '{title}'. </p>
+            <p>You can search for products by their title or type.</p>
+            <Popular />
+          </div>
+        )}
       </ul>
     </div>
   );
