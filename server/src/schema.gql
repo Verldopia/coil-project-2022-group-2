@@ -57,14 +57,20 @@ type Item {
   images: String
 }
 
+type LoginResponse {
+  access_token: String!
+  user: User!
+}
+
 type Query {
   Items: [Item!]!
   getItem(id: Int!): Item!
   categories: [Category!]!
   getCategory(id: Int!): Category!
   getCategoryTitle(title: String!): Category!
-  Users: [User!]!
-  getUser(id: String!): User!
+  users: [User!]!
+  getUser(id: Int!): User!
+  user(userName: String!): User!
   UserMeta: [UserMeta!]!
   getUserMeta(id: Int!): UserMeta!
   Admins: [Admin!]!
@@ -79,6 +85,8 @@ type Mutation {
   createUser(createUserInput: CreateUserInput!): User!
   createUserMeta(createUserMetaInput: CreateUserMetaInput!): UserMeta!
   createAdmin(createAdminInput: CreateAdminInput!): Admin!
+  login(loginUserInput: LoginUserInput!): LoginResponse!
+  register(createUserInput: CreateUserInput!): User!
 }
 
 input CreateItemInput {
@@ -128,4 +136,9 @@ input CreateAdminInput {
   email: String!
   telephone: Float!
   type: String!
+}
+
+input LoginUserInput {
+  userName: String!
+  password: String!
 }

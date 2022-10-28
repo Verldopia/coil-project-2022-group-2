@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { UsersModule } from 'src/users/users.module';
+import { AuthResolver } from './auth.resolver';
 import { AuthService } from './auth.service';
 import { ImperialStrategy } from './imperial.strategy';
 import { JwtStrategy } from './jwt.strategy';
@@ -15,7 +16,12 @@ import { JwtStrategy } from './jwt.strategy';
       signOptions: { expiresIn: '1w' },
     }),
   ],
-  providers: [AuthService, ImperialStrategy, JwtStrategy],
+  providers: [
+    AuthResolver,
+    AuthService,
+    ImperialStrategy,
+    JwtStrategy,
+  ],
   exports: [AuthService],
 })
 export class AuthModule {}

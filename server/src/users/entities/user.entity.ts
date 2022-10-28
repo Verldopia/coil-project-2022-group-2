@@ -1,6 +1,11 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { UserMeta } from 'src/users-meta/entities/users-meta.entity';
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 @ObjectType()

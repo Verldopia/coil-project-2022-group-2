@@ -11,7 +11,11 @@ export class ImperialStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(userName: string, password: string): Promise<User> {
-    const user = await this.authService.validateUser(userName, password);
+    console.log('validating...');
+    const user = await this.authService.validateUser(
+      userName,
+      password
+    );
 
     if (!user) {
       throw new UnauthorizedException();

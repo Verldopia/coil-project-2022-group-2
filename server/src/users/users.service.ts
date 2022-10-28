@@ -7,7 +7,7 @@ import { User } from './entities/user.entity';
 @Injectable()
 export class UsersService {
   constructor(
-    @InjectRepository(User) private usersRepository: Repository<User>,
+    @InjectRepository(User) private usersRepository: Repository<User>
   ) {}
 
   // Find all Users
@@ -28,6 +28,7 @@ export class UsersService {
   // Create new instance
   createUser(createUserInput: CreateUserInput): Promise<User> {
     const newUser = this.usersRepository.create(createUserInput);
+    console.log(newUser);
     return this.usersRepository.save(newUser);
   }
 }
