@@ -15,6 +15,9 @@
   display: flex;
   justify-content: space-between;
 }
+.productItem {
+  background-color: var(--bgd-color);
+}
 .product__imgBox {
   display: flex;
   align-items: center;

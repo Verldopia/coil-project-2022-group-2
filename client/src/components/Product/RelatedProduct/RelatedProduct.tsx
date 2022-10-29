@@ -20,7 +20,9 @@ const RelatedProduct = ({
   // Find 4 related products
   let relatedProduct = data?.Items.filter(
     (item) =>
-      Lowercase(item.category?.title) === title && item.id !== id
+      Lowercase(item.category?.title) === title &&
+      item.id !== id &&
+      item.approved
   );
 
   // If there's no specific category, display all products (for landing page)
@@ -30,7 +32,7 @@ const RelatedProduct = ({
 
   // Sort products on popularity
   const sortedProduct = relatedProduct
-    ?.filter((prod) => prod.popularity)
+    ?.filter((prod) => prod.popularity && prod.approved)
     .sort((c1, c2) => c2.popularity - c1.popularity)
     .slice(0, 4);
 

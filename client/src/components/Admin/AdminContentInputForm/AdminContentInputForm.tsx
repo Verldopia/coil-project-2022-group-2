@@ -43,7 +43,7 @@ const AdminContentInputForm = ({ catData }: Props) => {
       price: Math.floor(Math.random() * 500),
       popularity: Math.floor(Math.random() * 100),
       archived: false,
-      approved: true,
+      approved: false,
       stock: Math.floor(Math.random() * 100),
       type: 'test',
       description: '',
@@ -200,9 +200,9 @@ const AdminContentInputForm = ({ catData }: Props) => {
         </div>
 
         {/* // Content image uploader box */}
-        <p>Upload images</p>
+        {/* <p>Upload images</p> */}
         <div className="admin-form-box">
-          <TextField
+          {/* <TextField
             className="form-input"
             id="mainImage"
             name="mainImage"
@@ -212,6 +212,18 @@ const AdminContentInputForm = ({ catData }: Props) => {
             onChange={(e) => {
               formik.setFieldValue('mainImage', e.target.value);
             }}
+            onBlur={formik.handleBlur}
+            value={formik.values.mainImage}
+          /> */}
+          <TextField
+            className="form-input"
+            id="mainImage"
+            name="mainImage"
+            type="text"
+            size="small"
+            variant="outlined"
+            label="Image URL"
+            onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.mainImage}
           />

@@ -10,7 +10,9 @@ type NewestProductProps = {
 
 const NewestProduct = ({ titleText, data }: NewestProductProps) => {
   // Find 4 last added items
-  const relatedProduct = data?.Items.slice(-4);
+  const relatedProduct = data?.Items.filter(
+    (prod) => prod.approved
+  ).slice(-4);
 
   return (
     <div className="container--preview">

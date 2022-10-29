@@ -1,5 +1,6 @@
 .adminContentBox {
   width: 100%;
+  max-width: 60rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -8,5 +9,5 @@
   background-color: var(--light-grey);
   border-radius: 0.5rem;
   border: 1px solid var(--dark-grey);
-  padding: 1rem;
+  padding: 1rem 2rem;
 }

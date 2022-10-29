@@ -30,7 +30,8 @@ const Categories: React.FC = () => {
   if (error) return <p>An error has ocurred, can't load products.</p>;
 
   let product = data?.Items.filter(
-    (item) => Lowercase(item.category?.title) == title
+    (item) =>
+      Lowercase(item.category?.title) == title && item.approved
   );
 
   // Filter most popular products

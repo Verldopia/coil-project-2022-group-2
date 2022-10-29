@@ -23,31 +23,32 @@ const ProductCard = ({ item, i }: ProductCardProps) => {
     : '';
 
   return (
-    <li
-      className={styles.productItem}
-      key={i}
-      onClick={(e) => setId(item.id)}
-    >
-      {' '}
-      <div className={styles.product__imgBox}>
-        <a href={route}>
-          <img
-            src={item.mainImage}
-            alt={item.title}
-            className={styles.product__img}
-          />
-        </a>
-      </div>
-      <section className={styles.product__text}>
-        <a href={route} className={styles.searchBtn}>
-          {item.title}
-        </a>
-        <span className={styles.product__price}>
-          {FormatCurrency(item.price)}
-        </span>
-        <AddToCart item={item} />
-      </section>
-    </li>
+    <>
+      <li
+        className={styles.productItem}
+        key={i}
+        onClick={(e) => setId(item.id)}
+      >
+        <div className={styles.product__imgBox}>
+          <a href={route}>
+            <img
+              src={item.mainImage}
+              alt={item.title}
+              className={styles.product__img}
+            />
+          </a>
+        </div>
+        <section className={styles.product__text}>
+          <a href={route} className={styles.searchBtn}>
+            {item.title}
+          </a>
+          <span className={styles.product__price}>
+            {FormatCurrency(item.price)}
+          </span>
+          <AddToCart item={item} />
+        </section>
+      </li>
+    </>
   );
 };
 
