@@ -10,7 +10,7 @@ import {
   StarRating,
 } from '../components';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
-import { Lowercase } from '../utilities/TextTransform';
+import { Lowercase, SlugifyID } from '../utilities/TextTransform';
 import { ProductsData } from '../interfaces';
 
 export interface IItemPageProps {}
@@ -27,7 +27,9 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
   if (error) return <p>Can't load product with ID {id}.</p>;
 
   // Find product by ID
-  const product = data?.Items.find((item) => item.id === Number(id));
+  const product = data?.Items.find(
+    (item) => item.id === SlugifyID(id)
+  );
 
   return (
     <div className="container--box">
@@ -85,7 +87,7 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
 
       {/* // Select 4 products in same category, and create a card */}
       <RelatedProduct
-        id={Number(id)}
+        id={SlugifyID(id)}
         title={title}
         titleText="Related products"
         data={data}

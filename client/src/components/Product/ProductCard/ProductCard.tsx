@@ -3,7 +3,7 @@ import { Product } from '../../../interfaces';
 import AddToCart from '../../AddToCart/AddToCart';
 import styles from './ProductCard.module.css';
 import { useParams } from 'react-router-dom';
-import { Lowercase } from '../../../utilities/TextTransform';
+import { Lowercase, Slugify } from '../../../utilities/TextTransform';
 import { FormatCurrency } from '../../../utilities/FormatCurrency';
 
 type ProductCardProps = {
@@ -19,7 +19,7 @@ const ProductCard = ({ item, i }: ProductCardProps) => {
   const route = id
     ? `../../categories/${
         title ?? Lowercase(item.category?.title)
-      }/${id}`
+      }/${id}=${Slugify(item.title)}`
     : '';
 
   return (
