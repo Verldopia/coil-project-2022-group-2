@@ -17,4 +17,5 @@ export const ERRORS = {
   TYPE_REQUIRED:
     'Provide a subcategory, this will be added to the category filters',
   IMG_REQUIRED: 'Image is required',
+  PRODUCT_DUP: 'Product already exists',
 };

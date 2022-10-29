@@ -2,8 +2,8 @@ import React from 'react';
 import styles from '../ProductCard/ProductCard.module.css';
 
 type Props = {
+  title?: string | undefined;
   text: string | undefined;
-  title: string | undefined;
 };
 
 function DescriptionBox({ text, title }: Props) {

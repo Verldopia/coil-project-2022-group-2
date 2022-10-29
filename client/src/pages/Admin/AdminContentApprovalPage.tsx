@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import React from 'react';
-import { ProductCard } from '../../components';
+import { DescriptionBox, ProductCard } from '../../components';
 import { GET_ALL_PRODUCTS } from '../../graphql/products';
 import { ProductsData } from '../../interfaces';
 
@@ -20,8 +20,13 @@ const AdminContentApprovalPage: React.FC = () => {
 
   return (
     <>
-      <h2 className="form-title">Content approval</h2>
+      <h2>Content approval</h2>
       <ul className="product-container">
+        <DescriptionBox
+          text={
+            "Approve the submitted product to display it in the webstore. It's possible to view the product details by clicking on the product. The product is not visible in the webstore until it is approved."
+          }
+        />
         {unapprovedProduct?.map((item, i) => (
           <ProductCard key={i} item={item} i={i} />
         ))}
