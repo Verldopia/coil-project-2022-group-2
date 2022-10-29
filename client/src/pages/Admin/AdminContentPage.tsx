@@ -15,7 +15,7 @@ const AdminContentPage: React.FC = () => {
 
   return (
     <>
-      <AdminContentInputForm data={data} />
+      <AdminContentInputForm catData={data} />
     </>
   );
 };

@@ -1,23 +1,43 @@
-import React from 'react';
 import { ERRORS } from '../../../constants';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { CategoryData } from '../../../interfaces';
+import { CategoryData, ProductsData } from '../../../interfaces';
 
 // Styles
 import { TextField, Button } from '@mui/material';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import styles from './AdminContentInputForm.module.css';
 import { Capitalize } from '../../../utilities/TextTransform';
+import {
+  CREATE_PRODUCT,
+  GET_ALL_PRODUCTS,
+} from '../../../graphql/products';
+import { useMutation, useQuery } from '@apollo/client';
 
 type Props = {
-  data: CategoryData | undefined;
+  catData: CategoryData | undefined;
 };
 
-const AdminContentInputForm = ({ data }: Props) => {
+const AdminContentInputForm = ({ catData }: Props) => {
+  // Fetch products
+  const { data } = useQuery<ProductsData>(GET_ALL_PRODUCTS, {
+    fetchPolicy: 'cache-first',
+  });
+  // Check duplicate products, then create a new one
+  function checkDuplicateProduct() {
+    const duplicateTitle = data?.Items.find(
+      (prod) => prod.title === formik.values.title
+    );
+    // If title already exists, throw error.
+    if (duplicateTitle) {
+      alert('This product already exists');
+    }
+  }
+
+  const [createProduct] = useMutation(CREATE_PRODUCT);
   const formik = useFormik({
     initialValues: {
-      title: '',
+      title: 'testk',
       categoryId: 1,
       adminId: 1,
       price: Math.floor(Math.random() * 500),
@@ -25,7 +45,7 @@ const AdminContentInputForm = ({ data }: Props) => {
       archived: false,
       approved: true,
       stock: Math.floor(Math.random() * 100),
-      type: '',
+      type: 'test',
       description: '',
       mainImage: '',
     },
@@ -37,13 +57,15 @@ const AdminContentInputForm = ({ data }: Props) => {
       price: Yup.number().required(ERRORS.PRICE_REQUIRED),
       stock: Yup.number().required(ERRORS.STOCK_REQUIRED),
       type: Yup.string().required(ERRORS.TYPE_REQUIRED),
+      mainImage: Yup.string().required(ERRORS.IMG_REQUIRED),
       description: Yup.string()
         .min(50, ERRORS.DESC_TOO_SHORT)
         .required(ERRORS.DESC_REQUIRED),
     }),
     onSubmit: (values) => {
-      console.log(values);
-      // formik.submitForm();
+      checkDuplicateProduct();
+      createProduct({ variables: { input: values } });
+      window.location.reload();
     },
   });
 
@@ -82,9 +104,9 @@ const AdminContentInputForm = ({ data }: Props) => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           >
-            {data?.categories.map((cat, i) => (
+            {catData?.categories.map((cat) => (
               <option id="categoryId" key={cat.id} value={cat.id}>
-                <p>{Capitalize(cat.title)}</p>
+                {Capitalize(cat.title)}
               </option>
             ))}
           </select>
@@ -193,6 +215,11 @@ const AdminContentInputForm = ({ data }: Props) => {
             onBlur={formik.handleBlur}
             value={formik.values.mainImage}
           />
+          {formik.touched.mainImage && formik.errors.mainImage ? (
+            <p className={styles.errorMessage}>
+              {formik.errors.mainImage}
+            </p>
+          ) : null}
         </div>
 
         {/* // Content submit button */}

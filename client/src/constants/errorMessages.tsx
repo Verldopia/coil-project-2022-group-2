@@ -16,4 +16,5 @@ export const ERRORS = {
   STOCK_REQUIRED: 'Stock is required',
   TYPE_REQUIRED:
     'Provide a subcategory, this will be added to the category filters',
+  IMG_REQUIRED: 'Image is required',
 };
