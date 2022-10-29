@@ -9,7 +9,7 @@
   padding: 8px;
 }
 .tr:nth-child(even) {
-  background-color: var(--bgd-color);
+  background-color: var(--light-grey);
 }
 .statusInitial {
   color: rgb(255, 183, 0);

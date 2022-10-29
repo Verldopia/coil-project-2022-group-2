@@ -23,16 +23,6 @@ const AdminContentInputForm = ({ catData }: Props) => {
   const { data } = useQuery<ProductsData>(GET_ALL_PRODUCTS, {
     fetchPolicy: 'cache-first',
   });
-  // Check duplicate products, then create a new one
-  function checkDuplicateProduct() {
-    const duplicateTitle = data?.Items.find(
-      (prod) => prod.title === formik.values.title
-    );
-    // If title already exists, throw error.
-    if (duplicateTitle) {
-      alert('This product already exists');
-    }
-  }
 
   const [createProduct] = useMutation(CREATE_PRODUCT);
   const formik = useFormik({
@@ -63,8 +53,10 @@ const AdminContentInputForm = ({ catData }: Props) => {
         .required(ERRORS.DESC_REQUIRED),
     }),
     onSubmit: (values) => {
-      checkDuplicateProduct();
-      createProduct({ variables: { input: values } });
+      // Check duplicate products, then create a new one
+      data?.Items.find((prod) => prod.title === values.title)
+        ? alert(ERRORS.PRODUCT_DUP)
+        : createProduct({ variables: { input: values } });
       window.location.reload();
     },
   });
@@ -100,14 +92,18 @@ const AdminContentInputForm = ({ catData }: Props) => {
         {/* // Content category selector box */}
         <div className="admin-form-box selector">
           <select
+            id="categoryId"
             name="categoryId"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
+            value={formik.values.categoryId}
           >
             {catData?.categories.map((cat) => (
-              <option id="categoryId" key={cat.id} value={cat.id}>
-                {Capitalize(cat.title)}
-              </option>
+              <option
+                key={cat.id}
+                value={cat.id}
+                label={cat.title}
+              ></option>
             ))}
           </select>
         </div>
