@@ -1,6 +1,6 @@
+import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { Breadcrumbs, Link, Typography } from '@mui/material';
-import React from 'react';
+import { Breadcrumbs, Button, Link, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import {
   AddToCart,
@@ -13,9 +13,7 @@ import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { Lowercase, SlugifyID } from '../utilities/TextTransform';
 import { ProductsData } from '../interfaces';
 
-export interface IItemPageProps {}
-
-const ItemPage: React.FC<IItemPageProps> = (props) => {
+const ItemPage: React.FC = (props) => {
   let { id, title } = useParams();
 
   // Fetch products
@@ -30,6 +28,32 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
   const product = data?.Items.find(
     (item) => item.id === SlugifyID(id)
   );
+
+  let disabled = false;
+  let finder = JSON.parse(localStorage.wishlist);
+  console.log('🚀 - localStorage.wishlist', localStorage.wishlist);
+  const found = finder.find((item: number) => item === product?.id);
+  if (found) {
+    disabled = true;
+  }
+
+  // Set items to localStorage when clicked on wishlist
+  function handleWishlist() {
+    // Get localStorage and push clicked product ID to array
+    let wishlist =
+      JSON.parse(localStorage.getItem('wishlist') ?? '') || [];
+    wishlist.push(product?.id);
+    console.log('🚀 - wishlist', wishlist);
+
+    // Remove duplicates and set to localStorage
+    localStorage.setItem(
+      'wishlist',
+      JSON.stringify([...new Set(wishlist)])
+    );
+    // Disable button, and reload
+    disabled = true;
+    window.location.reload();
+  }
 
   return (
     <div className="container--box">
@@ -74,6 +98,13 @@ const ItemPage: React.FC<IItemPageProps> = (props) => {
               <p>Currently {product.stock} in stock.</p>
               <p>€{product.price}.-</p>
               <AddToCart item={product} />
+              <Button
+                className="wishlist"
+                onClick={handleWishlist}
+                disabled={disabled}
+              >
+                Add to wishlist
+              </Button>
             </div>
             <div className="container--info__text">
               <h3>About the {product.title}</h3>

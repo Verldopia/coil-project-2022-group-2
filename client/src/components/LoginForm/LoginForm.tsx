@@ -9,12 +9,16 @@ import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import QuestionMarkOutlinedIcon from '@mui/icons-material/QuestionMarkOutlined';
 import styles from './LoginForm.module.css';
-import LoginUser from '../../hooks/LoginUser';
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { User } from '../../interfaces';
 import { GET_USER_LOGIN } from '../../graphql/users';
 
 const LoginForm: React.FC = () => {
+  // Fetch products
+  const { data } = useQuery<User>(GET_USER_LOGIN, {
+    fetchPolicy: 'cache-first',
+  });
+  // const [login] = useMutation(LOGIN);
   const formik = useFormik({
     initialValues: {
       userName: '',
@@ -25,7 +29,8 @@ const LoginForm: React.FC = () => {
       password: Yup.string().required(ERRORS.PASS_REQUIRED),
     }),
     onSubmit: (values, { setSubmitting }) => {
-      console.log(typeof values.userName, values.userName);
+      console.log('🚀 - values', values);
+      // login({ variables: { input: values } });
       setTimeout(() => {
         setSubmitting(false);
       }, 400);
