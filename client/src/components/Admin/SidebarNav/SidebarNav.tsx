@@ -8,7 +8,10 @@ const SidebarNav: React.FC = () => {
         <div className={styles.list}>
           <ul className="list-unstyled components mb-5">
             <li className={styles.listItem}>
-              <a href={ROUTES.ADMIN} className="bold">
+              <a
+                href={ROUTES.ADMIN}
+                className={styles.listItemLink + ' bold'}
+              >
                 Admin dashboard
               </a>
             </li>

@@ -24,7 +24,7 @@
   --darkest-grey: #34303d;
   --cta-color: #ffeb6e;
   --light-color: #b6b1ff;
-  --dark-color: #dddb48;
+  --dark-color: rgb(221, 219, 72);
   --error-color: red;
 
   /* font family css variables */

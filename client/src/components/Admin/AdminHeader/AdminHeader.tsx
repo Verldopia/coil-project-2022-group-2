@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from '../../../constants/routes';
-import AdjustOutlinedIcon from '@mui/icons-material/AdjustOutlined';
 import { NavbarBrand, Button } from 'reactstrap';
 import styles from '../../Header/Header.module.css';
 
@@ -11,10 +10,8 @@ const AdminHeader: React.FC = (props) => {
       <div className={styles.headerContainer}>
         <div className={styles.headerTop}>
           <div className={styles.headerLogo}>
-            <NavbarBrand tag={NavLink} to={ROUTES.ADMIN}>
-              <AdjustOutlinedIcon
-                className={styles.headerLogoIMG}
-              ></AdjustOutlinedIcon>
+            <NavbarBrand tag={NavLink} to={ROUTES.LANDING}>
+              <div className={styles.headerLogoIMG}></div>
             </NavbarBrand>
           </div>
           <div className={styles.headerBtns}>

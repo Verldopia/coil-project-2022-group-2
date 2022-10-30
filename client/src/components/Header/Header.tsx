@@ -29,9 +29,9 @@ const Header: React.FC = () => {
             <Button
               className={styles.admin}
               tag={NavLink}
-              to={ROUTES.ADMINLogin}
+              to={ROUTES.ADMIN}
             >
-              Admin dashboard
+              Admin
             </Button>
             <Button
               className={styles.btn}
