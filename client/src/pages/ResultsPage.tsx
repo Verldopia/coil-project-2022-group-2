@@ -38,7 +38,10 @@ const ResultsPage: React.FC<IResultsProps> = () => {
           ))
         ) : (
           <div className="form-container">
-            <p>There seem to be no results for '{title}'. </p>
+            <p>
+              There seem to be no results for '
+              <strong className="bold">{title}</strong>'.
+            </p>
             <p>You can search for products by their title or type.</p>
             <Popular />
           </div>

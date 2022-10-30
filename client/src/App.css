@@ -58,6 +58,9 @@ body {
   font-size: var(--md);
   background-color: var(--white-clr);
 }
+.bold {
+  font-weight: bold;
+}
 .container--preview,
 .container {
   width: 100%;
