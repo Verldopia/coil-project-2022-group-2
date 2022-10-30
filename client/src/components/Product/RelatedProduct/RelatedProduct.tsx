@@ -25,9 +25,11 @@ const RelatedProduct = ({
       item.approved
   );
 
-  // If there's no specific category, display all products (for landing page)
-  if (!title) {
-    relatedProduct = data?.Items;
+  // If there's no specific category, display all products (for landing page | popular page)
+  if (!title || title === 'popular') {
+    relatedProduct = data?.Items.filter(
+      (item) => item.id !== id && item.approved
+    );
   }
 
   // Sort products on popularity

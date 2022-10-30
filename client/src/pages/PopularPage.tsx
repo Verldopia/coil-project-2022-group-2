@@ -135,15 +135,6 @@ const PopularPage: React.FC = () => {
         </div>
         {/* // Category description card */}
         <ul className="product-container">
-          {/* <DescriptionBox
-            text={
-              product
-                ? product[0].category?.description
-                : 'There is no description for this category'
-            }
-            title={product ? product[0].category?.title : ''}
-          /> */}
-
           {/* // Productslist */}
           {typeItem?.length === 0
             ? product?.map((item, i) => (
