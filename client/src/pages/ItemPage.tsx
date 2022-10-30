@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useQuery } from '@apollo/client';
-import { Breadcrumbs, Button, Link, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import {
   AddToCart,
@@ -12,6 +11,17 @@ import {
 import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { Lowercase, SlugifyID } from '../utilities/TextTransform';
 import { ProductsData } from '../interfaces';
+
+// Styles
+import {
+  Breadcrumbs,
+  Button,
+  Link,
+  Tooltip,
+  Typography,
+} from '@mui/material';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 
 const ItemPage: React.FC = (props) => {
   let { id, title } = useParams();
@@ -100,13 +110,26 @@ const ItemPage: React.FC = (props) => {
               />
               <p>Currently {product.stock} in stock.</p>
               <p>€{product.price}.-</p>
+
               <AddToCart item={product} />
               <Button
-                className="wishlist"
+                className="mainBtn"
+                color="info"
+                variant="outlined"
                 onClick={handleWishlist}
                 disabled={disabled}
               >
-                Add to wishlist
+                {disabled ? (
+                  <FavoriteOutlinedIcon />
+                ) : (
+                  <Tooltip
+                    title="Add to wishlist"
+                    arrow
+                    placement="bottom"
+                  >
+                    <FavoriteBorderOutlinedIcon />
+                  </Tooltip>
+                )}
               </Button>
             </div>
             <div className="container--info__text">

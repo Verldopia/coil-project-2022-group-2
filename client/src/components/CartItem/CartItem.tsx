@@ -84,7 +84,10 @@ function CartItem({ id, quantity }: CartItemProps) {
                 arrow
                 placement="bottom"
               >
-                <RemoveOutlinedIcon fontSize="small" />
+                <RemoveOutlinedIcon
+                  className={styles.btn}
+                  fontSize="small"
+                />
               </Tooltip>
             </button>
             <span>x{quantity}</span>
@@ -97,7 +100,10 @@ function CartItem({ id, quantity }: CartItemProps) {
                 arrow
                 placement="bottom"
               >
-                <AddOutlinedIcon fontSize="small" />
+                <AddOutlinedIcon
+                  className={styles.btn}
+                  fontSize="small"
+                />
               </Tooltip>
             </button>
           </div>
@@ -110,7 +116,7 @@ function CartItem({ id, quantity }: CartItemProps) {
               arrow
               placement="bottom"
             >
-              <DeleteOutlineOutlinedIcon />
+              <DeleteOutlineOutlinedIcon className={styles.btn} />
             </Tooltip>
           </button>
         </div>

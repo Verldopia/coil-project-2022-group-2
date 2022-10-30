@@ -219,3 +219,12 @@ h4 {
 .fa:hover {
   background-color: var(--light-color);
 }
+.mainBtn {
+  border: 1px solid red;
+  width: 6rem;
+}
+.removeBtn {
+  display: flex;
+  gap: 1rem;
+  width: auto;
+}

@@ -16,6 +16,7 @@
   justify-content: space-between;
 }
 .productItem {
+  position: relative;
   background-color: var(--bgd-color);
 }
 .product__imgBox {
@@ -62,4 +63,21 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.btnDelete {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bgd-color);
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  transition: all ease 0.2s;
+}
+.btnDelete:hover {
+  background-color: var(--light-grey);
 }
