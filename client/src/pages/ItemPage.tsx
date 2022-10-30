@@ -29,27 +29,30 @@ const ItemPage: React.FC = (props) => {
     (item) => item.id === SlugifyID(id)
   );
 
+  // When product ID is found, disable button
   let disabled = false;
-  let finder = JSON.parse(localStorage.wishlist);
-  console.log('🚀 - localStorage.wishlist', localStorage.wishlist);
-  const found = finder.find((item: number) => item === product?.id);
-  if (found) {
-    disabled = true;
+  if (localStorage.wishlist) {
+    let finder = JSON.parse(localStorage.wishlist);
+    const found = finder.find((item: number) => item === product?.id);
+    if (found) {
+      disabled = true;
+    }
   }
 
   // Set items to localStorage when clicked on wishlist
   function handleWishlist() {
     // Get localStorage and push clicked product ID to array
-    let wishlist =
-      JSON.parse(localStorage.getItem('wishlist') ?? '') || [];
+    let wishlist = JSON.parse(
+      localStorage.getItem('wishlist') ?? '[]'
+    );
     wishlist.push(product?.id);
-    console.log('🚀 - wishlist', wishlist);
 
     // Remove duplicates and set to localStorage
     localStorage.setItem(
       'wishlist',
       JSON.stringify([...new Set(wishlist)])
     );
+
     // Disable button, and reload
     disabled = true;
     window.location.reload();
