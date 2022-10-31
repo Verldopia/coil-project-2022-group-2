@@ -14,6 +14,7 @@ import {
   LoginPage,
   RegisterPage,
   ResultsPage,
+  OrderPage,
 } from './pages';
 import {
   AdminLandingPage,
@@ -99,6 +100,7 @@ function App() {
           <Route path={ROUTES.WISHLIST} element={<WishlistPage />} />
           <Route path={ROUTES.ITEMS} element={<ItemPage />} />
           <Route path={ROUTES.CHECKOUT} element={<CheckOutPage />} />
+          <Route path={ROUTES.ORDERED} element={<OrderPage />} />
           <Route
             path={ROUTES.CATEGORIES}
             element={<CategoriesPage />}
@@ -112,7 +114,7 @@ function App() {
           </Route>
         </Route>
 
-        {/* Does not exist yet */}
+        {/* // !! Does not exist yet */}
         <Route path={ROUTES.CONTACT} element={<ContactPage />} />
         <Route path={ROUTES.ABOUT} element={<AboutPage />} />
         <Route path={ROUTES.ACCOUNT} element={<AccountPage />} />

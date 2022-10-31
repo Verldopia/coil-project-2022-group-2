@@ -1,14 +1,13 @@
 import React from 'react';
 import { ROUTES } from '../../constants/routes';
+import Cta from '../Cta/Cta';
 import styles from './Popular.module.css';
 
-type Props = {};
-
-const Popular = (props: Props) => {
+const Popular = () => {
   return (
-    <a href={'../../' + ROUTES.POPULAR} className={styles.actionBtn}>
-      What's popular?
-    </a>
+    <div className={styles.actionBtn}>
+      <Cta inner="What's popular?" route={ROUTES.POPULAR} />
+    </div>
   );
 };
 

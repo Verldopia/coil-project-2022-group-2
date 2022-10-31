@@ -47,7 +47,7 @@ const CheckOutPage: React.FC<ICheckOutPageProps> = (props) => {
             </div>
           </ul>
           <div className={styles.actionBtnBox}>
-            <Cta inner="Place order" route={ROUTES.CHECKOUT} />
+            <Cta inner="Place order" route={ROUTES.ORDERED} />
           </div>
         </div>
       </div>

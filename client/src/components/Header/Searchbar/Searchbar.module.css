@@ -25,10 +25,10 @@
   width: 4rem;
   height: 2.5rem;
   background-color: var(--cta-color);
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   color: var(--darkest-grey);
   transition: all ease 0.2s;
-  border: 1px solid var(--darkest-grey);
+  border: 1px solid var(--dark-grey);
 }
 .searchBtn:hover,
 .searchCart:hover {
