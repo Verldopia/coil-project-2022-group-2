@@ -5,9 +5,8 @@ import { useQuery } from '@apollo/client';
 import { UseShoppingCart } from '../../context/ShoppingCartContext';
 import { GET_ALL_PRODUCTS } from '../../graphql/products';
 import { ProductsData } from '../../interfaces';
-import { FormatCurrency } from '../../utilities/FormatCurrency';
+import { FormatCurrency } from '../../utilities';
 import { CartItem, Cta } from '../../components';
-import { NavLink } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
 
 // Styles

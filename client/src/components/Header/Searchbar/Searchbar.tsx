@@ -4,7 +4,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
-import { Lowercase } from '../../../utilities/TextTransform';
+import { Lowercase } from '../../../utilities';
 import { UseShoppingCart } from '../../../context/ShoppingCartContext';
 
 const SearchBar: React.FC = () => {

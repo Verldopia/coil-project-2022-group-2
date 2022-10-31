@@ -9,7 +9,7 @@ import {
   StarRating,
 } from '../components';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
-import { Lowercase, SlugifyID } from '../utilities/TextTransform';
+import { Lowercase, SlugifyID } from '../utilities';
 import { ProductsData } from '../interfaces';
 
 // Styles

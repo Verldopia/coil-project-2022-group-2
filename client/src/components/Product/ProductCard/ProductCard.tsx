@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { Product } from '../../../interfaces';
 import AddToCart from '../../AddToCart/AddToCart';
 import { useParams } from 'react-router-dom';
-import { Lowercase, Slugify } from '../../../utilities/TextTransform';
-import { FormatCurrency } from '../../../utilities/FormatCurrency';
+import {
+  Lowercase,
+  Slugify,
+  FormatCurrency,
+} from '../../../utilities';
 
 // Styles
 import styles from './ProductCard.module.css';

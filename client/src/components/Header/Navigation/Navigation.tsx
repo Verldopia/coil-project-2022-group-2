@@ -5,10 +5,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_ALL_CATEGORIES } from '../../../graphql/categories';
 import { CategoryData } from '../../../interfaces';
-import {
-  Capitalize,
-  Lowercase,
-} from '../../../utilities/TextTransform';
+import { Capitalize, Lowercase } from '../../../utilities';
 import { ROUTES } from '../../../constants';
 
 const Navigation: React.FC = () => {

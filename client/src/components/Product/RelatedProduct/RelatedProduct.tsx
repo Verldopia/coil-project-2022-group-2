@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lowercase } from '../../../utilities/TextTransform';
+import { Lowercase } from '../../../utilities';
 import { Typography } from '@mui/material';
 import { Product, ProductsData } from '../../../interfaces';
 import { ProductCard } from '../../../components';

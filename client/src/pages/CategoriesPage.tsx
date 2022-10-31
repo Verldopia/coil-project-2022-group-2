@@ -13,7 +13,7 @@ import { ProductsData } from '../interfaces';
 // Styles
 import styles from '../components/Product/FilterProducts/FilterProducts.module.css';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
-import { Capitalize, Lowercase } from '../utilities/TextTransform';
+import { Capitalize, Lowercase } from '../utilities';
 import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 

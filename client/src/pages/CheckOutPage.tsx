@@ -1,10 +1,7 @@
-import { useQuery } from '@apollo/client';
 import React from 'react';
 import { AccordionBox, CartItem, Cta } from '../components';
 import { UseShoppingCart } from '../context/ShoppingCartContext';
-import { GET_ALL_PRODUCTS } from '../graphql/products';
-import { ProductsData } from '../interfaces';
-import { FormatCurrency } from '../utilities/FormatCurrency';
+import { FormatCurrency, useFetchProducts } from '../utilities';
 import { ROUTES } from '../constants';
 
 // Styles
@@ -13,15 +10,10 @@ import styles from '../components/Cart/Cart.module.css';
 export interface ICheckOutPageProps {}
 
 const CheckOutPage: React.FC<ICheckOutPageProps> = (props) => {
+  const data = useFetchProducts();
   const { cartItems } = UseShoppingCart();
 
-  // Fetch products
-  const { loading, error, data } = useQuery<ProductsData>(
-    GET_ALL_PRODUCTS,
-    { fetchPolicy: 'cache-first' }
-  );
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>An error has ocurred, can't load products.</p>;
+  console.log('🚀 - data', data);
 
   return (
     <div className="container">

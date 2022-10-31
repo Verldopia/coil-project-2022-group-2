@@ -5,14 +5,13 @@ import React, { useState } from 'react';
 import { UseShoppingCart } from '../../context/ShoppingCartContext';
 import { GET_ALL_PRODUCTS } from '../../graphql/products';
 import { ProductsData } from '../../interfaces';
-import { FormatCurrency } from '../../utilities/FormatCurrency';
+import { FormatCurrency, Lowercase } from '../../utilities';
 
 // Styles
 import styles from './CartItem.module.css';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
-import { Lowercase } from '../../utilities/TextTransform';
 import { useParams } from 'react-router-dom';
 import { Tooltip } from '@mui/material';
 

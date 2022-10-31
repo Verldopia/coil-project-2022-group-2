@@ -7,7 +7,6 @@ import { CategoryData, ProductsData } from '../../../interfaces';
 import { TextField, Button } from '@mui/material';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import styles from './AdminContentInputForm.module.css';
-import { Capitalize } from '../../../utilities/TextTransform';
 import {
   CREATE_PRODUCT,
   GET_ALL_PRODUCTS,

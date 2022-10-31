@@ -9,6 +9,16 @@ export interface CategoryData {
   categories: Category[];
 }
 
+// Discount
+export interface Discount {
+  id: number;
+  code: string;
+  description?: string;
+  discountPrice?: number;
+  discountPercentage?: number;
+  timesUsed?: number;
+}
+
 // Products
 export interface Product {
   id: number;
@@ -23,6 +33,7 @@ export interface Product {
   categoryId: number;
   adminId: number;
   type: string;
+  discountId: number;
   category?: Category;
 }
 

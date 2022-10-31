@@ -10,6 +10,7 @@ export const GET_ALL_PRODUCTS = gql`
       mainImage
       popularity
       description
+      discountId
       approved
       archived
       type
