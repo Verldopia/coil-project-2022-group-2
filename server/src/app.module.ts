@@ -13,6 +13,7 @@ import { UserMetaModule } from './users-meta/users-meta.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { OrderModule } from './order/order.module';
+import { DiscountModule } from './discount/discount.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { OrderModule } from './order/order.module';
     AdminModule,
     AuthModule,
     OrderModule,
+    DiscountModule,
   ],
   // controllers: [AppController],
   // providers: [AppService],

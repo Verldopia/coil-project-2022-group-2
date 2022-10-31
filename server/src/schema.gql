@@ -32,6 +32,14 @@ input CreateCategoryInput {
   title: String!
 }
 
+input CreateDiscountInput {
+  code: String!
+  description: String!
+  discountPercentage: Float!
+  discountPrice: Float!
+  timesUsed: Float!
+}
+
 input CreateItemInput {
   adminId: Int!
   approved: Boolean!
@@ -48,8 +56,11 @@ input CreateItemInput {
 }
 
 input CreateOrderInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  delivered: Boolean!
+  orderDate: String!
+  priceTotal: Float!
+  shipped: Boolean!
+  userId: Int!
 }
 
 input CreateUserMetaInput {
@@ -59,6 +70,15 @@ input CreateUserMetaInput {
   firstName: String!
   lastName: String!
   userId: Int!
+}
+
+type Discount {
+  code: String!
+  description: String!
+  discountPercentage: Float!
+  discountPrice: Float!
+  id: Int!
+  timesUsed: Float!
 }
 
 type Item {
@@ -92,6 +112,7 @@ input LoginUserInput {
 type Mutation {
   createAdmin(createAdminInput: CreateAdminInput!): Admin!
   createCategory(createCategoryInput: CreateCategoryInput!): Category!
+  createDiscount(createDiscountInput: CreateDiscountInput!): Discount!
   createItem(createItemInput: CreateItemInput!): Item!
   createOrder(createOrderInput: CreateOrderInput!): Order!
   createUserMeta(createUserMetaInput: CreateUserMetaInput!): UserMeta!
@@ -99,7 +120,6 @@ type Mutation {
   removeCategory(id: Int!): Category!
   removeOrder(id: Int!): Order!
   updateCategory(updateCategoryInput: UpdateCategoryInput!): Category!
-  updateOrder(updateOrderInput: UpdateOrderInput!): Order!
 }
 
 type Order {
@@ -117,6 +137,7 @@ type Query {
   Items: [Item!]!
   UserMeta: [UserMeta!]!
   categories: [Category!]!
+  discount(id: Int!): Discount!
   getAdmin(id: Int!): Admin!
   getCategory(id: Int!): Category!
   getCategoryTitle(title: String!): Category!
@@ -132,12 +153,6 @@ input UpdateCategoryInput {
   description: String
   id: Int!
   title: String
-}
-
-input UpdateOrderInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
 }
 
 type User {
