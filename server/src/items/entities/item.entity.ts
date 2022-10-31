@@ -62,6 +62,10 @@ export class Item {
   @Field((type) => Int)
   categoryId: number;
 
+  @Column({ nullable: true })
+  @Field({ nullable: true })
+  discountId?: number;
+
   @Column()
   @Field((type) => Int)
   adminId: number;
@@ -71,7 +75,7 @@ export class Item {
   category: Category;
 
   @ManyToOne(() => Discount, (discount) => discount.items)
-  @Field((type) => Discount)
+  @Field((type) => Discount, { nullable: true })
   discount?: Discount;
 
   @ManyToOne(() => Admin, (admin) => admin.items)

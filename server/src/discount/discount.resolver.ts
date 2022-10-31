@@ -11,7 +11,7 @@ import { CreateDiscountInput } from './dto/create-discount.input';
 
 @Resolver(() => Discount)
 export class DiscountResolver {
-  constructor(private readonly discountService: DiscountService) {}
+  constructor(private discountService: DiscountService) {}
 
   @Mutation(() => Discount)
   createDiscount(
@@ -21,7 +21,7 @@ export class DiscountResolver {
     return this.discountService.create(createDiscountInput);
   }
 
-  @Query(() => Discount, { name: 'discount' })
+  @Query(() => Discount)
   getDiscount(
     @Args('id', { type: () => Int }) id: number
   ): Promise<Discount> {

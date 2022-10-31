@@ -90,7 +90,8 @@ type Item {
   category: Category!
   categoryId: Int!
   description: String!
-  discount: Discount!
+  discount: Discount
+  discountId: Float
   id: Int!
   images: String
   mainImage: String!
@@ -139,10 +140,10 @@ type Query {
   Items: [Item!]!
   UserMeta: [UserMeta!]!
   categories: [Category!]!
-  discount(id: Int!): Discount!
   getAdmin(id: Int!): Admin!
   getCategory(id: Int!): Category!
   getCategoryTitle(title: String!): Category!
+  getDiscount(id: Int!): Discount!
   getItem(id: Int!): Item!
   getUser(id: Int!): User!
   getUserMeta(id: Int!): UserMeta!

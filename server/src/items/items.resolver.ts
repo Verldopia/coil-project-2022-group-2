@@ -24,14 +24,16 @@ export class ItemsResolver {
 
   // Find one by ID
   @Query(() => Item)
-  getItem(@Args('id', { type: () => Int }) id: number): Promise<Item> {
+  getItem(
+    @Args('id', { type: () => Int }) id: number
+  ): Promise<Item> {
     return this.itemsService.getItem(id);
   }
 
   //   Create new item
   @Mutation((returns) => Item)
   createItem(
-    @Args('createItemInput') createItemInput: CreateItemInput,
+    @Args('createItemInput') createItemInput: CreateItemInput
   ): Promise<Item> {
     return this.itemsService.createItem(createItemInput);
   }
