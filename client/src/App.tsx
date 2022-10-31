@@ -5,6 +5,7 @@ import { ROUTES } from './constants/routes';
 import {
   LandingPage,
   ContactPage,
+  CheckOutPage,
   WishlistPage,
   AboutPage,
   AccountPage,
@@ -37,8 +38,6 @@ import FormLayout from './components/.layouts/FormLayout';
 import './assets/css/reset.css';
 import './App.css';
 import { ShoppingCartProvider } from './context/ShoppingCartContext';
-import CheckOutPage from './pages/CheckOutPage';
-import PopularPage from './pages/PopularPage';
 
 function App() {
   return (
@@ -100,14 +99,10 @@ function App() {
           <Route path={ROUTES.WISHLIST} element={<WishlistPage />} />
           <Route path={ROUTES.ITEMS} element={<ItemPage />} />
           <Route path={ROUTES.CHECKOUT} element={<CheckOutPage />} />
-
-          {/* Categories */}
           <Route
             path={ROUTES.CATEGORIES}
             element={<CategoriesPage />}
           />
-          {/* <Route path={ROUTES.POPULAR} element={<PopularPage />} /> */}
-
           <Route element={<FormLayout />}>
             <Route path={ROUTES.LOGIN} element={<LoginPage />} />
             <Route

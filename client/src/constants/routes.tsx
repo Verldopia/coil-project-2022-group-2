@@ -25,4 +25,5 @@ export const ROUTES = Object.freeze({
   REGISTER: 'register',
   RESULTS: 'search/:title',
   WISHLIST: 'wishlist',
+  ORDERED: 'orders',
 });

@@ -220,11 +220,16 @@ h4 {
   background-color: var(--light-color);
 }
 .mainBtn {
-  border: 1px solid red;
   width: 6rem;
 }
 .removeBtn {
   display: flex;
   gap: 1rem;
+  width: auto;
+}
+.checkout {
+  display: block;
+  padding: 1rem;
+  margin: 1rem;
   width: auto;
 }
