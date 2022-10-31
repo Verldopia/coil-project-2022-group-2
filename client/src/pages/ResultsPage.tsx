@@ -20,8 +20,9 @@ const ResultsPage: React.FC<IResultsProps> = () => {
 
   const result = data?.Items.filter(
     (item) =>
-      Lowercase(item.title).includes(title ?? '') ||
-      (Lowercase(item.type).includes(title ?? '') && item.approved)
+      (item.approved &&
+        Lowercase(item.title).includes(title ?? '')) ||
+      Lowercase(item.type).includes(title ?? '')
   );
 
   return (

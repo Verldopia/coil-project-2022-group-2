@@ -1,4 +1,7 @@
 import AddToCart from './AddToCart/AddToCart';
+import AccordionBox from './AccordionBox/AccordionBox';
+import AccordionAddress from './AccordionAddress/AccordionAddress';
+import AccordionPayment from './AccordionPayment/AccordionPayment';
 import AdminContentInputForm from './Admin/AdminContentInputForm/AdminContentInputForm';
 import Cart from './Cart/Cart';
 import Cta from './Cta/Cta';
@@ -23,6 +26,9 @@ import SearchBar from './Header/SearchBar/Searchbar';
 import StarRating from './StarRating/StarRating';
 
 export {
+  AccordionPayment,
+  AccordionAddress,
+  AccordionBox,
   AddToCart,
   AdminContentInputForm,
   Cart,

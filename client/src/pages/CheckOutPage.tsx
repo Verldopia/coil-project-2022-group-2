@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/client';
 import React from 'react';
-import { CartItem, Cta } from '../components';
+import { AccordionBox, CartItem, Cta } from '../components';
 import { UseShoppingCart } from '../context/ShoppingCartContext';
 import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { ProductsData } from '../interfaces';
@@ -25,8 +25,11 @@ const CheckOutPage: React.FC<ICheckOutPageProps> = (props) => {
 
   return (
     <div className="container">
+      <h1>Summary</h1>
       <div className="container--info">
-        <div className="container--info__images"></div>
+        <div className="container--info__images accordion">
+          <AccordionBox />
+        </div>
         <div className={styles.cartBody}>
           <ul className={styles.cartItems}>
             {cartItems.map((prod) => (
