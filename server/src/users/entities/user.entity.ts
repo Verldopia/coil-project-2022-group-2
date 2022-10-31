@@ -1,8 +1,10 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Order } from 'src/order/entities/order.entity';
 import { UserMeta } from 'src/users-meta/entities/users-meta.entity';
 import {
   Column,
   Entity,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -29,4 +31,8 @@ export class User {
   @OneToOne(() => UserMeta)
   @Field((type) => UserMeta)
   userMeta?: UserMeta;
+
+  @OneToMany(() => Order, (order) => order.user)
+  @Field((type) => [Order], { nullable: true })
+  orders?: Order[];
 }

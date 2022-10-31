@@ -47,6 +47,11 @@ input CreateItemInput {
   type: String!
 }
 
+input CreateOrderInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
 input CreateUserMetaInput {
   address: String
   city: String
@@ -88,10 +93,23 @@ type Mutation {
   createAdmin(createAdminInput: CreateAdminInput!): Admin!
   createCategory(createCategoryInput: CreateCategoryInput!): Category!
   createItem(createItemInput: CreateItemInput!): Item!
+  createOrder(createOrderInput: CreateOrderInput!): Order!
   createUserMeta(createUserMetaInput: CreateUserMetaInput!): UserMeta!
   login(loginUserInput: LoginUserInput!): LoginResponse!
   removeCategory(id: Int!): Category!
+  removeOrder(id: Int!): Order!
   updateCategory(updateCategoryInput: UpdateCategoryInput!): Category!
+  updateOrder(updateOrderInput: UpdateOrderInput!): Order!
+}
+
+type Order {
+  delivered: Boolean!
+  id: Int!
+  orderDate: String!
+  priceTotal: Float!
+  shipped: Boolean!
+  user: User!
+  userId: Int!
 }
 
 type Query {
@@ -106,6 +124,7 @@ type Query {
   getUser(id: Int!): User!
   getUserMeta(id: Int!): UserMeta!
   getUserName(userName: String!): User!
+  order(id: Int!): Order!
   users: [User!]!
 }
 
@@ -115,9 +134,16 @@ input UpdateCategoryInput {
   title: String
 }
 
+input UpdateOrderInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
 type User {
   email: String!
   id: Int!
+  orders: [Order!]
   password: String!
   userMeta: UserMeta!
   userName: String!

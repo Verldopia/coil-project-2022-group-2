@@ -4,6 +4,8 @@ import { Category } from 'src/categories/entities/category.entity';
 import {
   Column,
   Entity,
+  JoinTable,
+  ManyToMany,
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -51,6 +53,10 @@ export class Item {
   @Field()
   type: string;
 
+  @Column({ nullable: true })
+  @Field({ nullable: true })
+  images?: string;
+
   @Column()
   @Field((type) => Int)
   categoryId: number;
@@ -67,7 +73,6 @@ export class Item {
   @Field((type) => Admin)
   admin: Admin;
 
-  @Column({ nullable: true })
-  @Field({ nullable: true })
-  images?: string;
+  @ManyToMany(() => Item, (item) => item.id)
+  orders?: Item[];
 }

@@ -12,6 +12,7 @@ import config from '../ormconfig';
 import { UserMetaModule } from './users-meta/users-meta.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { OrderModule } from './order/order.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { AuthModule } from './auth/auth.module';
     UserMetaModule,
     AdminModule,
     AuthModule,
+    OrderModule,
   ],
   // controllers: [AppController],
   // providers: [AppService],
