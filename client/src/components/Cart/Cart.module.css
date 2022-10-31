@@ -19,9 +19,6 @@
   display: flex;
   justify-content: space-between;
 }
-.cartBtn {
-  cursor: pointer;
-}
 .cartItems {
   display: flex;
   flex-direction: column;
@@ -33,6 +30,7 @@
 .actionBtnBox {
   width: 100%;
   display: flex;
+  margin: 1rem 0 3rem 0;
   justify-content: end;
 }
 .actionBtn {

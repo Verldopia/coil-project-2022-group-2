@@ -1,6 +1,7 @@
 import AddToCart from './AddToCart/AddToCart';
 import AdminContentInputForm from './Admin/AdminContentInputForm/AdminContentInputForm';
 import Cart from './Cart/Cart';
+import Cta from './Cta/Cta';
 import CartItem from './CartItem/CartItem';
 import Descriptinator from './Descriptinator/Descriptinator';
 import DescriptionBox from './Product/DescriptionBox/DescriptionBox';
@@ -25,6 +26,7 @@ export {
   AddToCart,
   AdminContentInputForm,
   Cart,
+  Cta,
   CartItem,
   Descriptinator,
   DescriptionBox,

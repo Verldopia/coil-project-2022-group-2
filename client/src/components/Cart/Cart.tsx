@@ -6,7 +6,7 @@ import { UseShoppingCart } from '../../context/ShoppingCartContext';
 import { GET_ALL_PRODUCTS } from '../../graphql/products';
 import { ProductsData } from '../../interfaces';
 import { FormatCurrency } from '../../utilities/FormatCurrency';
-import { CartItem } from '../../components';
+import { CartItem, Cta } from '../../components';
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
 
@@ -14,7 +14,6 @@ import { ROUTES } from '../../constants/routes';
 import styles from './Cart.module.css';
 import { Offcanvas } from 'react-bootstrap';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
-import { Button } from 'reactstrap';
 import { Tooltip } from '@mui/material';
 
 type CartProps = {
@@ -67,13 +66,7 @@ function Cart({ isOpen }: CartProps) {
         </ul>
       </div>
       <div className={styles.actionBtnBox}>
-        <Button
-          className={styles.actionBtn}
-          tag={NavLink}
-          to={ROUTES.CHECKOUT}
-        >
-          Check out
-        </Button>
+        <Cta inner="Check out" route={ROUTES.CHECKOUT} />
       </div>
     </Offcanvas>
   );
