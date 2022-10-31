@@ -20,7 +20,7 @@ export class User {
 
   @Column()
   @Field()
-  email: string;
+  email?: string;
 
   @Column()
   @Field()

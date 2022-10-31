@@ -2,59 +2,76 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type UserMeta {
-  id: Int!
-  firstName: String!
-  lastName: String!
-  address: String
-  city: String
-  country: String
-  userId: Int!
-  user: User!
-  User: User!
-}
-
-type User {
-  id: Int!
-  userName: String!
-  email: String!
-  password: String!
-  userMeta: UserMeta!
-}
-
 type Admin {
-  id: Int!
-  userName: String!
-  password: String!
   email: String!
+  id: Int!
+  items: [Item!]
+  password: String!
   telephone: Float!
   type: String!
-  items: [Item!]
+  userName: String!
 }
 
 type Category {
-  id: Int!
-  title: String!
   description: String!
+  id: Int!
   items: [Item!]
+  title: String!
+}
+
+input CreateAdminInput {
+  email: String!
+  password: String!
+  telephone: Float!
+  type: String!
+  userName: String!
+}
+
+input CreateCategoryInput {
+  description: String!
+  title: String!
+}
+
+input CreateItemInput {
+  adminId: Int!
+  approved: Boolean!
+  archived: Boolean!
+  categoryId: Int!
+  description: String!
+  images: String
+  mainImage: String!
+  popularity: Float
+  price: Float!
+  stock: Float!
+  title: String!
+  type: String!
+}
+
+input CreateUserMetaInput {
+  address: String
+  city: String
+  country: String
+  firstName: String!
+  lastName: String!
+  userId: Int!
 }
 
 type Item {
-  id: Int!
-  title: String!
-  description: String!
-  price: Float!
-  stock: Float!
-  mainImage: String!
-  popularity: Float
+  admin: Admin!
+  adminId: Int!
   approved: Boolean!
   archived: Boolean!
-  type: String!
-  categoryId: Int!
-  adminId: Int!
   category: Category!
-  admin: Admin!
+  categoryId: Int!
+  description: String!
+  id: Int!
   images: String
+  mainImage: String!
+  popularity: Float
+  price: Float!
+  stock: Float!
+  title: String!
+  type: String!
 }
 
 type LoginResponse {
@@ -62,83 +79,58 @@ type LoginResponse {
   user: User!
 }
 
-type Query {
-  Items: [Item!]!
-  getItem(id: Int!): Item!
-  categories: [Category!]!
-  getCategory(id: Int!): Category!
-  getCategoryTitle(title: String!): Category!
-  users: [User!]!
-  getUser(id: Int!): User!
-  user(userName: String!): User!
-  UserMeta: [UserMeta!]!
-  getUserMeta(id: Int!): UserMeta!
-  Admins: [Admin!]!
-  getAdmin(id: Int!): Admin!
+input LoginUserInput {
+  password: String!
+  userName: String!
 }
 
 type Mutation {
-  createItem(createItemInput: CreateItemInput!): Item!
-  createCategory(createCategoryInput: CreateCategoryInput!): Category!
-  updateCategory(updateCategoryInput: UpdateCategoryInput!): Category!
-  removeCategory(id: Int!): Category!
-  createUser(createUserInput: CreateUserInput!): User!
-  createUserMeta(createUserMetaInput: CreateUserMetaInput!): UserMeta!
   createAdmin(createAdminInput: CreateAdminInput!): Admin!
+  createCategory(createCategoryInput: CreateCategoryInput!): Category!
+  createItem(createItemInput: CreateItemInput!): Item!
+  createUserMeta(createUserMetaInput: CreateUserMetaInput!): UserMeta!
   login(loginUserInput: LoginUserInput!): LoginResponse!
-  register(createUserInput: CreateUserInput!): User!
+  removeCategory(id: Int!): Category!
+  updateCategory(updateCategoryInput: UpdateCategoryInput!): Category!
 }
 
-input CreateItemInput {
-  title: String!
-  description: String!
-  price: Float!
-  stock: Float!
-  mainImage: String!
-  type: String!
-  popularity: Float
-  approved: Boolean!
-  archived: Boolean!
-  categoryId: Int!
-  adminId: Int!
-  images: String
-}
-
-input CreateCategoryInput {
-  title: String!
-  description: String!
+type Query {
+  Admins: [Admin!]!
+  Items: [Item!]!
+  UserMeta: [UserMeta!]!
+  categories: [Category!]!
+  getAdmin(id: Int!): Admin!
+  getCategory(id: Int!): Category!
+  getCategoryTitle(title: String!): Category!
+  getItem(id: Int!): Item!
+  getUser(id: Int!): User!
+  getUserMeta(id: Int!): UserMeta!
+  getUserName(userName: String!): User!
+  users: [User!]!
 }
 
 input UpdateCategoryInput {
-  title: String
   description: String
   id: Int!
+  title: String
 }
 
-input CreateUserInput {
-  userName: String!
+type User {
   email: String!
+  id: Int!
   password: String!
+  userMeta: UserMeta!
+  userName: String!
 }
 
-input CreateUserMetaInput {
-  firstName: String!
-  lastName: String!
+type UserMeta {
+  User: User!
   address: String
   city: String
   country: String
+  firstName: String!
+  id: Int!
+  lastName: String!
+  user: User!
   userId: Int!
-}
-
-input CreateAdminInput {
-  userName: String!
-  password: String!
-  email: String!
-  telephone: Float!
-  type: String!
-}
-
-input LoginUserInput {
-  userName: String!
-  password: String!
 }

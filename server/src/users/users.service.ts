@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { log } from 'console';
 import { Repository } from 'typeorm';
 import { CreateUserInput } from './dto/create-user.input';
 import { User } from './entities/user.entity';
@@ -22,6 +23,8 @@ export class UsersService {
 
   // Find User on userName
   getUserName(userName: string): Promise<User> {
+    console.log('init..');
+
     return this.usersRepository.findOneByOrFail({ userName });
   }
 

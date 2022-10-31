@@ -8,7 +8,7 @@ import {
 import { User } from './entities/user.entity';
 import { CreateUserInput } from './dto/create-user.input';
 import { UsersService } from './users.service';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+// import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 import { UseGuards } from '@nestjs/common';
 
 @Resolver(() => User)
@@ -17,7 +17,7 @@ export class UsersResolver {
 
   // Find all Users
   @Query(() => [User], { name: 'users' })
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   findAll() {
     return this.usersService.findAll();
   }
@@ -29,16 +29,10 @@ export class UsersResolver {
   }
 
   // Find one on userName
-  @Query(() => User, { name: 'user' })
+  @Query(() => User)
   getUserName(@Args('userName') userName: string) {
-    return this.usersService.getUserName(userName);
-  }
+    console.log('init..');
 
-  //   Create new User
-  @Mutation((returns) => User)
-  createUser(
-    @Args('createUserInput') createUserInput: CreateUserInput
-  ): Promise<User> {
-    return this.usersService.createUser(createUserInput);
+    return this.usersService.getUserName(userName);
   }
 }

@@ -5,7 +5,7 @@ import { User } from 'src/users/entities/user.entity';
 import { AuthService } from './auth.service';
 
 @Injectable()
-export class ImperialStrategy extends PassportStrategy(Strategy) {
+export class LocalStrategy extends PassportStrategy(Strategy) {
   constructor(private authService: AuthService) {
     super();
   }
@@ -18,7 +18,7 @@ export class ImperialStrategy extends PassportStrategy(Strategy) {
     );
 
     if (!user) {
-      throw new UnauthorizedException();
+      throw new Error('yeet');
     }
     return user;
   }
