@@ -1,6 +1,7 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { Admin } from 'src/admin/entities/admin.entity';
 import { Category } from 'src/categories/entities/category.entity';
+import { Discount } from 'src/discount/entities/discount.entity';
 import {
   Column,
   Entity,
@@ -68,6 +69,10 @@ export class Item {
   @ManyToOne(() => Category, (category) => category.items)
   @Field((type) => Category)
   category: Category;
+
+  @ManyToOne(() => Discount, (discount) => discount.items)
+  @Field((type) => Discount)
+  discount?: Discount;
 
   @ManyToOne(() => Admin, (admin) => admin.items)
   @Field((type) => Admin)

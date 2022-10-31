@@ -78,6 +78,7 @@ type Discount {
   discountPercentage: Float!
   discountPrice: Float!
   id: Int!
+  items: [Item!]
   timesUsed: Float!
 }
 
@@ -89,6 +90,7 @@ type Item {
   category: Category!
   categoryId: Int!
   description: String!
+  discount: Discount!
   id: Int!
   images: String
   mainImage: String!
