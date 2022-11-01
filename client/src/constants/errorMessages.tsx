@@ -18,4 +18,7 @@ export const ERRORS = {
     'Provide a subcategory, this will be added to the category filters',
   IMG_REQUIRED: 'Image is required',
   PRODUCT_DUP: 'Product already exists',
+
+  // Discount
+  DISC_INVALID: 'Discount code is invalid',
 };

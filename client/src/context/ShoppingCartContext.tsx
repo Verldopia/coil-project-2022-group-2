@@ -3,14 +3,10 @@
 import React, { useContext, createContext, useState } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
 import Cart from '../components/Cart/Cart';
+import { CartItem } from '../interfaces';
 
 type ShoppingCartProviderProps = {
   children: React.ReactNode;
-};
-
-type CartItem = {
-  id: number;
-  quantity: number;
 };
 
 type ShoppingCartContext = {

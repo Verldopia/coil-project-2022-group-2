@@ -11,12 +11,19 @@ export interface CategoryData {
 
 // Discount
 export interface Discount {
+  getDiscount: Discount;
   id: number;
   code: string;
   description?: string;
   discountPrice?: number;
   discountPercentage?: number;
   timesUsed?: number;
+}
+
+// CartItem
+export interface CartItem {
+  id: number;
+  quantity: number;
 }
 
 // Products

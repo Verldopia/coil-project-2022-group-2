@@ -1,15 +1,23 @@
-const Capitalize = (text: string | undefined) => {
+// First letter to high
+export const Capitalize = (text: string | undefined) => {
   if (!text) return '';
   return text.charAt(0).toUpperCase() + text.slice(1);
 };
 
-const Lowercase = (text: string | undefined) => {
+// All letters to high
+export const Uppercase = (text: string | undefined) => {
+  if (!text) return '';
+  return text.toUpperCase();
+};
+
+// All letters to low
+export const Lowercase = (text: string | undefined) => {
   if (!text) return '';
   return text?.toLowerCase();
 };
 
 // Create slug from title
-const Slugify = (text: string | undefined) => {
+export const Slugify = (text: string | undefined) => {
   if (!text) return '';
   return text
     .toLowerCase()
@@ -20,9 +28,7 @@ const Slugify = (text: string | undefined) => {
 };
 
 // Retrieve ID from slug
-const SlugifyID = (text: string | undefined) => {
+export const SlugifyID = (text: string | undefined) => {
   const splitText = text?.split('=');
   return Number(splitText?.[0]);
 };
-
-export { Capitalize, Lowercase, Slugify, SlugifyID };

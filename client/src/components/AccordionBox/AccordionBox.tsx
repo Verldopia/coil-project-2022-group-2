@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccordionAddress from '../AccordionAddress/AccordionAddress';
 import AccordionPayment from '../AccordionPayment/AccordionPayment';
+import AccordionDiscount from '../AccordionDiscount/AccordionDiscount';
 
 export default function AccordionBox() {
   const [expanded, setExpanded] = React.useState<string | false>(
@@ -20,7 +21,7 @@ export default function AccordionBox() {
 
   return (
     <>
-      {/* // Shipping address */}
+      {/* // Discount box */}
       <Accordion
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
@@ -31,6 +32,25 @@ export default function AccordionBox() {
           id="panel1bh-header"
         >
           <Typography sx={{ width: '33%', flexShrink: 0 }}>
+            Discount
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <AccordionDiscount />
+        </AccordionDetails>
+      </Accordion>
+
+      {/* // Shipping address */}
+      <Accordion
+        expanded={expanded === 'panel2'}
+        onChange={handleChange('panel2')}
+      >
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ width: '35%', flexShrink: 0 }}>
             Shipping address
           </Typography>
         </AccordionSummary>
@@ -49,7 +69,7 @@ export default function AccordionBox() {
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
+          <Typography sx={{ width: '35%', flexShrink: 0 }}>
             Shipping method
           </Typography>
         </AccordionSummary>
@@ -72,7 +92,7 @@ export default function AccordionBox() {
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
+          <Typography sx={{ width: '35%', flexShrink: 0 }}>
             Payment
           </Typography>
         </AccordionSummary>

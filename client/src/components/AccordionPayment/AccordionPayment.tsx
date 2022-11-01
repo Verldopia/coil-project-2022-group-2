@@ -1,8 +1,6 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import { Tooltip } from '@mui/material';
 
 export default function AccordionPayment() {

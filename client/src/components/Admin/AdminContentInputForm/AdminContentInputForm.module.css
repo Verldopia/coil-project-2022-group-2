@@ -2,3 +2,9 @@
   color: var(--error-color);
   font-size: var(--base);
 }
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

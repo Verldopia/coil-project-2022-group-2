@@ -2,6 +2,7 @@ import AddToCart from './AddToCart/AddToCart';
 import AccordionBox from './AccordionBox/AccordionBox';
 import AccordionAddress from './AccordionAddress/AccordionAddress';
 import AccordionPayment from './AccordionPayment/AccordionPayment';
+import AccordionDiscount from './AccordionDiscount/AccordionDiscount';
 import AdminContentInputForm from './Admin/AdminContentInputForm/AdminContentInputForm';
 import Cart from './Cart/Cart';
 import Cta from './Cta/Cta';
@@ -18,6 +19,7 @@ import ImageModal from './Product/ImageModal/ImageModal';
 import Navigation from './Header/Navigation/Navigation';
 import NewestProduct from './Product/NewestProduct/NewestProduct';
 import Popular from './Popular/Popular';
+import PriceCalculation from './PriceCalculation/PriceCalculation';
 import ProductCard from './Product/ProductCard/ProductCard';
 import ImageBox from './Product/ImageBox/ImageBox';
 import RelatedProduct from './Product/RelatedProduct/RelatedProduct';
@@ -26,6 +28,7 @@ import SearchBar from './Header/SearchBar/Searchbar';
 import StarRating from './StarRating/StarRating';
 
 export {
+  AccordionDiscount,
   AccordionPayment,
   AccordionAddress,
   AccordionBox,
@@ -39,8 +42,9 @@ export {
   FilterProductsTitle,
   FilterProducts,
   Footer,
-  Header,
+  PriceCalculation,
   LoginForm,
+  Header,
   LandingHead,
   ImageModal,
   Navigation,
