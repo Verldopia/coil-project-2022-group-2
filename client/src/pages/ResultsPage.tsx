@@ -31,11 +31,14 @@ const ResultsPage: React.FC<IResultsProps> = () => {
           ))
         ) : (
           <div className="form-container">
-            <p>
-              There seem to be no results for '
-              <strong className="bold">{title}</strong>'.
+            <p className="padding">
+              Oops! We don’t have anything related to ‘
+              <strong className="bold">{title}</strong>.’
             </p>
-            <p>You can search for products by their title or type.</p>
+            <p>
+              Need something else? Please contact us to see if we can
+              order a product or help you in any other way!
+            </p>
             <Popular />
           </div>
         )}

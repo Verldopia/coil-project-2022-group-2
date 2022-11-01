@@ -1,11 +1,11 @@
-import { TextField } from '@mui/material';
+import { Badge, TextField } from '@mui/material';
 import styles from './SearchBar.module.css';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import React, { useState } from 'react';
-import { Button } from 'reactstrap';
 import { Lowercase } from '../../../utilities';
 import { UseShoppingCart } from '../../../context/ShoppingCartContext';
+import { Button } from 'reactstrap';
 
 const SearchBar: React.FC = () => {
   // Set search param
@@ -17,7 +17,6 @@ const SearchBar: React.FC = () => {
   return (
     <div className={styles.searchBarContainer}>
       <div className={styles.searchBarBox}>
-        {/* // If there's no param, redirect to homepage */}
         <form action={route}>
           <TextField
             className={styles.searchBar}
@@ -32,12 +31,15 @@ const SearchBar: React.FC = () => {
           </Button>
         </form>
         {cartQuantity !== 0 && (
-          <button className={styles.searchCart} onClick={openCart}>
-            <ShoppingCartOutlinedIcon />
-            <div className={styles.searchCartIndicator}>
-              {cartQuantity}
-            </div>
-          </button>
+          <Badge
+            className={styles.searchCart}
+            badgeContent={cartQuantity}
+            color="secondary"
+            onClick={openCart}
+            max={9}
+          >
+            <ShoppingCartOutlinedIcon color="action" />
+          </Badge>
         )}
       </div>
     </div>

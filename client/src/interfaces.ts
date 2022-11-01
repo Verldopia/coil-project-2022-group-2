@@ -11,7 +11,9 @@ export interface CategoryData {
 
 // Discount
 export interface Discount {
-  getDiscount: Discount;
+  map(arg0: (row: any) => JSX.Element): import('react').ReactNode;
+  getDiscount?: Discount;
+  getAllDiscounts?: Discount;
   id: number;
   code: string;
   description?: string;

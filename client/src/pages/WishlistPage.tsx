@@ -69,12 +69,14 @@ const WishlistPage = () => {
       ) : (
         // Displayed when there is no wishlist
         <div className="form-container">
-          <p>
-            Your <strong className="bold">wishlist</strong> is empty.
+          <p className="padding">
+            Your <strong className="bold">wishlist</strong> is empty!
           </p>
           <p>
-            You can add products to this list, to easily find them
-            later.
+            To add a product to the wishlist, click the button on a
+            products page and it’ll be automatically added here. The
+            wishlist helps you identify your favourite products to buy
+            later or share with a friend.
           </p>
           <Popular />
         </div>

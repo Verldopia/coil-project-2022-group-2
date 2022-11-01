@@ -5,6 +5,10 @@ export const GET_DISCOUNTS = gql`
     getAllDiscounts {
       id
       code
+      description
+      discountPrice
+      discountPercentage
+      timesUsed
     }
   }
 `;
