@@ -141,9 +141,10 @@ type Query {
   UserMeta: [UserMeta!]!
   categories: [Category!]!
   getAdmin(id: Int!): Admin!
+  getAllDiscounts: [Discount!]!
   getCategory(id: Int!): Category!
   getCategoryTitle(title: String!): Category!
-  getDiscount(id: Int!): Discount!
+  getDiscount(code: String!): Discount!
   getItem(id: Int!): Item!
   getUser(id: Int!): User!
   getUserMeta(id: Int!): UserMeta!

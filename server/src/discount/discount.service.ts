@@ -11,10 +11,16 @@ export class DiscountService {
     private discountRepository: Repository<Discount>
   ) {}
 
+  // Find all discounts
+  async findAll(): Promise<Discount[]> {
+    return this.discountRepository.find();
+  }
+
   create(createDiscountInput: CreateDiscountInput) {
     return 'This action adds a new discount';
   }
-  getDiscount(id: number): Promise<Discount> {
-    return this.discountRepository.findOneByOrFail({ id });
+
+  getDiscount(code: string): Promise<Discount> {
+    return this.discountRepository.findOneByOrFail({ code });
   }
 }

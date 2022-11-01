@@ -60,7 +60,7 @@ function PriceCalculation({ cartItems }: Props) {
       </div>
 
       {/* // Display discount percentage box */}
-      <div className={styles.box}>
+      <div className={styles.discountBox}>
         {discPrice !== 0 && (
           <>
             <p>Discount {d?.code}:</p>
