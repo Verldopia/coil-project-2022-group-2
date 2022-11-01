@@ -1,17 +1,17 @@
 import { ERRORS } from '../../../constants';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { CategoryData, ProductsData } from '../../../interfaces';
+import { CategoryData } from '../../../interfaces';
 
 // Styles
 import { TextField, Button } from '@mui/material';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import styles from './AdminContentInputForm.module.css';
 import {
-  CREATE_PRODUCT,
-  GET_ALL_PRODUCTS,
+  CREATE_PRODUCT
 } from '../../../graphql/products';
-import { useMutation, useQuery } from '@apollo/client';
+import { useMutation } from '@apollo/client';
+import { useFetchProducts } from '../../../utilities';
 
 type Props = {
   catData: CategoryData | undefined;
@@ -19,9 +19,8 @@ type Props = {
 
 const AdminContentInputForm = ({ catData }: Props) => {
   // Fetch products
-  const { data } = useQuery<ProductsData>(GET_ALL_PRODUCTS, {
-    fetchPolicy: 'cache-first',
-  });
+  const data = useFetchProducts();
+
 
   const [createProduct] = useMutation(CREATE_PRODUCT);
   const formik = useFormik({

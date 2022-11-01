@@ -1,11 +1,8 @@
 // !! Code may be similar to Web Dev Simplified: https://www.youtube.com/watch?v=lATafp15HWA.
 
 import React from 'react';
-import { useQuery } from '@apollo/client';
 import { UseShoppingCart } from '../../context/ShoppingCartContext';
-import { GET_ALL_PRODUCTS } from '../../graphql/products';
-import { ProductsData } from '../../interfaces';
-import { FormatCurrency } from '../../utilities';
+import { FormatCurrency, useFetchProducts } from '../../utilities';
 import { CartItem, Cta } from '../../components';
 import { ROUTES } from '../../constants/routes';
 
@@ -21,12 +18,7 @@ type CartProps = {
 
 function Cart({ isOpen }: CartProps) {
   // Fetch products
-  const { loading, error, data } = useQuery<ProductsData>(
-    GET_ALL_PRODUCTS,
-    { fetchPolicy: 'cache-first' }
-  );
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>An error has ocurred, can't load products.</p>;
+  const data = useFetchProducts();
 
   const { closeCart, cartItems } = UseShoppingCart();
 

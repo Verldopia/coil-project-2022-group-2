@@ -1,9 +1,6 @@
 import React from 'react';
+import { useFetchProducts } from '../utilities';
 
-//Styles
-import { GET_ALL_PRODUCTS } from '../graphql/products';
-import { ProductsData } from '../interfaces';
-import { useQuery } from '@apollo/client';
 import {
   NewestProduct,
   RelatedProduct,
@@ -14,12 +11,8 @@ export interface ILandingPageProps {}
 
 const LandingPage: React.FC<ILandingPageProps> = (props) => {
   // Fetch products
-  const { loading, error, data } = useQuery<ProductsData>(
-    GET_ALL_PRODUCTS,
-    { fetchPolicy: 'cache-first' }
-  );
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Can't load products.</p>;
+  const data = useFetchProducts();
+
   return (
     <div className="container">
       <LandingHead />

@@ -1,4 +1,3 @@
-import useFetchProducts from './useFetchProducts';
 import FormatCurrency from './FormatCurrency';
 import {
   Capitalize,
@@ -6,12 +5,15 @@ import {
   Slugify,
   SlugifyID,
 } from './TextTransform';
+import useFetchProducts from './useFetchProducts';
+import useFetchCategories from './useFetchCategories';
 
 export {
-  FormatCurrency,
-  useFetchProducts,
   Capitalize,
+  FormatCurrency,
   Lowercase,
   Slugify,
   SlugifyID,
+  useFetchCategories,
+  useFetchProducts,
 };

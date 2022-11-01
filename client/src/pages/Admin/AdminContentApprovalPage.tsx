@@ -1,17 +1,10 @@
-import { useQuery } from '@apollo/client';
 import React from 'react';
 import { DescriptionBox, ProductCard } from '../../components';
-import { GET_ALL_PRODUCTS } from '../../graphql/products';
-import { ProductsData } from '../../interfaces';
+import { useFetchProducts } from '../../utilities';
 
 const AdminContentApprovalPage: React.FC = () => {
   // Fetch products
-  const { loading, error, data } = useQuery<ProductsData>(
-    GET_ALL_PRODUCTS,
-    { fetchPolicy: 'cache-first' }
-  );
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>There are no products</p>;
+  const data = useFetchProducts();
 
   // Search for unapproved products
   const unapprovedProduct = data?.Items.filter(

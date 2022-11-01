@@ -1,22 +1,14 @@
-import { useQuery } from '@apollo/client';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Popular, ProductCard } from '../components';
-import { GET_ALL_PRODUCTS } from '../graphql/products';
-import { Lowercase } from '../utilities';
-import { ProductsData } from '../interfaces';
+import { Lowercase, useFetchProducts } from '../utilities';
 
 export interface IResultsProps {}
 
 const ResultsPage: React.FC<IResultsProps> = () => {
   const { title } = useParams();
   // Fetch products
-  const { loading, error, data } = useQuery<ProductsData>(
-    GET_ALL_PRODUCTS,
-    { fetchPolicy: 'cache-first' }
-  );
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>An error has ocurred, can't load products.</p>;
+  const data = useFetchProducts();
 
   const result = data?.Items.filter(
     (item) =>

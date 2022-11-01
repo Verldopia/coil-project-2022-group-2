@@ -1,5 +1,4 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import {
   AddToCart,
@@ -8,9 +7,7 @@ import {
   RelatedProduct,
   StarRating,
 } from '../components';
-import { GET_ALL_PRODUCTS } from '../graphql/products';
-import { Lowercase, SlugifyID } from '../utilities';
-import { ProductsData } from '../interfaces';
+import { Lowercase, SlugifyID, useFetchProducts } from '../utilities';
 
 // Styles
 import {
@@ -27,12 +24,7 @@ const ItemPage: React.FC = (props) => {
   let { id, title } = useParams();
 
   // Fetch products
-  const { loading, error, data } = useQuery<ProductsData>(
-    GET_ALL_PRODUCTS,
-    { fetchPolicy: 'cache-first' }
-  );
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Can't load product with ID {id}.</p>;
+  const data = useFetchProducts();
 
   // Find product by ID
   const product = data?.Items.find(

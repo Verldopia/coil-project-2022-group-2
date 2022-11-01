@@ -1,21 +1,14 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { ProductsData } from '../interfaces';
-import { GET_ALL_PRODUCTS } from '../graphql/products';
 import { DescriptionBox, Popular, ProductCard } from '../components';
 
 // Styles
 import { Button, Tooltip } from '@mui/material';
 import HeartBrokenIcon from '@mui/icons-material/HeartBroken';
+import { useFetchProducts } from '../utilities';
 
 const WishlistPage = () => {
   // Fetch products
-  const { loading, error, data } = useQuery<ProductsData>(
-    GET_ALL_PRODUCTS,
-    { fetchPolicy: 'cache-first' }
-  );
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Can't load wishlist.</p>;
+  const data = useFetchProducts();
 
   let newList = new Array();
   if (localStorage.wishlist) {

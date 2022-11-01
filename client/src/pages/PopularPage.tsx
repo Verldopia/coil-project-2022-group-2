@@ -1,19 +1,19 @@
-import { useQuery } from '@apollo/client';
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   ProductCard,
-  DescriptionBox,
   FilterProducts,
   FilterProductsTitle,
 } from '../components';
-import { GET_ALL_PRODUCTS } from '../graphql/products';
-import { ProductsData } from '../interfaces';
 
 // Styles
 import styles from '../components/Product/FilterProducts/FilterProducts.module.css';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
-import { Capitalize, Lowercase } from '../utilities';
+import {
+  Capitalize,
+  Lowercase,
+  useFetchProducts,
+} from '../utilities';
 import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 
@@ -22,12 +22,7 @@ const PopularPage: React.FC = () => {
   let { title } = useParams();
 
   // Fetch products
-  const { loading, error, data } = useQuery<ProductsData>(
-    GET_ALL_PRODUCTS,
-    { fetchPolicy: 'cache-first' }
-  );
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>An error has ocurred, can't load products.</p>;
+  const data = useFetchProducts();
 
   let product = data?.Items.filter(
     (item) =>

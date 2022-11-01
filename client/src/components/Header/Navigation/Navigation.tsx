@@ -2,20 +2,16 @@ import { NavLink as RRNavLink } from 'react-router-dom';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 import styles from './Navigation.module.css';
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { GET_ALL_CATEGORIES } from '../../../graphql/categories';
-import { CategoryData } from '../../../interfaces';
-import { Capitalize, Lowercase } from '../../../utilities';
+import {
+  Capitalize,
+  Lowercase,
+  useFetchCategories,
+} from '../../../utilities';
 import { ROUTES } from '../../../constants';
 
 const Navigation: React.FC = () => {
   // Fetch categories for navigation
-  const { loading, error, data } = useQuery<CategoryData>(
-    GET_ALL_CATEGORIES,
-    { fetchPolicy: 'cache-first' }
-  );
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>There are no categories</p>;
+  const data = useFetchCategories();
 
   return (
     <>
