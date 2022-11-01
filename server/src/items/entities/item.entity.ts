@@ -2,6 +2,7 @@ import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { Admin } from 'src/admin/entities/admin.entity';
 import { Category } from 'src/categories/entities/category.entity';
 import { Discount } from 'src/discount/entities/discount.entity';
+import { Order } from 'src/order/entities/order.entity';
 import {
   Column,
   Entity,
@@ -82,6 +83,9 @@ export class Item {
   @Field((type) => Admin)
   admin: Admin;
 
-  @ManyToMany(() => Item, (item) => item.id)
-  orders?: Item[];
+  @ManyToMany((type) => Order, (order) => order.items, {
+    cascade: true,
+  })
+  @JoinTable({ name: 'orders items' })
+  orders?: Order[];
 }

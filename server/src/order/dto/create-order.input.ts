@@ -14,6 +14,6 @@ export class CreateOrderInput {
   @Field()
   priceTotal: number;
 
-  @Field((type) => Int)
+  @Field({ nullable: true })
   userId: number;
 }

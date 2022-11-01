@@ -33,15 +33,14 @@ export class Order {
   @Field()
   priceTotal: number;
 
-  @Column()
-  @Field((type) => Int)
-  userId: number;
+  @Column({ nullable: true })
+  @Field({ nullable: true })
+  userId?: number;
 
-  @ManyToOne(() => User, (user) => user.id)
+  @ManyToOne(() => User, (user) => user.orders)
   @Field((type) => User)
   user: User;
 
-  @ManyToMany(() => Item, (item) => item.orders)
-  @JoinTable()
+  @ManyToMany((type) => Item, (item) => item.orders)
   items: Item[];
 }

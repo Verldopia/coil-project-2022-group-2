@@ -60,7 +60,7 @@ input CreateOrderInput {
   orderDate: String!
   priceTotal: Float!
   shipped: Boolean!
-  userId: Int!
+  userId: Float
 }
 
 input CreateUserMetaInput {
@@ -132,7 +132,7 @@ type Order {
   priceTotal: Float!
   shipped: Boolean!
   user: User!
-  userId: Int!
+  userId: Float
 }
 
 type Query {
@@ -146,10 +146,11 @@ type Query {
   getCategoryTitle(title: String!): Category!
   getDiscount(code: String!): Discount!
   getItem(id: Int!): Item!
+  getOrder(id: Int!): Order!
+  getOrders: [Order!]!
   getUser(id: Int!): User!
   getUserMeta(id: Int!): UserMeta!
   getUserName(userName: String!): User!
-  order(id: Int!): Order!
   users: [User!]!
 }
 
