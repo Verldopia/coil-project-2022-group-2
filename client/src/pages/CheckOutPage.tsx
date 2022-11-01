@@ -32,9 +32,11 @@ const CheckOutPage: React.FC<ICheckOutPageProps> = (props) => {
               <PriceCalculation cartItems={cartItems} />
             </div>
           </ul>
-          <div className={styles.actionBtnBox}>
-            <Cta inner="Place order" route={ROUTES.ORDERED} />
-          </div>
+          {cartItems[0] && (
+            <div className={styles.actionBtnBox}>
+              <Cta inner="Place order" route={ROUTES.ORDERED} />
+            </div>
+          )}
         </div>
       </div>
     </div>

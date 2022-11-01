@@ -33,6 +33,10 @@
   margin: 1rem 0 3rem 0;
   justify-content: end;
 }
+.cartBody {
+  max-width: 25rem;
+  width: 100%;
+}
 
 @keyframes fade {
   from {

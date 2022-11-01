@@ -50,35 +50,12 @@ export default function AccordionBox() {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography sx={{ width: '35%', flexShrink: 0 }}>
+          <Typography sx={{ width: '33%', flexShrink: 0 }}>
             Shipping address
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <AccordionAddress />
-        </AccordionDetails>
-      </Accordion>
-
-      {/* // Shipping method */}
-      <Accordion
-        expanded={expanded === 'panel3'}
-        onChange={handleChange('panel3')}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3bh-content"
-          id="panel3bh-header"
-        >
-          <Typography sx={{ width: '35%', flexShrink: 0 }}>
-            Shipping method
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl.
-            Integer sit amet egestas eros, vitae egestas augue. Duis
-            vel est augue.
-          </Typography>
         </AccordionDetails>
       </Accordion>
 
@@ -92,7 +69,7 @@ export default function AccordionBox() {
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography sx={{ width: '35%', flexShrink: 0 }}>
+          <Typography sx={{ width: '33%', flexShrink: 0 }}>
             Payment
           </Typography>
         </AccordionSummary>

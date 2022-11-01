@@ -7,9 +7,7 @@ import { CategoryData } from '../../../interfaces';
 import { TextField, Button } from '@mui/material';
 import VpnKeyOutlinedIcon from '@mui/icons-material/VpnKeyOutlined';
 import styles from './AdminContentInputForm.module.css';
-import {
-  CREATE_PRODUCT
-} from '../../../graphql/products';
+import { CREATE_PRODUCT } from '../../../graphql/products';
 import { useMutation } from '@apollo/client';
 import { useFetchProducts } from '../../../utilities';
 
@@ -20,7 +18,6 @@ type Props = {
 const AdminContentInputForm = ({ catData }: Props) => {
   // Fetch products
   const data = useFetchProducts();
-
 
   const [createProduct] = useMutation(CREATE_PRODUCT);
   const formik = useFormik({
@@ -47,7 +44,7 @@ const AdminContentInputForm = ({ catData }: Props) => {
       type: Yup.string().required(ERRORS.TYPE_REQUIRED),
       mainImage: Yup.string().required(ERRORS.IMG_REQUIRED),
       description: Yup.string()
-        .min(50, ERRORS.DESC_TOO_SHORT)
+        .min(50, ERRORS.FIELD_TOO_SHORT)
         .required(ERRORS.DESC_REQUIRED),
     }),
     onSubmit: (values) => {
