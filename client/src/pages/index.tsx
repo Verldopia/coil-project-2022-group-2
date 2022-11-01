@@ -11,6 +11,9 @@ import OrderPage from './OrderPage';
 import RegisterPage from './RegisterPage';
 import ResultsPage from './ResultsPage';
 import WishlistPage from './WishlistPage';
+import FaqPage from './FaqPage';
+import LegalPage from './LegalPage';
+import ShippingPage from './ShippingPage';
 
 export {
   AboutPage,
@@ -25,5 +28,8 @@ export {
   LoginPage,
   RegisterPage,
   ResultsPage,
+  ShippingPage,
+  FaqPage,
+  LegalPage,
   WishlistPage,
 };

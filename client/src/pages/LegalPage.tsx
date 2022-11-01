@@ -8,9 +8,9 @@ import { Breadcrumbs, Link } from '@mui/material';
 import { Capitalize } from '../utilities';
 import { useLocation } from 'react-router-dom';
 
-export interface IAboutPageProps {}
+export interface ILegalPageProps {}
 
-const AboutPage: React.FC<IAboutPageProps> = (props) => {
+const LegalPage: React.FC<ILegalPageProps> = (props) => {
   const fullTitle = useLocation();
   const title = fullTitle.pathname.split('/');
 
@@ -33,9 +33,12 @@ const AboutPage: React.FC<IAboutPageProps> = (props) => {
       <div className="container--info__images larger">
         <h1 className="padding title">
           SmartHomes provides home security to around 2,007,000 homes
-          in Canada. The All-In-One commerce company to make your Home
-          Safe and Secure.
+          in Canada.
         </h1>
+        <h2 className="padding title">
+          The All-In-One commerce company to make your Home Safe and
+          Secure.
+        </h2>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -132,4 +135,4 @@ const AboutPage: React.FC<IAboutPageProps> = (props) => {
   );
 };
 
-export default AboutPage;
+export default LegalPage;

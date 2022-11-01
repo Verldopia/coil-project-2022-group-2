@@ -6,7 +6,7 @@ import { Button, Tooltip } from '@mui/material';
 import HeartBrokenIcon from '@mui/icons-material/HeartBroken';
 import { useFetchProducts } from '../utilities';
 
-const WishlistPage = () => {
+const WishlistPage: React.FC = () => {
   // Fetch products
   const data = useFetchProducts();
 

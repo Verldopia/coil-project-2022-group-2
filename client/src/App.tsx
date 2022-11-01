@@ -15,6 +15,9 @@ import {
   RegisterPage,
   ResultsPage,
   OrderPage,
+  FaqPage,
+  ShippingPage,
+  LegalPage,
 } from './pages';
 import {
   AdminLandingPage,
@@ -95,12 +98,15 @@ function App() {
 
         {/* User layout */}
         <Route element={<BaseLayout />}>
+          <Route path={ROUTES.ABOUT} element={<AboutPage />} />
           <Route path={ROUTES.LANDING} element={<LandingPage />} />
           <Route path={ROUTES.RESULTS} element={<ResultsPage />} />
           <Route path={ROUTES.WISHLIST} element={<WishlistPage />} />
           <Route path={ROUTES.ITEMS} element={<ItemPage />} />
           <Route path={ROUTES.CHECKOUT} element={<CheckOutPage />} />
           <Route path={ROUTES.ORDERED} element={<OrderPage />} />
+          <Route path={ROUTES.SHIPPING} element={<ShippingPage />} />
+          <Route path={ROUTES.FAQ} element={<FaqPage />} />
           <Route
             path={ROUTES.CATEGORIES}
             element={<CategoriesPage />}
@@ -115,8 +121,8 @@ function App() {
         </Route>
 
         {/* // !! Does not exist yet */}
+        <Route path={ROUTES.LEGAL} element={<LegalPage />} />
         <Route path={ROUTES.CONTACT} element={<ContactPage />} />
-        <Route path={ROUTES.ABOUT} element={<AboutPage />} />
         <Route path={ROUTES.ACCOUNT} element={<AccountPage />} />
       </Routes>
     </ShoppingCartProvider>
