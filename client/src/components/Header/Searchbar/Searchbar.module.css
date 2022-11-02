@@ -8,10 +8,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   max-width: var(--width);
   width: 100%;
   margin: 0 auto;
   padding: 1rem 0 0 1rem;
+}
+.form {
+  display: flex;
 }
 .searchBar {
   background-color: var(--bgd-color);

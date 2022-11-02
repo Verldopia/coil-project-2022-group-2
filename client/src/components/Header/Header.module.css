@@ -6,6 +6,7 @@
 .headerTop {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
   width: 100%;
   width: var(--width);
   padding: 0.5rem;
@@ -26,6 +27,8 @@
 }
 .headerBtns {
   display: flex;
+  flex-wrap: wrap;
+
   gap: 1.5rem;
   align-items: center;
   color: var(--bgd-color);

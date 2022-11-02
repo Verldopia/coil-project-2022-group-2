@@ -18,7 +18,7 @@ const SearchBar: React.FC = () => {
   return (
     <div className={styles.searchBarContainer}>
       <div className={styles.searchBarBox}>
-        <form action={route}>
+        <form className={styles.form} action={route}>
           <TextField
             className={styles.searchBar}
             size="small"

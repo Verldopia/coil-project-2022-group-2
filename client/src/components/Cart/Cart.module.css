@@ -5,13 +5,14 @@
     var(--bgd-color)
   );
   padding: 1rem;
-  width: 30rem;
+  width: 25rem;
   height: 100%;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 100;
   animation: fade 0.3s ease;
+  border: 1px solid red;
   overflow-y: auto;
   box-shadow: 5px 0 20px var(--darkest-grey);
 }
@@ -37,7 +38,11 @@
   max-width: 25rem;
   width: 100%;
 }
-
+@media (max-width: 54rem) {
+  .cartBody {
+    max-width: unset;
+  }
+}
 @keyframes fade {
   from {
     opacity: 0;
