@@ -91,7 +91,6 @@ typings/
 
 # Nuxt.scripts build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
