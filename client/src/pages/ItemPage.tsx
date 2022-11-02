@@ -101,7 +101,7 @@ const ItemPage: React.FC = (props) => {
                 amount={product.popularity}
               />
               <p>Currently {product.stock} in stock.</p>
-              <p>€{product.price}.-</p>
+              <p>${product.price}.-</p>
 
               <AddToCart item={product} />
               <Button

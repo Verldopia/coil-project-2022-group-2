@@ -44,7 +44,7 @@ function PriceCalculation({ cartItems }: Props) {
     ? (untaxedTotal / 100) * d.discountPercentage
     : 0;
 
-  // If discount amount > €50, set it to €50
+  // If discount amount > $50, set it to $50
   if (discPer > 50) {
     discPer = 50;
   }
@@ -87,7 +87,7 @@ function PriceCalculation({ cartItems }: Props) {
           {/* // Display shipping */}
           <div className={styles.box}>
             <p>Shipping:</p>
-            <p>€4.95</p>
+            <p>$4.95</p>
           </div>
 
           {/* // Display total price */}
