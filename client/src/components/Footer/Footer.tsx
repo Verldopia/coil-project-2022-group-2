@@ -2,6 +2,7 @@
 import styles from './Footer.module.css';
 import { TextField } from '@mui/material';
 import { ROUTES } from '../../constants';
+import { NavbarBrand, NavLink } from 'reactstrap';
 
 const Footer = () => {
   return (
@@ -12,25 +13,37 @@ const Footer = () => {
             <ul className={styles.list}>
               <h5 className={styles.title}>Support</h5>
               <li className={styles.listItem}>
-                <a href={ROUTES.FAQ}>FAQ</a>
+                <NavbarBrand tag={NavLink} to={ROUTES.FAQ}>
+                  FAQ
+                </NavbarBrand>
               </li>
               <li className={styles.listItem}>
-                <a href={ROUTES.SHIPPING}>Shipping</a>
+                <NavbarBrand tag={NavLink} to={ROUTES.SHIPPING}>
+                  Shipping
+                </NavbarBrand>
               </li>
               <li className={styles.listItem}>
-                <a href={ROUTES.ABOUT}>About us</a>
+                <NavbarBrand tag={NavLink} to={ROUTES.ABOUT}>
+                  About us
+                </NavbarBrand>
               </li>
             </ul>
             <ul className={styles.list}>
               <h5 className={styles.title}>Account</h5>
               <li className={styles.listItem}>
-                <a href={ROUTES.LOGIN}>Login</a>
+                <NavbarBrand tag={NavLink} to={ROUTES.LOGIN}>
+                  Login
+                </NavbarBrand>
               </li>
               <li className={styles.listItem}>
-                <a href={ROUTES.REGISTER}>Register</a>
+                <NavbarBrand tag={NavLink} to={ROUTES.REGISTER}>
+                  Register
+                </NavbarBrand>
               </li>
               <li className={styles.listItem}>
-                <a href={ROUTES.WISHLIST}>Wishlist</a>
+                <NavbarBrand tag={NavLink} to={ROUTES.WISHLIST}>
+                  Wishlist
+                </NavbarBrand>
               </li>
             </ul>
           </div>
@@ -55,34 +68,60 @@ const Footer = () => {
               href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
             ></link>
             <li className={styles.socialsItem}>
-              <a href="" className="fa fa-facebook"></a>
+              <NavbarBrand
+                tag={NavLink}
+                to=""
+                className="fa fa-facebook"
+              ></NavbarBrand>
             </li>
             <li className={styles.socialsItem}>
-              <a href="" className="fa fa-twitter"></a>
+              <NavbarBrand
+                tag={NavLink}
+                to=""
+                className="fa fa-twitter"
+              ></NavbarBrand>
             </li>
             <li className={styles.socialsItem}>
-              <a href="" className="fa fa-instagram"></a>
+              <NavbarBrand
+                tag={NavLink}
+                to=""
+                className="fa fa-instagram"
+              ></NavbarBrand>
             </li>
             <li className={styles.socialsItem}>
-              <a href="" className="fa fa-youtube"></a>
+              <NavbarBrand
+                tag={NavLink}
+                to=""
+                className="fa fa-youtube"
+              ></NavbarBrand>
             </li>
             <li className={styles.socialsItem}>
-              <a href="" className="fa fa-linkedin"></a>
+              <NavbarBrand
+                tag={NavLink}
+                to=""
+                className="fa fa-linkedin"
+              ></NavbarBrand>
             </li>
           </ul>
         </div>
         <div className="links">
           <ul className={styles.socials}>
             <li className={styles.socialsItem}>
-              <a href={ROUTES.LEGAL}>Legal</a>
+              <NavbarBrand tag={NavLink} to={ROUTES.LEGAL}>
+                Legal
+              </NavbarBrand>
             </li>
             <li>|</li>
             <li className={styles.socialsItem}>
-              <a href={ROUTES.LEGAL}>Privacy Policy</a>
+              <NavbarBrand tag={NavLink} to={ROUTES.LEGAL}>
+                Privacy Policy
+              </NavbarBrand>
             </li>
             <li>|</li>
             <li className={styles.socialsItem}>
-              <a href="">Sitemap</a>
+              <NavbarBrand tag={NavLink} to="">
+                Sitemap
+              </NavbarBrand>
             </li>
           </ul>
         </div>
