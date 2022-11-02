@@ -22,7 +22,10 @@ export default function AccordionDiscount() {
     onSubmit: () => {
       // Set discount code to sessionStorage
       data &&
-        sessionStorage.setItem('discountCode', data.getDiscount.code);
+        sessionStorage.setItem(
+          'discountCode',
+          data.getDiscount ? data.getDiscount.code : ''
+        );
       window.location.reload();
     },
   });
