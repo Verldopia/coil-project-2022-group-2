@@ -12,25 +12,25 @@ const Footer = () => {
             <ul className={styles.list}>
               <h5 className={styles.title}>Support</h5>
               <li className={styles.listItem}>
-                <a href={'../../' + ROUTES.FAQ}>FAQ</a>
+                <a href={ROUTES.FAQ}>FAQ</a>
               </li>
               <li className={styles.listItem}>
-                <a href={'../../' + ROUTES.SHIPPING}>Shipping</a>
+                <a href={ROUTES.SHIPPING}>Shipping</a>
               </li>
               <li className={styles.listItem}>
-                <a href={'../../' + ROUTES.ABOUT}>About us</a>
+                <a href={ROUTES.ABOUT}>About us</a>
               </li>
             </ul>
             <ul className={styles.list}>
               <h5 className={styles.title}>Account</h5>
               <li className={styles.listItem}>
-                <a href={'../../' + ROUTES.LOGIN}>Login</a>
+                <a href={ROUTES.LOGIN}>Login</a>
               </li>
               <li className={styles.listItem}>
-                <a href={'../../' + ROUTES.REGISTER}>Register</a>
+                <a href={ROUTES.REGISTER}>Register</a>
               </li>
               <li className={styles.listItem}>
-                <a href={'../../' + ROUTES.WISHLIST}>Wishlist</a>
+                <a href={ROUTES.WISHLIST}>Wishlist</a>
               </li>
             </ul>
           </div>
@@ -74,11 +74,11 @@ const Footer = () => {
         <div className="links">
           <ul className={styles.socials}>
             <li className={styles.socialsItem}>
-              <a href={'../../' + ROUTES.LEGAL}>Legal</a>
+              <a href={ROUTES.LEGAL}>Legal</a>
             </li>
             <li>|</li>
             <li className={styles.socialsItem}>
-              <a href={'../../' + ROUTES.LEGAL}>Privacy Policy</a>
+              <a href={ROUTES.LEGAL}>Privacy Policy</a>
             </li>
             <li>|</li>
             <li className={styles.socialsItem}>

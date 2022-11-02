@@ -6,6 +6,7 @@ type CtaProps = {
 };
 
 function Cta({ inner, route }: CtaProps) {
+  const baseUrl = window.location.origin;
   return (
     <>
       <Button
@@ -20,7 +21,7 @@ function Cta({ inner, route }: CtaProps) {
         color="info"
       >
         <Link
-          href={'../../' + route}
+          href={baseUrl + '/' + route}
           underline="none"
           sx={{
             color: 'var(--darkest-grey)',

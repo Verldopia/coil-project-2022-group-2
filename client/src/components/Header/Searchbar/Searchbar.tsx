@@ -10,7 +10,8 @@ import { Button } from 'reactstrap';
 const SearchBar: React.FC = () => {
   // Set search param
   const [param, setParam] = useState('');
-  const route = param ? '../../search/' + Lowercase(param) : '';
+  const baseUrl = window.location.origin;
+  const route = param ? baseUrl + '/search/' + Lowercase(param) : '';
 
   const { openCart, cartQuantity } = UseShoppingCart();
 
