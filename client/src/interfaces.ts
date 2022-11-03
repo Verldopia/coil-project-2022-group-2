@@ -60,3 +60,24 @@ export interface User {
 export interface UsersData {
   accounts: User[];
 }
+
+// Orders
+export interface Order {
+  map(arg0: (row: any) => JSX.Element): import('react').ReactNode;
+  id: number;
+  userId: number;
+  orderDate: number;
+  shipped: boolean;
+  delivered: boolean;
+  priceTotal: number;
+  items: Product[];
+  getOrders?: Order;
+}
+
+// Item from orders
+export interface OrderItem {
+  orderId: number;
+  itemId: number;
+  amount: number;
+  itemOrders: OrderItem;
+}

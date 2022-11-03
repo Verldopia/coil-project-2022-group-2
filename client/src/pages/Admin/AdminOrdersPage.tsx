@@ -1,10 +1,13 @@
 import React from 'react';
 import { AdminTable } from '../../components/Admin/AdminTable/AdminTable';
+import { useFetchOrders } from '../../utilities';
 
-const AdminOrdersPage: React.FC = () => {
+const AdminOrdersPage = () => {
+  const orderData = useFetchOrders();
+
   return (
     <>
-      <AdminTable />
+      <AdminTable orders={orderData?.getOrders} />
     </>
   );
 };
