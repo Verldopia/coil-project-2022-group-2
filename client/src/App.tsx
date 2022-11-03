@@ -20,7 +20,6 @@ import {
   LegalPage,
 } from './pages';
 import {
-  AdminLandingPage,
   AdminLoginPage,
   AdminLivePage,
   AdminOrdersPage,
@@ -57,7 +56,6 @@ function App() {
 
         {/* Admin layout */}
         <Route element={<AdminLayout />}>
-          <Route path={ROUTES.ADMIN} element={<AdminLandingPage />} />
           <Route
             path={ROUTES.ADMINLive}
             element={<AdminLivePage />}

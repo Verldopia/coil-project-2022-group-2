@@ -20,8 +20,7 @@ export const AdminLoginForm: React.FC = () => {
       password: Yup.string().required(ERRORS.PASS_REQUIRED),
     }),
     onSubmit: (values) => {
-      console.log(values);
-      // formik.submitForm();
+      window.location.href = ROUTES.ADMINContent;
     },
   });
 

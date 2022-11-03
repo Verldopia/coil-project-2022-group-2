@@ -1,7 +1,6 @@
 export const ROUTES = Object.freeze({
   // Admin
-  ADMINLogin: 'admin-login',
-  ADMIN: 'x',
+  ADMINLogin: 'x',
   ADMINLive: 'x-live',
   ADMINAdministration: 'x-administration',
   ADMINContent: 'x-content',

@@ -43,10 +43,6 @@
   background-color: --dark-color;
   padding: 1rem;
 }
-.admin {
-  /* !! Code to be removed for production (also btn itself) */
-  color: red;
-}
 .headerBottom {
   background-color: var(--darkest-grey);
 }

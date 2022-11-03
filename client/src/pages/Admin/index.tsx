@@ -1,4 +1,3 @@
-import AdminLandingPage from './AdminLandingPage';
 import AdminLivePage from './AdminLivePage';
 import AdminLoginPage from './AdminLoginPage';
 import AdminOrdersPage from './AdminOrdersPage';
@@ -12,7 +11,6 @@ import AdminPaymentsPage from './AdminPaymentsPage';
 
 export {
   AdminLivePage,
-  AdminLandingPage,
   AdminLoginPage,
   AdminOrdersPage,
   AdminStockPage,

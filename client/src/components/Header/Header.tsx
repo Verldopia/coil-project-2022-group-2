@@ -25,14 +25,6 @@ const Header: React.FC = () => {
             </NavbarBrand>
           </div>
           <div className={styles.headerBtns}>
-            {/* // !! To Be removed for production! (also css) */}
-            <Button
-              className={styles.admin}
-              tag={NavLink}
-              to={ROUTES.ADMIN}
-            >
-              Admin
-            </Button>
             <Button
               className={styles.btn}
               tag={NavLink}
