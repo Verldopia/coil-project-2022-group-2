@@ -8,7 +8,6 @@ import {
   CheckOutPage,
   WishlistPage,
   AboutPage,
-  AccountPage,
   CategoriesPage,
   ItemPage,
   LoginPage,
@@ -105,6 +104,7 @@ function App() {
           <Route path={ROUTES.ORDERED} element={<OrderPage />} />
           <Route path={ROUTES.SHIPPING} element={<ShippingPage />} />
           <Route path={ROUTES.FAQ} element={<FaqPage />} />
+          <Route path={ROUTES.LEGAL} element={<LegalPage />} />
           <Route
             path={ROUTES.CATEGORIES}
             element={<CategoriesPage />}
@@ -119,9 +119,7 @@ function App() {
         </Route>
 
         {/* // !! Does not exist yet */}
-        <Route path={ROUTES.LEGAL} element={<LegalPage />} />
         <Route path={ROUTES.CONTACT} element={<ContactPage />} />
-        <Route path={ROUTES.ACCOUNT} element={<AccountPage />} />
       </Routes>
     </ShoppingCartProvider>
   );

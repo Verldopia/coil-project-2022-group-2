@@ -1,5 +1,4 @@
 import AboutPage from './AboutPage';
-import AccountPage from './AccountPage';
 import CategoriesPage from './CategoriesPage';
 import CheckOutPage from './CheckOutPage';
 import ContactPage from './ContactPage';
@@ -17,7 +16,6 @@ import ShippingPage from './ShippingPage';
 
 export {
   AboutPage,
-  AccountPage,
   CategoriesPage,
   CheckOutPage,
   PopularPage,

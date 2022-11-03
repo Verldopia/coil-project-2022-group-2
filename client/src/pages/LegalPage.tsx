@@ -8,9 +8,7 @@ import { Breadcrumbs, Link } from '@mui/material';
 import { Capitalize } from '../utilities';
 import { useLocation } from 'react-router-dom';
 
-export interface ILegalPageProps {}
-
-const LegalPage: React.FC<ILegalPageProps> = (props) => {
+const LegalPage: React.FC = () => {
   const fullTitle = useLocation();
   const title = fullTitle.pathname.split('/');
 
@@ -31,40 +29,51 @@ const LegalPage: React.FC<ILegalPageProps> = (props) => {
         </Breadcrumbs>
       </div>
       <div className="container--info__images larger">
-        <h1 className="padding title">
-          SmartHomes provides home security to around 2,007,000 homes
-          in Canada.
-        </h1>
-        <h2 className="padding title">
-          The All-In-One commerce company to make your Home Safe and
-          Secure.
-        </h2>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>What is SmartHomes.com?</Typography>
+            <Typography>ABC Private Limited</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              SmartHomes.com (ABC Private Limited) is Canada’s largest
-              home security and control system provider. With our
-              catalog, you will find everything you are looking for.
-              We have automated door locks, cameras, sensors,
-              touchpads, and thermostats; you name it and we have it
-              all.
+              For SmartHomes.com (ABC Private Limited), the privacy of
+              your information is our priority. This notice describes
+              the personal information we will be collecting.We care
+              about your rights and choices, please read the following
+              legal notice and feel free to contact us with any
+              questions.
             </Typography>
             <br />
             <Typography>
-              We give you multiple options to choose from in every
-              category, the best quality available at an affordable
-              price. Select your items and your order will be
-              delivered right to your doorstep, anywhere in Canada.
+              Please read this Privacy Notice before using any of our
+              products and/or services. We use collected information
+              for:
             </Typography>
             <br />
-            <Typography>We guarantee the best quality!</Typography>
+            <ul>
+              <Typography>
+                Delivery of products/services and communication
+              </Typography>
+              <br />
+              <Typography>
+                Providing you with great deals, personalized services
+                and recommendations to improve your experience.
+              </Typography>
+              <br />{' '}
+              <Typography>
+                Keeping you informed about marketing and promotional
+                campaigns based on your profile
+              </Typography>
+              <br />
+              <Typography>
+                Preventing fraud, monetary loss, illegal activity,
+                harm, and any other legal or information security
+                risks.
+              </Typography>
+            </ul>
           </AccordionDetails>
         </Accordion>
         <Accordion>
@@ -73,17 +82,30 @@ const LegalPage: React.FC<ILegalPageProps> = (props) => {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography>Why Us?</Typography>
+            <Typography>Information to Third Parties</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              SmartHomes.com gives you products that help you to leave
-              your home without worrying about break-ins, gas leaks,
-              or fires. Explore the latest items and shop for your
-              every need from the comfort of your home or office. No
-              more getting worried about theft, leaky water pipes or
-              fire; get everything you need, when you need, right at
-              your doorstep.
+              We do not believe in selling, trading or otherwise
+              sharing or transferring your personal Information to
+              third parties. Although, accumulated data might be
+              shared to third parties for marketing, advertising, or
+              other purposes. These services are not allowed to use
+              your Personal Information except for the purposes
+              described in this Privacy Policy.
+            </Typography>
+            <br />
+            <Typography>
+              The personal information we will be using for different
+              purposes will be accurate, complete, and up to date. To
+              review your information and details, you may request
+              access by contacting us. In situations where your
+              information has been shared with a third party, we will
+              refer you to that party and you have the right to
+              challenge the accuracy and completeness of your own
+              data. You may also access, correct and modify your
+              information by logging in to your account on our
+              website.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -93,40 +115,37 @@ const LegalPage: React.FC<ILegalPageProps> = (props) => {
             aria-controls="panel3a-content"
             id="panel3a-header"
           >
-            <Typography>Our story</Typography>
+            <Typography>Copyright and Trade-mark License </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              SmartHome is the first commerce platform in Canada to
-              make homes a safe place for homeowners. SmartHome.com,
-              founded in 2009 by a group of international students,
-              Ben Richards, Harry Evans and Priya Sharma. When they
-              came to Toronto, they found a gap in the market for home
-              security and monitoring. Over the last five years,
-              SmartHomes.com has been a leader in home security
-              products, expanding throughout the country and offering
-              a wide variety of home-protection items. They are
-              launching the latest items to help people live a relaxed
-              and stress-free life in Canada.
+              The information on this website including the text,
+              graphics, logos, button icons, images, audio clips,
+              digital downloads, data compilations, are protected by
+              ABC Private Limited copyright and trademark laws.
+              SmartHomes is registered under the trademarks of ABC
+              Private Limited. Without the prior express written
+              consent of ABC, you can not modify, copy, reproduce,
+              republish, upload, post, transmit, or distribute any
+              portion of the Information. If you feel, any
+              information, content or text appearing on our website
+              constitutes a copyright infringement of another parties’
+              rights, please contact us immediately at
+              legal@smarthomes.com.
             </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography>Our Vision</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
+            <br />
             <Typography>
-              We aim to offer consistency that focuses on our
-              customer’s needs and delivering leading-edge products.
-              We take our security products and innovation seriously,
-              we hope to generate a new era of smart connected devices
-              that will enhance privacy and give customers the
-              opportunity to protect their home, their way.
+              For non-commercial use, you can print or download
+              portions of the materials from various areas, however
+              you agree that you will not change or delete any
+              copyright notices from the materials or modify any
+              registered mark. SmartHomes hereby grants license to
+              distribute, display and promote the Information solely
+              for the purpose of advertising, promoting and selling
+              the products, provided you agree not to change or delete
+              any copyright materials, or modify any registered mark.
+              Dealers can not change any information without written
+              permission of SmartHomes.
             </Typography>
           </AccordionDetails>
         </Accordion>
