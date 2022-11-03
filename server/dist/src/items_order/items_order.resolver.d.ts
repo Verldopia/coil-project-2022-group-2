@@ -9,7 +9,7 @@ export declare class ItemsOrderResolver {
     constructor(itemOrderService: ItemsOrderService);
     createItemsOrder(createItemsOrderInput: CreateItemsOrderInput): Promise<ItemOrder>;
     findAll(): Promise<ItemOrder[]>;
-    findOne(orderId: number, itemId: number): Promise<ItemOrder>;
+    findOne(orderId: number): Promise<ItemOrder>;
     item(itemOrder: ItemOrder): Promise<Item>;
     order(itemOrder: ItemOrder): Promise<Order>;
     updateItemOrder(updateItemOrderInput: UpdateItemsOrderInput): Promise<ItemOrder>;

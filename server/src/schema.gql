@@ -168,7 +168,7 @@ type Query {
   getUser(id: Int!): User!
   getUserMeta(id: Int!): UserMeta!
   getUserName(userName: String!): User!
-  itemOrder(itemId: Int!, orderId: Int!): ItemOrder!
+  itemOrder(orderId: Int!): ItemOrder!
   itemOrders: [ItemOrder!]!
   users: [User!]!
 }

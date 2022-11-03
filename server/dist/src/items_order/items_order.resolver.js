@@ -30,8 +30,8 @@ let ItemsOrderResolver = class ItemsOrderResolver {
     findAll() {
         return this.itemOrderService.findAll();
     }
-    findOne(orderId, itemId) {
-        return this.itemOrderService.findOne(orderId, itemId);
+    findOne(orderId) {
+        return this.itemOrderService.findOne(orderId);
     }
     item(itemOrder) {
         return this.itemOrderService.getItem(itemOrder.itemId);
@@ -62,9 +62,8 @@ __decorate([
 __decorate([
     (0, graphql_1.Query)(() => items_order_entity_1.ItemOrder, { name: 'itemOrder' }),
     __param(0, (0, graphql_1.Args)('orderId', { type: () => graphql_1.Int })),
-    __param(1, (0, graphql_1.Args)('itemId', { type: () => graphql_1.Int })),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, Number]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], ItemsOrderResolver.prototype, "findOne", null);
 __decorate([

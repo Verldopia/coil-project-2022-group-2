@@ -13,7 +13,7 @@ export declare class ItemsOrderService {
     constructor(itemOrderRepository: Repository<ItemOrder>, itemService: ItemsService, orderService: OrderService);
     createItemsOrder(createItemOrderInput: CreateItemsOrderInput): Promise<ItemOrder>;
     findAll(): Promise<ItemOrder[]>;
-    findOne(orderId: number, itemId: number): Promise<ItemOrder>;
+    findOne(orderId: number): Promise<ItemOrder>;
     findAllByOrderId(id: number): Promise<ItemOrder[]>;
     findAllByItemId(id: number): Promise<ItemOrder[]>;
     update(orderId: number, itemId: number, updateItemOrderInput: UpdateItemsOrderInput): Promise<ItemOrder>;

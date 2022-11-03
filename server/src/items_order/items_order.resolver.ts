@@ -34,11 +34,8 @@ export class ItemsOrderResolver {
   }
 
   @Query(() => ItemOrder, { name: 'itemOrder' })
-  findOne(
-    @Args('orderId', { type: () => Int }) orderId: number,
-    @Args('itemId', { type: () => Int }) itemId: number
-  ) {
-    return this.itemOrderService.findOne(orderId, itemId);
+  findOne(@Args('orderId', { type: () => Int }) orderId: number) {
+    return this.itemOrderService.findOne(orderId);
   }
 
   @ResolveField(() => Item)

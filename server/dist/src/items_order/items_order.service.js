@@ -32,10 +32,9 @@ let ItemsOrderService = class ItemsOrderService {
     findAll() {
         return this.itemOrderRepository.find();
     }
-    findOne(orderId, itemId) {
+    findOne(orderId) {
         return this.itemOrderRepository.findOneByOrFail({
             orderId,
-            itemId,
         });
     }
     findAllByOrderId(id) {

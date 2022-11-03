@@ -33,10 +33,9 @@ export class ItemsOrderService {
     return this.itemOrderRepository.find();
   }
 
-  findOne(orderId: number, itemId: number): Promise<ItemOrder> {
+  findOne(orderId: number): Promise<ItemOrder> {
     return this.itemOrderRepository.findOneByOrFail({
       orderId,
-      itemId,
     });
   }
 
