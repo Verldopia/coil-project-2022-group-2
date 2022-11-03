@@ -107,7 +107,6 @@ __decorate([
     (0, typeorm_1.ManyToMany)((type) => order_entity_1.Order, (order) => order.items, {
         cascade: true,
     }),
-    (0, typeorm_1.JoinTable)({ name: 'orders items' }),
     __metadata("design:type", Array)
 ], Item.prototype, "orders", void 0);
 Item = __decorate([

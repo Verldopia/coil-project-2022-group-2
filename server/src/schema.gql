@@ -55,6 +55,12 @@ input CreateItemInput {
   type: String!
 }
 
+input CreateItemsOrderInput {
+  amount: Int!
+  itemId: Int!
+  orderId: Int!
+}
+
 input CreateOrderInput {
   delivered: Boolean!
   orderDate: String!
@@ -102,6 +108,14 @@ type Item {
   type: String!
 }
 
+type ItemOrder {
+  amount: Int!
+  item: Item!
+  itemId: Int!
+  order: Order!
+  orderId: Int!
+}
+
 type LoginResponse {
   access_token: String!
   user: User!
@@ -117,12 +131,15 @@ type Mutation {
   createCategory(createCategoryInput: CreateCategoryInput!): Category!
   createDiscount(createDiscountInput: CreateDiscountInput!): Discount!
   createItem(createItemInput: CreateItemInput!): Item!
+  createItemsOrder(createItemsOrderInput: CreateItemsOrderInput!): ItemOrder!
   createOrder(createOrderInput: CreateOrderInput!): Order!
   createUserMeta(createUserMetaInput: CreateUserMetaInput!): UserMeta!
   login(loginUserInput: LoginUserInput!): LoginResponse!
   removeCategory(id: Int!): Category!
+  removeItemOrder(itemId: Int!, orderId: Int!): ItemOrder!
   removeOrder(id: Int!): Order!
   updateCategory(updateCategoryInput: UpdateCategoryInput!): Category!
+  updateItemOrder(updateItemOrderInput: UpdateItemsOrderInput!): ItemOrder!
 }
 
 type Order {
@@ -151,6 +168,8 @@ type Query {
   getUser(id: Int!): User!
   getUserMeta(id: Int!): UserMeta!
   getUserName(userName: String!): User!
+  itemOrder(itemId: Int!, orderId: Int!): ItemOrder!
+  itemOrders: [ItemOrder!]!
   users: [User!]!
 }
 
@@ -158,6 +177,13 @@ input UpdateCategoryInput {
   description: String
   id: Int!
   title: String
+}
+
+input UpdateItemsOrderInput {
+  amount: Int
+  id: Int!
+  itemId: Int
+  orderId: Int
 }
 
 type User {

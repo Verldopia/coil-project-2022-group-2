@@ -14,6 +14,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { OrderModule } from './order/order.module';
 import { DiscountModule } from './discount/discount.module';
+import { ItemsOrderModule } from './items_order/items_order.module';
 
 @Module({
   imports: [
@@ -37,6 +38,7 @@ import { DiscountModule } from './discount/discount.module';
     AuthModule,
     OrderModule,
     DiscountModule,
+    ItemsOrderModule,
   ],
   // controllers: [AppController],
   // providers: [AppService],

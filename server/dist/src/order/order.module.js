@@ -24,6 +24,7 @@ OrderModule = __decorate([
             items_module_1.ItemsModule,
         ],
         providers: [order_resolver_1.OrderResolver, order_service_1.OrderService],
+        exports: [order_service_1.OrderService],
     })
 ], OrderModule);
 exports.OrderModule = OrderModule;

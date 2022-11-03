@@ -8,5 +8,6 @@ import { CategoriesModule } from 'src/categories/categories.module';
 @Module({
   imports: [TypeOrmModule.forFeature([Item]), CategoriesModule],
   providers: [ItemsService, ItemsResolver],
+  exports: [ItemsService],
 })
 export class ItemsModule {}

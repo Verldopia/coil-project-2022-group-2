@@ -19,6 +19,7 @@ ItemsModule = __decorate([
     (0, common_1.Module)({
         imports: [typeorm_1.TypeOrmModule.forFeature([item_entity_1.Item]), categories_module_1.CategoriesModule],
         providers: [items_service_1.ItemsService, items_resolver_1.ItemsResolver],
+        exports: [items_service_1.ItemsService],
     })
 ], ItemsModule);
 exports.ItemsModule = ItemsModule;

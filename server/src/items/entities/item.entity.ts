@@ -86,6 +86,5 @@ export class Item {
   @ManyToMany((type) => Order, (order) => order.items, {
     cascade: true,
   })
-  @JoinTable({ name: 'orders items' })
   orders?: Order[];
 }

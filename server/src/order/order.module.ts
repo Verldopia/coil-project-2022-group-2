@@ -14,5 +14,6 @@ import { ItemsModule } from 'src/items/items.module';
   ],
 
   providers: [OrderResolver, OrderService],
+  exports: [OrderService],
 })
 export class OrderModule {}
