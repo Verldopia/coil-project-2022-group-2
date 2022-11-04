@@ -26,6 +26,7 @@ const Header: React.FC = () => {
           </div>
           <div className={styles.headerBtns}>
             <Button
+              id="step-3"
               className={styles.btn}
               tag={NavLink}
               to={ROUTES.WISHLIST}

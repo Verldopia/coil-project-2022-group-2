@@ -15,13 +15,22 @@ const LandingPage: React.FC<ILandingPageProps> = (props) => {
 
   return (
     <div className="container">
-      <LandingHead />
+      <div id="step-1">
+        <LandingHead />
+      </div>
 
       {/* // 4 Globally most popular products */}
-      <RelatedProduct titleText="Recommended products" data={data} />
+      <div id="step-5">
+        <RelatedProduct
+          titleText="Recommended products"
+          data={data}
+        />
+      </div>
 
       {/* // 4 Newest products added to database */}
-      <NewestProduct titleText="New arrivals" data={data} />
+      <div id="step-6">
+        <NewestProduct titleText="New arrivals" data={data} />
+      </div>
     </div>
   );
 };

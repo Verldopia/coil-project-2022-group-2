@@ -10,6 +10,7 @@ function Cta({ inner, route }: CtaProps) {
   return (
     <>
       <Button
+        id="step-2"
         className="mainBtn checkout"
         sx={{
           color: 'var(--darkest-grey)',

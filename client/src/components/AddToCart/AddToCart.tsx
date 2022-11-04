@@ -9,7 +9,7 @@ const AddToCart = ({ item }: AddToCartProps) => {
   const { increaseCartQuantity } = UseShoppingCart();
 
   return (
-    <>
+    <div>
       <Tooltip title="Add to cart" arrow placement="bottom">
         <Button
           sx={{
@@ -25,7 +25,7 @@ const AddToCart = ({ item }: AddToCartProps) => {
           <ShoppingCartOutlinedIcon />
         </Button>
       </Tooltip>
-    </>
+    </div>
   );
 };
 

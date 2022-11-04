@@ -263,3 +263,9 @@ h4 {
   margin: 1rem;
   width: auto;
 }
+
+#buttonRow {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 8px;
+}

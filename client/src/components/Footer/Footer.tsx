@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className={styles.container}>
       <div className={styles.footerContainer}>
         <div className={styles.footerBox}>
-          <div className={styles.footerBoxList}>
+          <div className={styles.footerBoxList} id="step-7">
             <ul className={styles.list}>
               <h5 className={styles.title}>Support</h5>
               <li className={styles.listItem}>

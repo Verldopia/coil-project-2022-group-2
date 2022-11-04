@@ -5,7 +5,7 @@ type Props = {};
 
 function LandingHead({}: Props) {
   return (
-    <div className="container--info">
+    <div className="container--info" id="1">
       <div className="container--info__images">
         <div className={styles.img}></div>
       </div>
