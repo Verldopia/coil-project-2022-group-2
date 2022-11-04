@@ -15,6 +15,7 @@ const Descriptinator = ({ text }: Props) => {
           text && (
             <li key={i}>
               <p className={styles.descriptionText}>• {text}</p>
+              <br />
             </li>
           )
       )}

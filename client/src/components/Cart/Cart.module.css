@@ -12,7 +12,6 @@
   right: 0;
   z-index: 100;
   animation: fade 0.3s ease;
-  border: 1px solid red;
   overflow-y: auto;
   box-shadow: 5px 0 20px var(--darkest-grey);
 }
