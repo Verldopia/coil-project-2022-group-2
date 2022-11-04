@@ -3,7 +3,7 @@ import React from 'react';
 const AdminCustomerPage: React.FC = () => {
   return (
     <>
-      <p>hello customers</p>
+      <p>There's nothing here...</p>
     </>
   );
 };
