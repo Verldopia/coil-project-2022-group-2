@@ -95,7 +95,6 @@ const ItemPage: React.FC = (props) => {
             </div>
             <div className="container--info__params">
               <h1>{product.title}</h1>
-              <p>Brand: {product.category?.title}</p>
               <StarRating
                 starValue={product.category?.id}
                 amount={product.popularity}

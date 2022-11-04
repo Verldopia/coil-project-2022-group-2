@@ -16,6 +16,10 @@ export interface ICheckOutPageProps {}
 const CheckOutPage: React.FC<ICheckOutPageProps> = (props) => {
   const { cartItems } = UseShoppingCart();
 
+  const removeCart = () => {
+    localStorage.removeItem('shopping-cart');
+  };
+
   return (
     <div className="container">
       <h1>Summary</h1>
@@ -33,7 +37,7 @@ const CheckOutPage: React.FC<ICheckOutPageProps> = (props) => {
             </div>
           </ul>
           {cartItems[0] && (
-            <div className={styles.actionBtnBox}>
+            <div className={styles.actionBtnBox} onClick={removeCart}>
               <Cta inner="Place order" route={ROUTES.ORDERED} />
             </div>
           )}

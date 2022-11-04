@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { ROUTES } from '../constants';
 
 export interface IOrderPageProps {}
 
 const OrderPage: React.FC<IOrderPageProps> = (props) => {
-  const [message, setMessage] = useState('');
-  const { number } = useParams();
-
-  useEffect(() => {
-    if (number) {
-      setMessage('The number is' + number);
-    } else {
-      setMessage('No number was provided');
-    }
-  }, []);
   return (
     <div>
-      <p>This is the OrderPage.</p>
-      <p>{message}</p>
+      <p>Order was successful!</p>
+      <br />
+      <a href={ROUTES.LANDING} className="bold">
+        Return to the store.
+      </a>
     </div>
   );
 };

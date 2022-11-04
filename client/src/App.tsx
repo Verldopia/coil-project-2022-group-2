@@ -105,6 +105,7 @@ function App() {
           <Route path={ROUTES.SHIPPING} element={<ShippingPage />} />
           <Route path={ROUTES.FAQ} element={<FaqPage />} />
           <Route path={ROUTES.LEGAL} element={<LegalPage />} />
+          <Route path={ROUTES.CONTACT} element={<ContactPage />} />
           <Route
             path={ROUTES.CATEGORIES}
             element={<CategoriesPage />}
@@ -117,9 +118,6 @@ function App() {
             />
           </Route>
         </Route>
-
-        {/* // !! Does not exist yet */}
-        <Route path={ROUTES.CONTACT} element={<ContactPage />} />
       </Routes>
     </ShoppingCartProvider>
   );
