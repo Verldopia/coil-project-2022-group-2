@@ -20,6 +20,9 @@ const Footer = () => {
               <li className={styles.listItem}>
                 <a href={ROUTES.ABOUT}>About us</a>
               </li>
+              <li className={styles.listItem}>
+                <a href={ROUTES.CONTACT}>Contact</a>
+              </li>
             </ul>
             <ul className={styles.list}>
               <h5 className={styles.title}>Account</h5>

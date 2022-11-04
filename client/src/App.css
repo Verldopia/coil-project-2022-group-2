@@ -123,8 +123,12 @@ body {
   }
 }
 .larger {
-  width: 100%;
-  max-width: 45rem;
+  max-width: 100%;
+  width: 45rem;
+}
+.listItem {
+  margin-left: 2rem;
+  list-style: disc;
 }
 .title {
   max-width: 25rem;
