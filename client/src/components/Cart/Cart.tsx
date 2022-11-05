@@ -31,7 +31,7 @@ function Cart({ isOpen }: CartProps) {
       <div className={styles.cartHeader}>
         <h2>Cart</h2>
         <button className={styles.cartBtn} onClick={closeCart}>
-          <Tooltip title="Close cart" arrow placement="bottom">
+          <Tooltip title="Close the cart" arrow placement="bottom">
             <CloseOutlinedIcon fontSize="large" />
           </Tooltip>
         </button>

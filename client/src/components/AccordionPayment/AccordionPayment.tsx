@@ -38,7 +38,7 @@ export default function AccordionPayment() {
           />
         </Grid>
         <Tooltip
-          title="Last three digits on signature strip"
+          title="The three digits on the back of your card"
           arrow
           placement="bottom"
         >

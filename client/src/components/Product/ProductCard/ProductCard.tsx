@@ -60,7 +60,7 @@ const ProductCard = ({ button, item, i }: ProductCardProps) => {
             onClick={removeProduct}
           >
             <Tooltip
-              title="Remove from wishlist"
+              title="Remove item from wishlist"
               arrow
               placement="bottom"
             >

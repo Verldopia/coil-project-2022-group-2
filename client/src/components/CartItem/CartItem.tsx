@@ -75,7 +75,7 @@ function CartItem({ id, quantity }: CartItemProps) {
               onClick={() => decreaseCartQuantity(product.id)}
             >
               <Tooltip
-                title="Decrease amount"
+                title="Decrease item quantity"
                 arrow
                 placement="bottom"
               >
@@ -91,7 +91,7 @@ function CartItem({ id, quantity }: CartItemProps) {
               onClick={() => increaseCartQuantity(product.id)}
             >
               <Tooltip
-                title="Increase amount"
+                title="Increase item quantity"
                 arrow
                 placement="bottom"
               >
@@ -107,7 +107,7 @@ function CartItem({ id, quantity }: CartItemProps) {
             onClick={() => removeFromCart(product.id)}
           >
             <Tooltip
-              title="Delete from cart"
+              title="Delete item from cart"
               arrow
               placement="bottom"
             >

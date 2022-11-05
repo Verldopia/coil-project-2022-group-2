@@ -76,7 +76,7 @@ export const AdminLoginForm: React.FC = () => {
             Login
           </Button>
           <Tooltip
-            title="Contact application owner to gain access"
+            title="Contact your administrator for access"
             arrow
             placement="bottom"
           >

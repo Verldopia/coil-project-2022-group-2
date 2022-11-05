@@ -89,7 +89,7 @@ const LoginForm: React.FC = () => {
             Login
           </Button>
           <Tooltip
-            title="Register new account"
+            title="Create a new account"
             arrow
             placement="bottom"
           >
@@ -102,7 +102,7 @@ const LoginForm: React.FC = () => {
             </Button>
           </Tooltip>
           <Tooltip
-            title="Don't have an account? Go to register"
+            title="Don't have an account? Click Register"
             arrow
             placement="bottom"
           >

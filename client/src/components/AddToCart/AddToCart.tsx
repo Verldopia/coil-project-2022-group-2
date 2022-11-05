@@ -10,7 +10,7 @@ const AddToCart = ({ item }: AddToCartProps) => {
 
   return (
     <div>
-      <Tooltip title="Add to cart" arrow placement="bottom">
+      <Tooltip title="Add item to cart" arrow placement="bottom">
         <Button
           sx={{
             color: 'var(--darkest-grey)',

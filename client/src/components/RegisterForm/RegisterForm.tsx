@@ -104,7 +104,7 @@ const RegisterForm: React.FC = () => {
             Register
           </Button>
           <Tooltip
-            title="Login with existing account"
+            title="Login with an existing account"
             arrow
             placement="bottom"
           >

@@ -143,7 +143,7 @@ const ItemPage: React.FC = (props) => {
                   <FavoriteOutlinedIcon />
                 ) : (
                   <Tooltip
-                    title="Add to wishlist"
+                    title="Add item to wishlist"
                     arrow
                     placement="bottom"
                   >
