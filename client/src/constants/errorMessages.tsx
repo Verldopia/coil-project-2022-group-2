@@ -19,6 +19,7 @@ export const ERRORS = {
   PRODUCT_DUP: 'Product already exists',
 
   // Checkout
+  // !! Hi Rachel, for line 23, 24: the type is written before the message. for example: "{Title} is too short", "{Address} is too short,..". ==> Please delete this message :)
   FIELD_TOO_SHORT: 'is too short',
   FIELD_REQUIRED: ' is required',
   DISC_INVALID: 'Discount code is invalid',
