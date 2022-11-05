@@ -37,7 +37,11 @@ export default function AccordionDiscount() {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit} className={styles.form}>
+    <form
+      onSubmit={formik.handleSubmit}
+      className={styles.form}
+      id="step-12"
+    >
       <TextField
         InputProps={{
           endAdornment: (

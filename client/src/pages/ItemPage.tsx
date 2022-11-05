@@ -1,4 +1,6 @@
-import React from 'react';
+import 'intro.js/introjs.css';
+import { Steps } from 'intro.js-react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   AddToCart,
@@ -7,7 +9,7 @@ import {
   RelatedProduct,
   StarRating,
 } from '../components';
-import { Lowercase, SlugifyID, useFetchProducts } from '../utilities';
+import { ItemSteps } from '../constants';
 
 // Styles
 import {
@@ -17,11 +19,19 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material';
+import { Lowercase, SlugifyID, useFetchProducts } from '../utilities';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 
 const ItemPage: React.FC = (props) => {
+  const [enabled, setEnabled] = useState(true);
+  const [initialStep, setInitialStep] = useState(0);
   let { id, title } = useParams();
+
+  const onExit = () => {
+    localStorage.setItem('tutorial-2', '1');
+    setEnabled(false);
+  };
 
   // Fetch products
   const data = useFetchProducts();
@@ -60,10 +70,25 @@ const ItemPage: React.FC = (props) => {
     window.location.reload();
   }
 
+  // Check if tutorial has already been shown
+  const tutorial_2 = localStorage.getItem('tutorial-2');
+
   return (
     <div className="container--box">
       {product && (
         <div className="container">
+          {/* // Tutorial */}
+          {!tutorial_2 && (
+            <div className="App">
+              <Steps
+                enabled={enabled}
+                steps={ItemSteps}
+                initialStep={initialStep}
+                onExit={onExit}
+              />
+            </div>
+          )}
+
           {/* // Breadcrumbing */}
           <Breadcrumbs
             className="bread--box"
@@ -102,8 +127,12 @@ const ItemPage: React.FC = (props) => {
               <p>Currently {product.stock} in stock.</p>
               <p>${product.price}.-</p>
 
-              <AddToCart item={product} />
+              <div className="button" id="step-8">
+                <AddToCart item={product} />
+              </div>
+
               <Button
+                id="step-9"
                 className="mainBtn"
                 color="info"
                 variant="outlined"
@@ -134,12 +163,14 @@ const ItemPage: React.FC = (props) => {
       )}
 
       {/* // Select 4 products in same category, and create a card */}
-      <RelatedProduct
-        id={SlugifyID(id)}
-        title={title}
-        titleText="Related products"
-        data={data}
-      />
+      <div id="step-10">
+        <RelatedProduct
+          id={SlugifyID(id)}
+          title={title}
+          titleText="Related products"
+          data={data}
+        />
+      </div>
     </div>
   );
 };

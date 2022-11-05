@@ -269,3 +269,6 @@ h4 {
   justify-content: space-evenly;
   padding: 8px;
 }
+.button {
+  max-width: calc(6rem + 2px);
+}

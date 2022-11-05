@@ -44,6 +44,7 @@ export default function AccordionBox() {
       <Accordion
         expanded={expanded === 'panel2'}
         onChange={handleChange('panel2')}
+        id="step-13"
       >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -63,6 +64,7 @@ export default function AccordionBox() {
       <Accordion
         expanded={expanded === 'panel4'}
         onChange={handleChange('panel4')}
+        id="step-14"
       >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
