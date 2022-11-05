@@ -8,7 +8,7 @@ export const LandingSteps = [
   {
     // Popular button
     element: '#step-2',
-    intro: 'See what everyone is buying!',
+    intro: 'Not sure where to start? See what everyone is buying.',
   },
   {
     // Wishlist
@@ -36,6 +36,6 @@ export const LandingSteps = [
     // Footer
     element: '#step-7',
     intro:
-      'Find out more information about the company, shipping details, and FAQs through these links',
+      'On every page you can click here to out more information about the company, shipping details, and any Frequently Asked Questions.',
   },
 ];

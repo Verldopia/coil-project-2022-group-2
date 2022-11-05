@@ -9,13 +9,13 @@ export const CheckoutSteps = [
     // Discount code
     element: '#step-12',
     intro:
-      'Have a promo code? Add it here and click submit to automatically discount your items.',
+      'Have a promo code? Add it here and click Submit. The discount will be applied automatically.',
   },
   {
     // Select shipping methods
     element: '#step-13',
     intro:
-      'Select a shipping option for your order and put in your shipping address.',
+      'Select a shipping option for your order and enter your shipping details here.',
   },
   {
     // Select payment methods
