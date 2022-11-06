@@ -152,7 +152,7 @@ const ItemPage: React.FC = (props) => {
                 )}
               </Button>
             </div>
-            <div className="container--info__text">
+            <div className="container--info__text" id="step-10">
               <h3>About the {product.title}</h3>
 
               {/* // <p>{product.description}</p> */}
@@ -163,7 +163,7 @@ const ItemPage: React.FC = (props) => {
       )}
 
       {/* // Select 4 products in same category, and create a card */}
-      <div id="step-10">
+      <div id="step-11">
         <RelatedProduct
           id={SlugifyID(id)}
           title={title}

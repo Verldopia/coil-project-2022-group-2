@@ -15,6 +15,12 @@ export const ItemSteps = [
     // Related products
     element: '#step-10',
     intro:
+      'Here you will find all the information you need to make a decision on a product.',
+  },
+  {
+    // Related products
+    element: '#step-11',
+    intro:
       'Not quite what you are looking for? Check the related products section to see products that might better suit your needs.',
   },
 ];

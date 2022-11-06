@@ -33,9 +33,6 @@
   align-items: center;
   color: var(--bgd-color);
 }
-.btn {
-  transition: all ease 0.2s;
-}
 .btn:hover {
   color: var(--md-grey);
 }
@@ -48,4 +45,21 @@
 }
 .headerButton {
   color: var(--bgd-color);
+}
+.btn {
+  cursor: pointer;
+  display: flex;
+  transition: all ease 0.2s;
+}
+.shake {
+  display: flex;
+  animation: shake 0.8s;
+}
+@keyframes shake {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

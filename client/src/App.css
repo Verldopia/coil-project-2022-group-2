@@ -78,7 +78,7 @@ body {
   flex-wrap: wrap;
 }
 .bread--box {
-  max-width: 30rem;
+  max-width: 40rem;
 }
 .container--filter {
   display: flex;

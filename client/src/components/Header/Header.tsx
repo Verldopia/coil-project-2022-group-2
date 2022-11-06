@@ -1,7 +1,9 @@
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ROUTES } from '../../constants/routes';
-import React from 'react';
+
 import styles from './Header.module.css';
+import ReplayOutlinedIcon from '@mui/icons-material/ReplayOutlined';
 
 import {
   Navbar,
@@ -13,8 +15,24 @@ import {
 
 // Custom components
 import { SearchBar, Navigation } from '../../components';
+import { Tooltip } from '@mui/material';
 
 const Header: React.FC = () => {
+  const [shake, setShake] = useState(false);
+
+  // Repeat the tutorial
+  const repeatTutorial = () => {
+    // Button begins to shake
+    setShake(true);
+
+    // Buttons stops to shake after 2 seconds
+    setTimeout(() => setShake(false), 800);
+
+    localStorage.removeItem('tutorial-1');
+    localStorage.removeItem('tutorial-2');
+    localStorage.removeItem('tutorial-3');
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
@@ -46,6 +64,18 @@ const Header: React.FC = () => {
               to={ROUTES.REGISTER}
             >
               Register
+            </Button>
+            <Button
+              className={shake ? `${styles.shake}` : styles.btn}
+              onClick={repeatTutorial}
+            >
+              <Tooltip
+                title="Rewatch the tutorial"
+                arrow
+                placement="bottom"
+              >
+                <ReplayOutlinedIcon />
+              </Tooltip>
             </Button>
           </div>
         </div>
