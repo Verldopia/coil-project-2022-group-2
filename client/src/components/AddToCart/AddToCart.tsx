@@ -3,6 +3,7 @@ import { UseShoppingCart } from '../../context/ShoppingCartContext';
 import { Product } from '../../interfaces';
 import { Button, Tooltip } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+
 type AddToCartProps = { item: Product };
 
 const AddToCart = ({ item }: AddToCartProps) => {
@@ -20,6 +21,7 @@ const AddToCart = ({ item }: AddToCartProps) => {
           }}
           className="mainBtn"
           variant="contained"
+          disabled={!item.approved}
           onClick={() => increaseCartQuantity(item?.id)}
         >
           <ShoppingCartOutlinedIcon />

@@ -13,6 +13,7 @@ import { ItemSteps } from '../constants';
 
 // Styles
 import {
+  Alert,
   Breadcrumbs,
   Button,
   Link,
@@ -111,6 +112,13 @@ const ItemPage: React.FC = (props) => {
               {product.title}
             </Typography>
           </Breadcrumbs>
+
+          {!product.approved && (
+            <Alert severity="error" className="margin">
+              The product is not visible in the webstore until it is
+              approved!
+            </Alert>
+          )}
           <div className="container--info">
             <div className="container--info__images images">
               <ImageModal
