@@ -4,6 +4,8 @@ import { TextField } from '@mui/material';
 import { ROUTES } from '../../constants';
 
 const Footer = () => {
+  const baseUrl = window.location.origin;
+
   return (
     <footer className={styles.container}>
       <div className={styles.footerContainer}>
@@ -12,28 +14,28 @@ const Footer = () => {
             <ul className={styles.list}>
               <h5 className={styles.title}>Support</h5>
               <li className={styles.listItem}>
-                <a href={ROUTES.FAQ}>FAQ</a>
+                <a href={baseUrl + '/' + ROUTES.FAQ}>FAQ</a>
               </li>
               <li className={styles.listItem}>
-                <a href={ROUTES.SHIPPING}>Shipping</a>
+                <a href={baseUrl + '/' + ROUTES.SHIPPING}>Shipping</a>
               </li>
               <li className={styles.listItem}>
-                <a href={ROUTES.ABOUT}>About us</a>
+                <a href={baseUrl + '/' + ROUTES.ABOUT}>About us</a>
               </li>
               <li className={styles.listItem}>
-                <a href={ROUTES.CONTACT}>Contact</a>
+                <a href={baseUrl + '/' + ROUTES.CONTACT}>Contact</a>
               </li>
             </ul>
             <ul className={styles.list}>
               <h5 className={styles.title}>Account</h5>
               <li className={styles.listItem}>
-                <a href={ROUTES.LOGIN}>Login</a>
+                <a href={baseUrl + '/' + ROUTES.LOGIN}>Login</a>
               </li>
               <li className={styles.listItem}>
-                <a href={ROUTES.REGISTER}>Register</a>
+                <a href={baseUrl + '/' + ROUTES.REGISTER}>Register</a>
               </li>
               <li className={styles.listItem}>
-                <a href={ROUTES.WISHLIST}>Wishlist</a>
+                <a href={baseUrl + '/' + ROUTES.WISHLIST}>Wishlist</a>
               </li>
             </ul>
           </div>
@@ -77,11 +79,13 @@ const Footer = () => {
         <div className="links">
           <ul className={styles.socials}>
             <li className={styles.socialsItem}>
-              <a href={ROUTES.LEGAL}>Legal</a>
+              <a href={baseUrl + '/' + ROUTES.LEGAL}>Legal</a>
             </li>
             <li>|</li>
             <li className={styles.socialsItem}>
-              <a href={ROUTES.LEGAL}>Privacy Policy</a>
+              <a href={baseUrl + '/' + ROUTES.LEGAL}>
+                Privacy Policy
+              </a>
             </li>
             <li>|</li>
             <li className={styles.socialsItem}>
