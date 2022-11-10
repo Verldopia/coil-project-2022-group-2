@@ -33,8 +33,8 @@ const AboutPage: React.FC<IAboutPageProps> = (props) => {
       <div className="container--info__images larger">
         <h1 className="padding title">
           SmartHomes provides home security to around 2,007,000 homes
-          in Canada. The All-In-One commerce company to make your Home
-          Safe and Secure.
+          in Canada. The All-In-One home security company to make your home
+          safe and secure.
         </h1>
         <Accordion>
           <AccordionSummary
@@ -47,21 +47,16 @@ const AboutPage: React.FC<IAboutPageProps> = (props) => {
           <AccordionDetails>
             <Typography>
               SmartHomes.com (ABC Private Limited) is Canada’s largest
-              home security and control system provider. With our
-              catalog, you will find everything you are looking for.
-              We have automated door locks, cameras, sensors,
-              touchpads, and thermostats; you name it and we have it
-              all.
+              home security and control system provider. 
+              We provide our customers with security products such as automated 
+              door locks, cameras, sensors, touchpads, and thermostats.
             </Typography>
             <br />
             <Typography>
-              We give you multiple options to choose from in every
-              category, the best quality available at an affordable
-              price. Select your items and your order will be
-              delivered right to your doorstep, anywhere in Canada.
+              SmartHomes.com gives you the best quality security products, at an affordable
+              price. We deliver home security right to your doorstep, anywhere in Canada.
             </Typography>
             <br />
-            <Typography>We guarantee the best quality!</Typography>
           </AccordionDetails>
         </Accordion>
         <Accordion>
@@ -74,13 +69,10 @@ const AboutPage: React.FC<IAboutPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              SmartHomes.com gives you products that help you to leave
-              your home without worrying about break-ins, gas leaks,
-              or fires. Explore the latest items and shop for your
-              every need from the comfort of your home or office. No
-              more getting worried about theft, leaky water pipes or
-              fire; get everything you need, when you need, right at
-              your doorstep.
+              SmartHomes.com gives you products that eliminate the 
+              worry about what might happen while you are away. 
+              Explore the latest items and shop for your
+              every need from the comfort of your home.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -94,17 +86,12 @@ const AboutPage: React.FC<IAboutPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              SmartHome is the first commerce platform in Canada to
-              make homes a safe place for homeowners. SmartHome.com,
-              founded in 2009 by a group of international students,
-              Ben Richards, Harry Evans and Priya Sharma. When they
-              came to Toronto, they found a gap in the market for home
-              security and monitoring. Over the last five years,
-              SmartHomes.com has been a leader in home security
-              products, expanding throughout the country and offering
-              a wide variety of home-protection items. They are
-              launching the latest items to help people live a relaxed
-              and stress-free life in Canada.
+              SmartHomes.com, was founded in 2009 by a group of international students,
+              who noticed the need for a revolutionary home
+              security and monitoring company. In the last five years,
+              SmartHomes.com has become a leader in home security
+              products, expanding to all provinces and offering
+              a wide variety of home protection items.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -118,12 +105,11 @@ const AboutPage: React.FC<IAboutPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              We aim to offer consistency that focuses on our
-              customer’s needs and delivering leading-edge products.
-              We take our security products and innovation seriously,
+              At SmartHomes.com, we aim to offer customer service and products that focus 
+              on our customer’s needs.
+              We take innovation seriously and
               we hope to generate a new era of smart connected devices
-              that will enhance privacy and give customers the
-              opportunity to protect their home, their way.
+              that will help customers protect their home, their way.
             </Typography>
           </AccordionDetails>
         </Accordion>

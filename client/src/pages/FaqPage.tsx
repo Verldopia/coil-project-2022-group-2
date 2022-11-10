@@ -44,7 +44,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
         <h1 className="margin title">Getting Started</h1>
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography>Why Should I buy on from SmartHomes.com?</Typography>
+            <Typography>Why should I buy from from SmartHomes.com?</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
@@ -65,13 +65,10 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              SmartHomes.com gives you products that help you to leave
-              your home without worrying about break-ins, gas leaks,
-              or fires. Explore the latest items and shop for your
-              every need from the comfort of your home or office. No
-              more getting worried about theft, leaky water pipes or
-              fire; get everything you need, when you need, right at
-              your doorstep.
+              SmartHomes.com gives you products that eliminate the 
+              worry about what might happen while you are away. 
+              Explore the latest items and shop for your
+              every need from the comfort of your home.
             </Typography>
           </AccordionDetails>
         </Accordion>
