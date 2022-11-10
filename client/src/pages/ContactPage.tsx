@@ -42,7 +42,7 @@ const ContactPage: React.FC = () => {
           </li>
         </ul>
         <br />
-        <h5>Give us a ring at</h5>
+        <h5>To better help you, you can give us a call:</h5>
         <ul>
           <li className="listItem">+1 123-987-7411</li>
           <li className="listItem">+1 123-987-7412</li>
@@ -53,7 +53,7 @@ const ContactPage: React.FC = () => {
         <br />
         <br />
         <p>
-          Email at:{' '}
+          Send us an email at:{' '}
           <a className="dark" href="mailto:hello@smarhomes.ca">
             hello@smarhomes.ca
           </a>
