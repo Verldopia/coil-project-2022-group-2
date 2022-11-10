@@ -44,14 +44,12 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
         <h1 className="margin title">Getting Started</h1>
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography>Why Should I buy on SmartHome?</Typography>
+            <Typography>Why Should I buy on from SmartHomes.com?</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
               SmartHome is one of the biggest home security and
-              control system providers in Canada with a diverse range
-              of customers and high credibility. With approximately 10
-              million daily page visits and sale events, offering
+              control system providers in Canada. SmartHomes.com offers
               buyers an opportunity to explore home security products
               at an affordable price all over Canada. Our extensive
               product catalogue offers everything you need to keep
@@ -86,12 +84,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           <AccordionDetails>
             <Typography>
               Every order is given a tracking number for easy access.
-              You can enter your details at your order placed page /
-              order history page to view the status of your order.
-              Please don’t worry if your tracking number doesn’t come
-              immediately, it might take up to 48-hour delay on the
-              carrier’s website to update the details. Just try again
-              shortly!
+              Please allow up to 48 hours to receive any tracking updates.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -101,9 +94,9 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Your tracking number is found in your confirmation
+              Your tracking number is given to you in your confirmation
               email. If you can’t find your confirmation email, please
-              check your spam folder. For any other troubleshooting
+              check your spam folder. For any other problems,
               please{' '}
               <a href={ROUTES.CONTACT} className="dark">
                 contact us
@@ -117,7 +110,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Currently, we ship to all Canadian provinces and
+              We ship to all Canadian provinces and
               territories. For more details, please see our Shipping
               page.
             </Typography>
@@ -129,7 +122,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              We offer Standard and Priority Shipping. Please see the
+              We offer both Standard and Priority shipping options. Please see the
               table below for shipping details and options
             </Typography>
             <TableContainer component={Paper} className="margin">
@@ -183,8 +176,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
               </Table>
             </TableContainer>
             <Typography>
-              For more information about our shipping prices, you can
-              view all the information on our Shipping page.
+              For more information about shipping, please check out our Shipping page.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -192,7 +184,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
 
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography>What payment methods can I use?</Typography>
+            <Typography>What payment methods does SmartHomes.com support?</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
@@ -208,9 +200,8 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              We don’t provide any installment offers to our
-              customers. You are requested to pay the full and final
-              payment at the payment details page.
+              We currently do not support payment with installments.
+              You are required to pay the full amount at checkout.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -220,14 +211,13 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>
-              How do SmartHomes promotion codes work?
+              How do SmartHomes.com promo codes work?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              You can use SmartHomes promotion codes to get a discount
-              on your order. If you receive a promotion code, hold
-              onto it to enter at checkout.
+              You can use SmartHomes promo codes to get a discount
+              on your order.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -237,8 +227,8 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              In the checkout page, you will be able to enter the
-              promo code before payment.
+              On the checkout page, you can enter your promo code under Discounts.
+              The discount amount will be automatically reduced from the total.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -247,7 +237,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>
-              How can I return or exchange the products?
+              How can I return or exchange a product?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -256,15 +246,15 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
               <a href={ROUTES.CONTACT} className="dark">
                 contact us
               </a>
-              . We will provide you with a shipping label and will be
-              able to issue a refund when the product has been
-              successfully returned.
+              . After speaking with customer service,
+              a shipping label will be sent to your email.
+              You can ship the product back to us at any post office and 
+              a refund will be issued when the product is received.
             </Typography>
             <br />
             <Typography>
               Note: We only accept returns and exchanges within 30
-              days of purchase. If your product has a warranty, please
-              contact the number on your warranty package.
+              days of purchase.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -277,7 +267,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              A refund will appear within 4-5 business days upon
+              A refund will be issued within 4-5 business days upon
               arrival of the returned product.
             </Typography>
           </AccordionDetails>
@@ -288,9 +278,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              If the product has been damaged and returned by the
-              user, we will be deducting 50% of the refund amount on
-              the buyer’s card.
+              Damaged products are subject to a reduction of 50% of the total refund amount.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -300,7 +288,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              Return tracking is set up at your local post office. Our
+              You can track your return through your local post office. Our
               shipping labels do not automatically offer return
               tracking, but you can add this on when shipping the
               return.
@@ -308,16 +296,16 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           </AccordionDetails>
         </Accordion>
 
-        <h2 className="margin title">Others</h2>
+        <h2 className="margin title">Other</h2>
         <Accordion>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography>
-              Can I purchase a product from SmartHomes in-store?
+              Can I purchase a product from SmartHomes.com in store?
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              We currently do not have any SmartHomes in-store
+              We currently do not have any in store
               locations.
             </Typography>
           </AccordionDetails>
