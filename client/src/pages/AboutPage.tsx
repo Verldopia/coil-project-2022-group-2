@@ -47,9 +47,9 @@ const AboutPage: React.FC<IAboutPageProps> = (props) => {
           <AccordionDetails>
             <Typography>
               SmartHomes.com (ABC Private Limited) is Canada’s largest
-              home security and control system provider. 
-              We provide our customers with security products such as automated 
-              door locks, cameras, sensors, touchpads, and thermostats.
+              home security provider. 
+              With products ranging from smart door locks to glass break sensors,
+              we have everything you need to keep your home safe and secured.
             </Typography>
             <br />
             <Typography>
@@ -69,10 +69,8 @@ const AboutPage: React.FC<IAboutPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              SmartHomes.com gives you products that eliminate the 
-              worry about what might happen while you are away. 
-              Explore the latest items and shop for your
-              every need from the comfort of your home.
+              SmartHomes.com gives you products to ease your worries. 
+              Explore the latest items and shop for your every need from the comfort of your home.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -86,12 +84,9 @@ const AboutPage: React.FC<IAboutPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              SmartHomes.com, was founded in 2009 by a group of international students,
-              who noticed the need for a revolutionary home
-              security and monitoring company. In the last five years,
-              SmartHomes.com has become a leader in home security
-              products, expanding to all provinces and offering
-              a wide variety of home protection items.
+              SmartHomes.com, was founded in 2009 by a group of international students.
+              These students noticed the need for a revolutionary home security and monitoring company. 
+              In the last five years, SmartHomes.com has become a leading force in Canadian home security.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -105,11 +100,8 @@ const AboutPage: React.FC<IAboutPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              At SmartHomes.com, we aim to offer customer service and products that focus 
-              on our customer’s needs.
-              We take innovation seriously and
-              we hope to generate a new era of smart connected devices
-              that will help customers protect their home, their way.
+              At SmartHomes.com, we aim to offer customer service and products that focus on our customer’s needs. 
+              We hope to continue offering our customers with devices to help protect their home, their way.
             </Typography>
           </AccordionDetails>
         </Accordion>

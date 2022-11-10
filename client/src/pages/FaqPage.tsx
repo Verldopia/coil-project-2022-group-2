@@ -48,12 +48,10 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              SmartHome is one of the biggest home security and
-              control system providers in Canada. SmartHomes.com offers
-              buyers an opportunity to explore home security products
-              at an affordable price all over Canada. Our extensive
-              product catalogue offers everything you need to keep
-              your home safe and secured. Don’t see something? Just
+              SmartHomes.com is one of the biggest home security providers in Canada.
+              SmartHomes.com provides high quality products at an affordable price, all over Canada.
+              Our product catalogue offers everything needed to keep your home safe and secured.
+              Don’t see something? Just
               ask us! We will try everything we can to get you the
               products you need.
             </Typography>
@@ -198,7 +196,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           <AccordionDetails>
             <Typography>
               We currently do not support payment with installments.
-              You are required to pay the full amount at checkout.
+              We require customers to pay the full amount at checkout.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -246,7 +244,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
               . After speaking with customer service,
               a shipping label will be sent to your email.
               You can ship the product back to us at any post office and 
-              a refund will be issued when the product is received.
+              a refund will be issued when we receive the product.
             </Typography>
             <br />
             <Typography>
@@ -286,9 +284,7 @@ const FaqPage: React.FC<IFaqPageProps> = (props) => {
           <AccordionDetails>
             <Typography>
               You can track your return through your local post office. Our
-              shipping labels do not automatically offer return
-              tracking, but you can add this on when shipping the
-              return.
+              shipping labels do not have return tracking, but you can add this on when shipping the return.
             </Typography>
           </AccordionDetails>
         </Accordion>

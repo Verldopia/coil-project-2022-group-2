@@ -62,9 +62,8 @@ const LegalPage: React.FC = () => {
               </Typography>
               <br />
               <Typography>
-                Preventing fraud, monetary loss, illegal activity,
-                harm, and any other legal or information security
-                risks
+                Preventing fraud, monetary loss, illegal activity, and
+                harm.
               </Typography>
             </ul>
           </AccordionDetails>
@@ -79,13 +78,9 @@ const LegalPage: React.FC = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              We do not believe in selling, trading or otherwise
-              sharing your personal information.
-              Although accumulated data might be
-              shared to third parties for marketing, advertising, or
-              other purposes, these services are not permitted to use
-              your personal information except for the purposes
-              described in this Privacy Policy.
+              We do not believe in selling, trading or otherwise sharing your personal information. 
+              Accumulated data may be shared for marketing purposes. 
+              This Privacy Policy limits the use of this information.
             </Typography>
             <br />
             <Typography>
@@ -104,27 +99,15 @@ const LegalPage: React.FC = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              The information on this website including text,
-              graphics, logos, button icons, images, audio clips,
-              digital downloads, data compilations, are protected by
-              ABC Private Limited copyright and trademark laws.
-              SmartHomes.com is registered under the trademarks of ABC
-              Private Limited. Without the prior express written
-              consent of ABC, you can not modify, copy, reproduce,
-              republish, upload, post, transmit, or distribute any
-              portion of this information. If you feel any
-              information, content or text appearing on our website
-              constitutes a copyright infringement of another parties’
-              rights, please contact us immediately at
-              legal@smarthomes.com.
+              The information on this website is protected by ABC Private Limited copyright.
+              SmartHomes.com is registered under the trademarks of ABC Private Limited.
+              Unless written consent has been provided, information cannot be modified, copied, reproduced, or distributed. 
+              If you feel that this information is a copyright infringement of another parties’ rights, please contact us immediately at legal@smarthomes.com.
             </Typography>
             <br />
             <Typography>
-              For non-commercial use,
-              portions of the materials can be printed or downloaded.
-              Those with access to SmartHomes.com materaials are not 
-              permitted to change any information without written
-              permission of SmartHomes.com.
+              For non-commercial use, portions of the materials can be printed or downloaded.
+              Materials are not permitted to change any information without written permission of SmartHomes.com.
             </Typography>
           </AccordionDetails>
         </Accordion>
