@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+## Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SmartHome ecommerce website Version 1.0
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+SmartHome is an organisation that sells smart solutions for your homes that enables us to add to a sustainable future. By using sustainable products, we add to and improve how our homes contribute to a sustainable planet for ourselves and our future.
 
-### `npm start`
+## Products
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+We cover the entire A to Z of smart home solutions. Our products cover a wide spectrum; we offer solutions in
+Cameras
+Automated Door Locks
+Touchpads
+Thermostats
+CO2 sensors
+Water Leak Sensors
+Smoke Sensors
+Glass Break Sensors
+Motion Sensors
+Door/Window Open Close Sensors
+Platform
+The website will be hosted and available for the public to peruse and purchase products on an as-is basis. Changes to the product database will be made on product availability.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Deployment
 
-### `npm test`
+The website will be deployed once all products and product description are in place.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Platforms
 
-### `npm run build`
+The ecommerce platform is optimised for multiple platforms and can be easily used on laptops, phones, and tablets.
+Personnel Resources
+The team in charge of producing, publishing, and maintaining the e-commerce website are
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Credits
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Michiel Willems: Website Developer/ Project Coordinator
+Rachel Hughes: Technical Writer
+Shreya Sabharwal: Technical Writer
+Mithun Nair: Technical Writer
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Further Resources
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Resources such as GitHub were used to develop and deploy the content and the website.
